@@ -1,0 +1,54 @@
+﻿using Ideastudio.DataAccess.Repositories.Interfaces;
+using Ideastudio.Domain;
+using Ideastudio.Service.Interfaces;
+using System.Collections.Generic;
+
+namespace Ideastudio.Service.Implementations
+{
+    public class LokacijskaDozvolaService : ILokacijskaDozvolaService
+    {
+        private readonly ILokacijskaDozvolaRepository _lokacijskaDozvolaRepository;
+
+        public LokacijskaDozvolaService(ILokacijskaDozvolaRepository lokacijskaDozvolaRepository)
+        {
+            _lokacijskaDozvolaRepository = lokacijskaDozvolaRepository;
+        }
+
+        public IEnumerable<LokacijskaDozvola> GetAll()
+        {
+            return _lokacijskaDozvolaRepository.GetAll();
+        }
+
+        public LokacijskaDozvola Get(int id)
+        {
+            return _lokacijskaDozvolaRepository.Get(id);
+        }
+
+        public ServiceResult<LokacijskaDozvola> Add(LokacijskaDozvola lokacijskaDozvola)
+        {
+            _lokacijskaDozvolaRepository.Add(lokacijskaDozvola);
+
+            _lokacijskaDozvolaRepository.SaveChanges();
+
+            return new ServiceResult<LokacijskaDozvola>(true, "Lokacijska dozvola uspesno dodata.", lokacijskaDozvola);
+        }
+
+        public ServiceResult<LokacijskaDozvola> Update(LokacijskaDozvola lokacijskaDozvola)
+        {
+            _lokacijskaDozvolaRepository.Update(lokacijskaDozvola);
+
+            _lokacijskaDozvolaRepository.SaveChanges();
+
+            return new ServiceResult<LokacijskaDozvola>(true, "Lokacijska dozvola uspesno izmenjena.", lokacijskaDozvola);
+        }
+
+        public ServiceResult<LokacijskaDozvola> Delete(LokacijskaDozvola lokacijskaDozvola)
+        {
+            _lokacijskaDozvolaRepository.Delete(lokacijskaDozvola);
+
+            _lokacijskaDozvolaRepository.SaveChanges();
+
+            return new ServiceResult<LokacijskaDozvola>(true, "Lokacijska dozvola uspesno izbrisana.", lokacijskaDozvola);
+        }
+    }
+}

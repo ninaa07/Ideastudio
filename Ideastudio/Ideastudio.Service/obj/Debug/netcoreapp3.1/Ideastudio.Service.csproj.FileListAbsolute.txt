@@ -1,0 +1,10 @@
+D:\Projects\Ideastudio\Ideastudio.Service\bin\Debug\netcoreapp3.1\Ideastudio.Service.deps.json
+D:\Projects\Ideastudio\Ideastudio.Service\bin\Debug\netcoreapp3.1\Ideastudio.Service.dll
+D:\Projects\Ideastudio\Ideastudio.Service\bin\Debug\netcoreapp3.1\Ideastudio.Service.pdb
+D:\Projects\Ideastudio\Ideastudio.Service\obj\Debug\netcoreapp3.1\Ideastudio.Service.csprojAssemblyReference.cache
+D:\Projects\Ideastudio\Ideastudio.Service\obj\Debug\netcoreapp3.1\Ideastudio.Service.AssemblyInfoInputs.cache
+D:\Projects\Ideastudio\Ideastudio.Service\obj\Debug\netcoreapp3.1\Ideastudio.Service.AssemblyInfo.cs
+D:\Projects\Ideastudio\Ideastudio.Service\obj\Debug\netcoreapp3.1\Ideastudio.Service.dll
+D:\Projects\Ideastudio\Ideastudio.Service\obj\Debug\netcoreapp3.1\Ideastudio.Service.pdb
+D:\Projects\Ideastudio\Ideastudio.Service\bin\Debug\netcoreapp3.1\Ideastudio.Service.runtimeconfig.json
+D:\Projects\Ideastudio\Ideastudio.Service\bin\Debug\netcoreapp3.1\Ideastudio.Service.runtimeconfig.dev.json
