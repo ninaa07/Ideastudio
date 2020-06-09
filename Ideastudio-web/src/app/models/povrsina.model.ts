@@ -9,9 +9,9 @@ export class Povrsina {
 
     vrstaPoda: string;
 
-    projekatZaGradjevinskuDozvolu: ProjekatZaGradjevinskuDozvolu;
+    projekatZaGradjevinskuDozvoluId: number;
 
-    vrstaPovrsine: VrstaPovrsine;
+    vrstaPovrsineId: number;
 
     status: Status;
 }

@@ -14,7 +14,7 @@
                             <button class="btn btn-outline-primary" ngbDropdownToggle>{{ selectedIol }}</button>
                             <div ngbDropdownMenu>
                                 <button *ngFor="let iol of informacijeOLokaciji" ngbDropdownItem
-                                    (click)="changeSelectionIol(iol.naziv)">{{ iol.naziv }}</button>
+                                    (click)="changeSelectionIol(iol.id, iol.naziv)">{{ iol.naziv }}</button>
                             </div>
                         </div>
                     </div>
@@ -23,7 +23,7 @@
                             <button class="btn btn-outline-primary" ngbDropdownToggle>{{ selectedIr }}</button>
                             <div ngbDropdownMenu>
                                 <button *ngFor="let ir of idejnaResenja" ngbDropdownItem
-                                    (click)="changeSelectionIr(ir.naziv)">{{ ir.naziv }}</button>
+                                    (click)="changeSelectionIr(ir, ir.naziv)">{{ ir.naziv }}</button>
                             </div>
                         </div>
                     </div>
@@ -35,7 +35,9 @@
                     </div>
                     <div class="row">
                         <label> Datum </label>
-                        <input class="form-control" disabled placeholder="Datum" type="text" value="" />
+                        <input class="form-control" disabled placeholder="Datum" type="text"
+                            [(ngModel)]="lokacijskaDozvola.datumIzdavanja"
+                            value="{{ lokacijskaDozvola.datumIzdavanja }}" name="datum" />
                     </div>
                 </div>
             </div>
@@ -43,23 +45,34 @@
                 <label class="section-label">Podaci o objektu</label>
                 <div class="row">
                     <label> Naziv </label>
-                    <input class="form-control" placeholder="Naziv" type="text" value="" />
+                    <input #objekat class="form-control" placeholder="Naziv" type="text"
+                        [(ngModel)]="lokacijskaDozvola.nazivObjekta" required name="naziv" />
+                    <mat-error *ngIf="!validate()">
+                        Objekat ne postoji u izabranom Idejnom rešenju
+                    </mat-error>
                 </div>
                 <div class="row">
                     <label> Broj Parcele </label>
-                    <input class="form-control" placeholder="Broj parcele" type="text" value="" />
+                    <input class="form-control" placeholder="Broj parcele" type="text"
+                        [(ngModel)]="lokacijskaDozvola.brojParcele" required name="brojParcele" />
+                    <mat-error *ngIf="!validate()">
+                        Objekat ne postoji u izabranom Idejnom rešenju
+                    </mat-error>
                 </div>
                 <div class="row">
                     <label> Povrsina Parcele </label>
-                    <input class="form-control" placeholder="Povrsina parcele" type="text" value="" />
+                    <input class="form-control" placeholder="Povrsina parcele" type="text"
+                        [(ngModel)]="lokacijskaDozvola.povrsinaParcele" name="povrsinaParcele" />
                 </div>
                 <div class="row">
                     <label> Zona </label>
-                    <input class="form-control" disabled placeholder="Zona" type="text" value="" />
+                    <input class="form-control" disabled type="text" [(ngModel)]="lokacijskaDozvola.zona"
+                        value="lokacijskaDozvola.zona" name="zona" />
                 </div>
                 <div class="row">
                     <label> Namena Zemljišta </label>
-                    <input class="form-control" disabled placeholder="Namena zemljišta" type="text" value="" />
+                    <input class="form-control" disabled type="text" [(ngModel)]="lokacijskaDozvola.namenaZemljista"
+                        value="lokacijskaDozvola.namenaZemljista" name="namenaZemljista" />
                 </div>
             </div>
         </div>

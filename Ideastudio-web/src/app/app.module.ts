@@ -8,7 +8,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { AppComponent } from './app.component';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { CommonModule } from '@angular/common';
+import { CommonModule, DatePipe } from '@angular/common';
 import { ThemeModule } from './theme/theme.module';
 import { AppRoutingModule } from './app-routing.module';
 import { MatDialogModule } from '@angular/material/dialog';
@@ -40,7 +40,7 @@ import { LokacijskaDozvolaComponent } from './components/lokacijska-dozvola/loka
     EditLokacijskaDozvolaDialog,
     AddLokacijskaDozvolaDialog
   ],
-  providers: [],
+  providers: [DatePipe],
   bootstrap: [AppComponent],
   entryComponents: [
     ConfirmDialog,

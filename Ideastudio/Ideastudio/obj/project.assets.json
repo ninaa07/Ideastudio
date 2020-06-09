@@ -2176,10 +2176,7 @@
         },
         "runtime": {
           "bin/placeholder/Ideastudio.DataAccess.dll": {}
-        },
-        "frameworkReferences": [
-          "Microsoft.AspNetCore.App"
-        ]
+        }
       },
       "Ideastudio.Domain/1.0.0": {
         "type": "project",
@@ -2200,10 +2197,7 @@
         },
         "runtime": {
           "bin/placeholder/Ideastudio.Domain.dll": {}
-        },
-        "frameworkReferences": [
-          "Microsoft.AspNetCore.App"
-        ]
+        }
       },
       "Ideastudio.Service/1.0.0": {
         "type": "project",
@@ -2225,10 +2219,7 @@
         },
         "runtime": {
           "bin/placeholder/Ideastudio.Service.dll": {}
-        },
-        "frameworkReferences": [
-          "Microsoft.AspNetCore.App"
-        ]
+        }
       }
     }
   },
@@ -7244,7 +7235,7 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\New User\\.nuget\\packages\\": {}
+    "C:\\Users\\Nina\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
@@ -7252,11 +7243,11 @@
       "projectUniqueName": "D:\\Projects\\Ideastudio\\Ideastudio\\Ideastudio\\Ideastudio.csproj",
       "projectName": "Ideastudio",
       "projectPath": "D:\\Projects\\Ideastudio\\Ideastudio\\Ideastudio\\Ideastudio.csproj",
-      "packagesPath": "C:\\Users\\New User\\.nuget\\packages\\",
+      "packagesPath": "C:\\Users\\Nina\\.nuget\\packages\\",
       "outputPath": "D:\\Projects\\Ideastudio\\Ideastudio\\Ideastudio\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\New User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Nina\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -7366,7 +7357,7 @@
           },
           {
             "name": "Microsoft.NETCore.App.Host.win-x64",
-            "version": "[3.0.3, 3.0.3]"
+            "version": "[3.0.1, 3.0.1]"
           },
           {
             "name": "Microsoft.NETCore.App.Ref",
@@ -7385,7 +7376,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.100\\RuntimeIdentifierGraph.json"
       }
     }
   },

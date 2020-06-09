@@ -13,7 +13,7 @@ export class LokacijskaDozvola {
 
     nazivObjekta: string;
 
-    informacijeOLokaciji: InformacijeOLokaciji;
+    informacijeOLokacijiId: number;
 
     idejnaResenja: IdejnoResenje[];
 }

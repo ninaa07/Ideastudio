@@ -384,7 +384,6 @@ D:\Projects\Ideastudio\Ideastudio\Ideastudio\bin\Debug\netcoreapp3.0\Ideastudio.
 D:\Projects\Ideastudio\Ideastudio\Ideastudio\bin\Debug\netcoreapp3.0\Ideastudio.DataAccess.pdb
 D:\Projects\Ideastudio\Ideastudio\Ideastudio\bin\Debug\netcoreapp3.0\Ideastudio.Domain.pdb
 D:\Projects\Ideastudio\Ideastudio\Ideastudio\obj\Debug\netcoreapp3.0\Ideastudio.csprojAssemblyReference.cache
-D:\Projects\Ideastudio\Ideastudio\Ideastudio\obj\Debug\netcoreapp3.0\Ideastudio.csproj.CoreCompileInputs.cache
 D:\Projects\Ideastudio\Ideastudio\Ideastudio\obj\Debug\netcoreapp3.0\Ideastudio.MvcApplicationPartsAssemblyInfo.cs
 D:\Projects\Ideastudio\Ideastudio\Ideastudio\obj\Debug\netcoreapp3.0\Ideastudio.MvcApplicationPartsAssemblyInfo.cache
 D:\Projects\Ideastudio\Ideastudio\Ideastudio\obj\Debug\netcoreapp3.0\Ideastudio.AssemblyInfoInputs.cache
@@ -395,4 +394,3 @@ D:\Projects\Ideastudio\Ideastudio\Ideastudio\obj\Debug\netcoreapp3.0\staticwebas
 D:\Projects\Ideastudio\Ideastudio\Ideastudio\obj\Debug\netcoreapp3.0\staticwebassets\Ideastudio.StaticWebAssets.xml
 D:\Projects\Ideastudio\Ideastudio\Ideastudio\obj\Debug\netcoreapp3.0\Ideastudio.dll
 D:\Projects\Ideastudio\Ideastudio\Ideastudio\obj\Debug\netcoreapp3.0\Ideastudio.pdb
-D:\Projects\Ideastudio\Ideastudio\Ideastudio\obj\Debug\netcoreapp3.0\Ideastudio.genruntimeconfig.cache

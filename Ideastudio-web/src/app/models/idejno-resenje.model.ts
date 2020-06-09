@@ -11,11 +11,11 @@ export class IdejnoResenje {
 
     datumIzrade: Date;
 
-    glavniProjektant: GlavniProjektant;
+    glavniProjektantId: number;
 
-    objekat: Objekat;
+    objekatId: number;
 
-    lokacijskaDozvola: LokacijskaDozvola;
+    lokacijskaDozvolaId: number;
 
     projektiZaGradjevinskuDozvolu: ProjekatZaGradjevinskuDozvolu;
 }

@@ -6,5 +6,5 @@ export class Prostorija {
 
     naziv: string;
 
-    vrstaPovrsine: VrstaPovrsine;
+    vrstaPovrsineId: number;
 }

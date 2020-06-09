@@ -34,10 +34,8 @@ D:\Projects\Ideastudio\Ideastudio\Ideastudio.DataAccess\bin\Debug\netcoreapp3.0\
 D:\Projects\Ideastudio\Ideastudio\Ideastudio.DataAccess\bin\Debug\netcoreapp3.0\Ideastudio.Domain.dll
 D:\Projects\Ideastudio\Ideastudio\Ideastudio.DataAccess\bin\Debug\netcoreapp3.0\Ideastudio.Domain.pdb
 D:\Projects\Ideastudio\Ideastudio\Ideastudio.DataAccess\obj\Debug\netcoreapp3.0\Ideastudio.DataAccess.csprojAssemblyReference.cache
-D:\Projects\Ideastudio\Ideastudio\Ideastudio.DataAccess\obj\Debug\netcoreapp3.0\Ideastudio.DataAccess.csproj.CoreCompileInputs.cache
 D:\Projects\Ideastudio\Ideastudio\Ideastudio.DataAccess\obj\Debug\netcoreapp3.0\Ideastudio.DataAccess.AssemblyInfoInputs.cache
 D:\Projects\Ideastudio\Ideastudio\Ideastudio.DataAccess\obj\Debug\netcoreapp3.0\Ideastudio.DataAccess.AssemblyInfo.cs
 D:\Projects\Ideastudio\Ideastudio\Ideastudio.DataAccess\obj\Debug\netcoreapp3.0\Ideastudio.DataAccess.csproj.CopyComplete
 D:\Projects\Ideastudio\Ideastudio\Ideastudio.DataAccess\obj\Debug\netcoreapp3.0\Ideastudio.DataAccess.dll
 D:\Projects\Ideastudio\Ideastudio\Ideastudio.DataAccess\obj\Debug\netcoreapp3.0\Ideastudio.DataAccess.pdb
-D:\Projects\Ideastudio\Ideastudio\Ideastudio.DataAccess\obj\Debug\netcoreapp3.0\Ideastudio.DataAccess.genruntimeconfig.cache

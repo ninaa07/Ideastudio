@@ -81,8 +81,8 @@ export class LokacijskaDozvolaComponent implements OnInit {
 
   edit(lokacijskaDozvola: LokacijskaDozvola): void {
 
-    const dialogRef = this.dialog.open(EditLokacijskaDozvolaDialog, {
-      width: '500px',
+    const dialogRef = this.dialog.open(AddLokacijskaDozvolaDialog, {
+      width: '700px',
       autoFocus: true,
       data: { lokacijskaDozvola },
       disableClose: true
