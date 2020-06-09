@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\New User\\OneDrive\\Desktop\\Ideastudio\\Ideastudio.Service\\Ideastudio.Service.csproj": {}
+    "D:\\Projects\\Ideastudio\\Ideastudio\\Ideastudio.Service\\Ideastudio.Service.csproj": {}
   },
   "projects": {
-    "C:\\Users\\New User\\OneDrive\\Desktop\\Ideastudio\\Ideastudio.DataAccess\\Ideastudio.DataAccess.csproj": {
+    "D:\\Projects\\Ideastudio\\Ideastudio\\Ideastudio.DataAccess\\Ideastudio.DataAccess.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\New User\\OneDrive\\Desktop\\Ideastudio\\Ideastudio.DataAccess\\Ideastudio.DataAccess.csproj",
+        "projectUniqueName": "D:\\Projects\\Ideastudio\\Ideastudio\\Ideastudio.DataAccess\\Ideastudio.DataAccess.csproj",
         "projectName": "Ideastudio.DataAccess",
-        "projectPath": "C:\\Users\\New User\\OneDrive\\Desktop\\Ideastudio\\Ideastudio.DataAccess\\Ideastudio.DataAccess.csproj",
+        "projectPath": "D:\\Projects\\Ideastudio\\Ideastudio\\Ideastudio.DataAccess\\Ideastudio.DataAccess.csproj",
         "packagesPath": "C:\\Users\\New User\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\New User\\OneDrive\\Desktop\\Ideastudio\\Ideastudio.DataAccess\\obj\\",
+        "outputPath": "D:\\Projects\\Ideastudio\\Ideastudio\\Ideastudio.DataAccess\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\New User\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -27,8 +27,8 @@
         "frameworks": {
           "netcoreapp3.0": {
             "projectReferences": {
-              "C:\\Users\\New User\\OneDrive\\Desktop\\Ideastudio\\Ideastudio.Domain\\Ideastudio.Domain.csproj": {
-                "projectPath": "C:\\Users\\New User\\OneDrive\\Desktop\\Ideastudio\\Ideastudio.Domain\\Ideastudio.Domain.csproj"
+              "D:\\Projects\\Ideastudio\\Ideastudio\\Ideastudio.Domain\\Ideastudio.Domain.csproj": {
+                "projectPath": "D:\\Projects\\Ideastudio\\Ideastudio\\Ideastudio.Domain\\Ideastudio.Domain.csproj"
               }
             }
           }
@@ -52,7 +52,7 @@
             },
             "FluentValidation.AspNetCore": {
               "target": "Package",
-              "version": "[8.6.1, )"
+              "version": "[8.6.2, )"
             },
             "Microsoft.AspNetCore.Mvc.Abstractions": {
               "target": "Package",
@@ -60,35 +60,35 @@
             },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[3.1.2, )"
+              "version": "[3.1.4, )"
             },
             "Microsoft.EntityFrameworkCore.Design": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[3.1.2, )"
+              "version": "[3.1.4, )"
             },
             "Microsoft.EntityFrameworkCore.Relational": {
               "target": "Package",
-              "version": "[3.1.2, )"
+              "version": "[3.1.4, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[3.1.2, )"
+              "version": "[3.1.4, )"
             },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[3.1.2, )"
+              "version": "[3.1.4, )"
             },
             "Microsoft.Extensions.Logging.Debug": {
               "target": "Package",
-              "version": "[3.1.2, )"
+              "version": "[3.1.4, )"
             },
             "NSwag.AspNetCore": {
               "target": "Package",
-              "version": "[13.2.3, )"
+              "version": "[13.6.0, )"
             }
           },
           "imports": [
@@ -127,14 +127,14 @@
         }
       }
     },
-    "C:\\Users\\New User\\OneDrive\\Desktop\\Ideastudio\\Ideastudio.Domain\\Ideastudio.Domain.csproj": {
+    "D:\\Projects\\Ideastudio\\Ideastudio\\Ideastudio.Domain\\Ideastudio.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\New User\\OneDrive\\Desktop\\Ideastudio\\Ideastudio.Domain\\Ideastudio.Domain.csproj",
+        "projectUniqueName": "D:\\Projects\\Ideastudio\\Ideastudio\\Ideastudio.Domain\\Ideastudio.Domain.csproj",
         "projectName": "Ideastudio.Domain",
-        "projectPath": "C:\\Users\\New User\\OneDrive\\Desktop\\Ideastudio\\Ideastudio.Domain\\Ideastudio.Domain.csproj",
+        "projectPath": "D:\\Projects\\Ideastudio\\Ideastudio\\Ideastudio.Domain\\Ideastudio.Domain.csproj",
         "packagesPath": "C:\\Users\\New User\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\New User\\OneDrive\\Desktop\\Ideastudio\\Ideastudio.Domain\\obj\\",
+        "outputPath": "D:\\Projects\\Ideastudio\\Ideastudio\\Ideastudio.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\New User\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -171,7 +171,7 @@
             },
             "FluentValidation.AspNetCore": {
               "target": "Package",
-              "version": "[8.6.1, )"
+              "version": "[8.6.2, )"
             },
             "Microsoft.AspNetCore.Mvc.Abstractions": {
               "target": "Package",
@@ -179,35 +179,35 @@
             },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[3.1.2, )"
+              "version": "[3.1.4, )"
             },
             "Microsoft.EntityFrameworkCore.Design": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[3.1.2, )"
+              "version": "[3.1.4, )"
             },
             "Microsoft.EntityFrameworkCore.Relational": {
               "target": "Package",
-              "version": "[3.1.2, )"
+              "version": "[3.1.4, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[3.1.2, )"
+              "version": "[3.1.4, )"
             },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[3.1.2, )"
+              "version": "[3.1.4, )"
             },
             "Microsoft.Extensions.Logging.Debug": {
               "target": "Package",
-              "version": "[3.1.2, )"
+              "version": "[3.1.4, )"
             },
             "NSwag.AspNetCore": {
               "target": "Package",
-              "version": "[13.2.3, )"
+              "version": "[13.6.0, )"
             }
           },
           "imports": [
@@ -246,14 +246,14 @@
         }
       }
     },
-    "C:\\Users\\New User\\OneDrive\\Desktop\\Ideastudio\\Ideastudio.Service\\Ideastudio.Service.csproj": {
+    "D:\\Projects\\Ideastudio\\Ideastudio\\Ideastudio.Service\\Ideastudio.Service.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\New User\\OneDrive\\Desktop\\Ideastudio\\Ideastudio.Service\\Ideastudio.Service.csproj",
+        "projectUniqueName": "D:\\Projects\\Ideastudio\\Ideastudio\\Ideastudio.Service\\Ideastudio.Service.csproj",
         "projectName": "Ideastudio.Service",
-        "projectPath": "C:\\Users\\New User\\OneDrive\\Desktop\\Ideastudio\\Ideastudio.Service\\Ideastudio.Service.csproj",
+        "projectPath": "D:\\Projects\\Ideastudio\\Ideastudio\\Ideastudio.Service\\Ideastudio.Service.csproj",
         "packagesPath": "C:\\Users\\New User\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\New User\\OneDrive\\Desktop\\Ideastudio\\Ideastudio.Service\\obj\\",
+        "outputPath": "D:\\Projects\\Ideastudio\\Ideastudio\\Ideastudio.Service\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\New User\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -269,8 +269,8 @@
         "frameworks": {
           "netcoreapp3.0": {
             "projectReferences": {
-              "C:\\Users\\New User\\OneDrive\\Desktop\\Ideastudio\\Ideastudio.DataAccess\\Ideastudio.DataAccess.csproj": {
-                "projectPath": "C:\\Users\\New User\\OneDrive\\Desktop\\Ideastudio\\Ideastudio.DataAccess\\Ideastudio.DataAccess.csproj"
+              "D:\\Projects\\Ideastudio\\Ideastudio\\Ideastudio.DataAccess\\Ideastudio.DataAccess.csproj": {
+                "projectPath": "D:\\Projects\\Ideastudio\\Ideastudio\\Ideastudio.DataAccess\\Ideastudio.DataAccess.csproj"
               }
             }
           }
@@ -294,7 +294,7 @@
             },
             "FluentValidation.AspNetCore": {
               "target": "Package",
-              "version": "[8.6.1, )"
+              "version": "[8.6.2, )"
             },
             "Microsoft.AspNetCore.Mvc.Abstractions": {
               "target": "Package",
@@ -302,35 +302,35 @@
             },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[3.1.2, )"
+              "version": "[3.1.4, )"
             },
             "Microsoft.EntityFrameworkCore.Design": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[3.1.2, )"
+              "version": "[3.1.4, )"
             },
             "Microsoft.EntityFrameworkCore.Relational": {
               "target": "Package",
-              "version": "[3.1.2, )"
+              "version": "[3.1.4, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[3.1.2, )"
+              "version": "[3.1.4, )"
             },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[3.1.2, )"
+              "version": "[3.1.4, )"
             },
             "Microsoft.Extensions.Logging.Debug": {
               "target": "Package",
-              "version": "[3.1.2, )"
+              "version": "[3.1.4, )"
             },
             "NSwag.AspNetCore": {
               "target": "Package",
-              "version": "[13.2.3, )"
+              "version": "[13.6.0, )"
             }
           },
           "imports": [

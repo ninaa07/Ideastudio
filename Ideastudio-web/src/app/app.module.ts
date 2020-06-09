@@ -14,10 +14,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { MatDialogModule } from '@angular/material/dialog';
 import { DashboardPage } from './pages/dashboard/dashboard.page';
 import { PregledPage } from './pages/pregled/pregled.page';
-import { LokacijskaDozvolaComponent } from './components/lokacijska-dozvola/lokacijska-dozvola/lokacijska-dozvola.component';
 import { ConfirmDialog } from './components/confirm/confirm.dialog';
 import { EditLokacijskaDozvolaDialog } from './components/lokacijska-dozvola/edit-lokacijska-dozvola/edit-lokacijska-dozvola.dialog.';
 import { AddLokacijskaDozvolaDialog } from './components/lokacijska-dozvola/add-lokacijska-dozvola/add-lokacijska-dozvola.dialog';
+import { LokacijskaDozvolaComponent } from './components/lokacijska-dozvola/lokacijska-dozvola.component';
 
 @NgModule({
   imports: [

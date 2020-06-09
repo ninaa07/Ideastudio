@@ -1,9 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace Ideastudio.Domain
 {
+    public enum StatusDokumenta
+    {
+        Nov,
+        Kreiran,
+        Obradjen
+    }
+
     public class ProjekatZaGradjevinskuDozvolu : BaseEntity
     {
         public ProjekatZaGradjevinskuDozvolu()
@@ -20,5 +26,7 @@ namespace Ideastudio.Domain
         public IdejnoResenje IdejnoResenje { get; set; }
 
         public virtual ICollection<Povrsina> Povrsine { get; set; }
+
+        public StatusDokumenta StatusDokumenta { get; set; }
     }
 }

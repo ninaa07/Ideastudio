@@ -4,6 +4,8 @@ export class InformacijeOLokaciji {
 
     id: number;
 
+    naziv: string;
+
     datumIzdavanja: Date;
 
     namenaZemljista: string;

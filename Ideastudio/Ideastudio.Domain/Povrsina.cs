@@ -1,9 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Ideastudio.Domain
+﻿namespace Ideastudio.Domain
 {
+    public enum Status
+    {
+        Insert, 
+        Update, 
+        Delete
+    }
+
     public class Povrsina : BaseEntity
     {
         public int Oznaka { get; set; }
@@ -17,5 +20,7 @@ namespace Ideastudio.Domain
         public int VrstaPovrsineId { get; set; }
 
         public VrstaPovrsine VrstaPovrsine { get; set; }
+
+        public Status Status { get; set; }
     }
 }

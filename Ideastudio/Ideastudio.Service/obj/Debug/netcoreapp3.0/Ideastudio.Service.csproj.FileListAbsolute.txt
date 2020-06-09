@@ -30,3 +30,20 @@ C:\Users\New User\OneDrive\Desktop\Ideastudio\Ideastudio.Service\obj\Debug\netco
 C:\Users\New User\OneDrive\Desktop\Ideastudio\Ideastudio.Service\obj\Debug\netcoreapp3.0\Ideastudio.Service.dll
 C:\Users\New User\OneDrive\Desktop\Ideastudio\Ideastudio.Service\obj\Debug\netcoreapp3.0\Ideastudio.Service.pdb
 C:\Users\New User\OneDrive\Desktop\Ideastudio\Ideastudio.Service\obj\Debug\netcoreapp3.0\Ideastudio.Service.genruntimeconfig.cache
+D:\Projects\Ideastudio\Ideastudio\Ideastudio.Service\bin\Debug\netcoreapp3.0\Ideastudio.Service.deps.json
+D:\Projects\Ideastudio\Ideastudio\Ideastudio.Service\bin\Debug\netcoreapp3.0\Ideastudio.Service.runtimeconfig.json
+D:\Projects\Ideastudio\Ideastudio\Ideastudio.Service\bin\Debug\netcoreapp3.0\Ideastudio.Service.runtimeconfig.dev.json
+D:\Projects\Ideastudio\Ideastudio\Ideastudio.Service\bin\Debug\netcoreapp3.0\Ideastudio.Service.dll
+D:\Projects\Ideastudio\Ideastudio\Ideastudio.Service\bin\Debug\netcoreapp3.0\Ideastudio.Service.pdb
+D:\Projects\Ideastudio\Ideastudio\Ideastudio.Service\bin\Debug\netcoreapp3.0\Ideastudio.DataAccess.dll
+D:\Projects\Ideastudio\Ideastudio\Ideastudio.Service\bin\Debug\netcoreapp3.0\Ideastudio.Domain.dll
+D:\Projects\Ideastudio\Ideastudio\Ideastudio.Service\bin\Debug\netcoreapp3.0\Ideastudio.DataAccess.pdb
+D:\Projects\Ideastudio\Ideastudio\Ideastudio.Service\bin\Debug\netcoreapp3.0\Ideastudio.Domain.pdb
+D:\Projects\Ideastudio\Ideastudio\Ideastudio.Service\obj\Debug\netcoreapp3.0\Ideastudio.Service.csprojAssemblyReference.cache
+D:\Projects\Ideastudio\Ideastudio\Ideastudio.Service\obj\Debug\netcoreapp3.0\Ideastudio.Service.csproj.CoreCompileInputs.cache
+D:\Projects\Ideastudio\Ideastudio\Ideastudio.Service\obj\Debug\netcoreapp3.0\Ideastudio.Service.AssemblyInfoInputs.cache
+D:\Projects\Ideastudio\Ideastudio\Ideastudio.Service\obj\Debug\netcoreapp3.0\Ideastudio.Service.AssemblyInfo.cs
+D:\Projects\Ideastudio\Ideastudio\Ideastudio.Service\obj\Debug\netcoreapp3.0\Ideastudio.Service.csproj.CopyComplete
+D:\Projects\Ideastudio\Ideastudio\Ideastudio.Service\obj\Debug\netcoreapp3.0\Ideastudio.Service.dll
+D:\Projects\Ideastudio\Ideastudio\Ideastudio.Service\obj\Debug\netcoreapp3.0\Ideastudio.Service.pdb
+D:\Projects\Ideastudio\Ideastudio\Ideastudio.Service\obj\Debug\netcoreapp3.0\Ideastudio.Service.genruntimeconfig.cache

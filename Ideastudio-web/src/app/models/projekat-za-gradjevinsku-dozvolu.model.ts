@@ -12,4 +12,15 @@ export class ProjekatZaGradjevinskuDozvolu {
     idejnoResenje: IdejnoResenje[];
 
     povrsine: Povrsina[];
+
+    statusDokumenta: StatusDokumenta;
+}
+
+export enum StatusDokumenta {
+
+    Nov,
+
+    Kreiran,
+
+    Obradjen
 }

@@ -7,6 +7,8 @@ export class IdejnoResenje {
 
     id: number;
 
+    naziv: string;
+
     datumIzrade: Date;
 
     glavniProjektant: GlavniProjektant;

@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace Ideastudio.Domain
 {
@@ -10,6 +9,8 @@ namespace Ideastudio.Domain
         {
             ProjektiZaGradjevinskuDozvolu = new HashSet<ProjekatZaGradjevinskuDozvolu>();
         }
+
+        public string Naziv { get; set; }
 
         public DateTime DatumIzrade { get; set; }
 

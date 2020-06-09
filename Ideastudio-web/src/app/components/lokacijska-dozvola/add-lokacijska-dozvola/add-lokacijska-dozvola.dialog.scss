@@ -61,4 +61,26 @@ label {
 .section-label {
     margin-top: 10px;
     margin-left: 10px;
+    margin-bottom: 15px;
+}
+
+.d-inline-block {
+    width: 98%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.dropdown-toggle {
+    width: inherit;
+}
+
+.top-row {
+    margin-right: 0px;
+    margin-left: 0px;
+}
+
+#section > .row {
+    height: 80px;
 }

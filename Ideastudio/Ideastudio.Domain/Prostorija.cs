@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Ideastudio.Domain
+﻿namespace Ideastudio.Domain
 {
     public class Prostorija : BaseEntity
     {
