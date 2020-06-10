@@ -14,12 +14,11 @@ const httpOptions = {
 
 export class LokacijskaDozvolaService {
 
-    url = 'https://localhost:44306/api/lokacijskeDozvole';
+    url = 'https://localhost:44306/api/lokacijskeDozvole/';
 
     constructor(private http: HttpClient) { }
 
     getAll(): Observable<LokacijskaDozvola[]> {
-        debugger;
         return this.http.get<LokacijskaDozvola[]>(this.url);
     }
 

@@ -15,9 +15,8 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { DashboardPage } from './pages/dashboard/dashboard.page';
 import { PregledPage } from './pages/pregled/pregled.page';
 import { ConfirmDialog } from './components/confirm/confirm.dialog';
-import { EditLokacijskaDozvolaDialog } from './components/lokacijska-dozvola/edit-lokacijska-dozvola/edit-lokacijska-dozvola.dialog.';
-import { AddLokacijskaDozvolaDialog } from './components/lokacijska-dozvola/add-lokacijska-dozvola/add-lokacijska-dozvola.dialog';
 import { LokacijskaDozvolaComponent } from './components/lokacijska-dozvola/lokacijska-dozvola.component';
+import { LokacijskaDozvolaDialog } from './components/lokacijska-dozvola/lokacijska-dozvola-dialog/lokacijska-dozvola.dialog';
 
 @NgModule({
   imports: [
@@ -37,15 +36,13 @@ import { LokacijskaDozvolaComponent } from './components/lokacijska-dozvola/loka
     PregledPage,
     LokacijskaDozvolaComponent,
     ConfirmDialog,
-    EditLokacijskaDozvolaDialog,
-    AddLokacijskaDozvolaDialog
+    LokacijskaDozvolaDialog
   ],
   providers: [DatePipe],
   bootstrap: [AppComponent],
   entryComponents: [
     ConfirmDialog,
-    EditLokacijskaDozvolaDialog,
-    AddLokacijskaDozvolaDialog
+    LokacijskaDozvolaDialog
   ]
 })
 export class AppModule { }

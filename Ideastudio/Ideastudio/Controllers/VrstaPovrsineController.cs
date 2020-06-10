@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Ideastudio.Domain;
+﻿using Ideastudio.Domain;
 using Ideastudio.Service;
 using Ideastudio.Service.Interfaces;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Ideastudio.Controllers
@@ -69,12 +64,12 @@ namespace Ideastudio.Controllers
             if (vrstaPovrsine == null)
                 return NotFound(new ServiceResult<VrstaPovrsine>(false, "Vrsta povrsine nije pronadjena."));
 
-            var rezultat = _vrstaPovrsineService.Update(vrstaPovrsine);
+            var result = _vrstaPovrsineService.Update(vrstaPovrsine);
 
-            if (rezultat.Success)
-                return Ok(rezultat);
+            if (result.Success)
+                return Ok(result);
 
-            return BadRequest(rezultat);
+            return BadRequest(result);
         }
 
         [HttpDelete("{id}")]
@@ -88,12 +83,12 @@ namespace Ideastudio.Controllers
             if (vrstaPovrsine == null)
                 return NotFound(new ServiceResult<VrstaPovrsine>(false, "Vrsta povrsine nije pronadjena."));
 
-            var rezultat = _vrstaPovrsineService.Delete(vrstaPovrsine);
+            var result = _vrstaPovrsineService.Delete(vrstaPovrsine);
 
-            if (rezultat.Success)
-                return Ok(rezultat);
+            if (result.Success)
+                return Ok(result);
 
-            return BadRequest(rezultat);
+            return BadRequest(result);
         }
     }
 }

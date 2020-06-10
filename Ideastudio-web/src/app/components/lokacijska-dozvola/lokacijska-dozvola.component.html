@@ -23,6 +23,8 @@
                                 <td>{{ ld.povrsinaParcele }}</td>
                                 <td>{{ ld.datumIzdavanja | date: 'dd/MM/yyyy' }}</td>
                                 <td>
+                                    <i class="tim-icons icon-single-copy-04" id="view-icon" matTooltip="Pregledaj"
+                                        (click)="open(ld.id)"></i>
                                     <i class="tim-icons icon-pencil" id="edit-icon" matTooltip="Izmeni"
                                         (click)="edit(ld)"></i>
                                     <i class="tim-icons icon-trash-simple" id="delete-icon" matTooltip="Obrisi"

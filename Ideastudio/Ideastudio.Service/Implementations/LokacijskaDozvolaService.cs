@@ -26,6 +26,8 @@ namespace Ideastudio.Service.Implementations
 
         public ServiceResult<LokacijskaDozvola> Add(LokacijskaDozvola lokacijskaDozvola)
         {
+            lokacijskaDozvola.DatumIzdavanja = System.DateTime.Now;
+
             _lokacijskaDozvolaRepository.Add(lokacijskaDozvola);
 
             _lokacijskaDozvolaRepository.SaveChanges();

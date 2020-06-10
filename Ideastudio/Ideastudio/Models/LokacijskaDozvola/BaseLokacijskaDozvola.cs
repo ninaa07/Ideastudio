@@ -13,5 +13,7 @@ namespace Ideastudio.Models.LokacijskaDozvola
         public string NazivObjekta { get; set; }
 
         public int InformacijeOLokacijiId { get; set; }
+
+        public string NazivIdejnogResenja { get; set; }
     }
 }

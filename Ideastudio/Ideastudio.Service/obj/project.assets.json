@@ -2111,10 +2111,7 @@
         },
         "runtime": {
           "bin/placeholder/Ideastudio.DataAccess.dll": {}
-        },
-        "frameworkReferences": [
-          "Microsoft.AspNetCore.App"
-        ]
+        }
       },
       "Ideastudio.Domain/1.0.0": {
         "type": "project",
@@ -7055,7 +7052,7 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Nina\\.nuget\\packages\\": {}
+    "C:\\Users\\New User\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
@@ -7063,11 +7060,11 @@
       "projectUniqueName": "D:\\Projects\\Ideastudio\\Ideastudio\\Ideastudio.Service\\Ideastudio.Service.csproj",
       "projectName": "Ideastudio.Service",
       "projectPath": "D:\\Projects\\Ideastudio\\Ideastudio\\Ideastudio.Service\\Ideastudio.Service.csproj",
-      "packagesPath": "C:\\Users\\Nina\\.nuget\\packages\\",
+      "packagesPath": "C:\\Users\\New User\\.nuget\\packages\\",
       "outputPath": "D:\\Projects\\Ideastudio\\Ideastudio\\Ideastudio.Service\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Nina\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\New User\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -7176,7 +7173,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
       }
     }
   }

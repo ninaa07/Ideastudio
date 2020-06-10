@@ -15,5 +15,7 @@ export class LokacijskaDozvola {
 
     informacijeOLokacijiId: number;
 
+    nazivIdejnogResenja: string;
+
     idejnaResenja: IdejnoResenje[];
 }

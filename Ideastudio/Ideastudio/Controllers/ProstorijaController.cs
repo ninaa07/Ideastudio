@@ -64,12 +64,12 @@ namespace Ideastudio.Controllers
             if (prostorija == null)
                 return NotFound(new ServiceResult<Prostorija>(false, "Prostorija nije pronadjena."));
 
-            var rezultat = _prostorijaService.Update(prostorija);
+            var result = _prostorijaService.Update(prostorija);
 
-            if (rezultat.Success)
-                return Ok(rezultat);
+            if (result.Success)
+                return Ok(result);
 
-            return BadRequest(rezultat);
+            return BadRequest(result);
         }
 
         [HttpDelete("{id}")]
@@ -83,12 +83,12 @@ namespace Ideastudio.Controllers
             if (prostorija == null)
                 return NotFound(new ServiceResult<Prostorija>(false, "Prostorija nije pronadjena."));
 
-            var rezultat = _prostorijaService.Delete(prostorija);
+            var result = _prostorijaService.Delete(prostorija);
 
-            if (rezultat.Success)
-                return Ok(rezultat);
+            if (result.Success)
+                return Ok(result);
 
-            return BadRequest(rezultat);
+            return BadRequest(result);
         }
     }
 }

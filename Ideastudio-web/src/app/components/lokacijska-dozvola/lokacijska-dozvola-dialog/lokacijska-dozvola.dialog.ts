@@ -7,36 +7,53 @@ import { IdejnoResenje } from 'src/app/models/idejno-resenje.model';
 import { LokacijskaDozvola } from 'src/app/models/lokacijska-dozvola.model';
 import { DatePipe } from '@angular/common';
 import { ObjekatService } from 'src/app/services/objekat.service';
-import { Objekat } from 'src/app/models/objekat.model';
 
 @Component({
-  selector: 'add-lokacijska-dozvola',
-  templateUrl: './add-lokacijska-dozvola.dialog.html',
-  styleUrls: ['./add-lokacijska-dozvola.dialog.scss']
+  selector: 'lokacijska-dozvola-dialog',
+  templateUrl: './lokacijska-dozvola.dialog.html',
+  styleUrls: ['./lokacijska-dozvola.dialog.scss']
 })
-export class AddLokacijskaDozvolaDialog implements OnInit {
+export class LokacijskaDozvolaDialog implements OnInit {
 
-  informacijeOLokaciji: InformacijeOLokaciji[];
+  informacijeOLokacijiList: InformacijeOLokaciji[];
   idejnaResenja: IdejnoResenje[];
   lokacijskaDozvola: LokacijskaDozvola;
+  informacijeOLokaciji: InformacijeOLokaciji;
   idejnoResenje: IdejnoResenje;
   selectedIol = 'Informacije o lokaciji';
   selectedIr = 'Idejno resenje';
+  datumIzdavanja: string;
+  disabled: boolean;
 
   constructor(private lokacijskaDozvolaService: LokacijskaDozvolaService,
     private objekatService: ObjekatService,
-    private dialogRef: MatDialogRef<AddLokacijskaDozvolaDialog>,
+    private dialogRef: MatDialogRef<LokacijskaDozvolaDialog>,
     @Inject(MAT_DIALOG_DATA) public data: any,
     private datePipe: DatePipe,
-    private alert: AlertService) { }
+    private alert: AlertService) {
+    this.disabled = false;
+  }
 
   ngOnInit(): void {
-    this.informacijeOLokaciji = this.data.informacijeOLokaciji;
+    this.informacijeOLokacijiList = this.data.informacijeOLokaciji;
     this.idejnaResenja = this.data.idejnaResenja;
     this.lokacijskaDozvola = this.data.lokacijskaDozvola ? this.data.lokacijskaDozvola : new LokacijskaDozvola();
-    if (!this.lokacijskaDozvola.datumIzdavanja) {
-      this.lokacijskaDozvola.datumIzdavanja = new Date();
-      this.datePipe.transform(this.lokacijskaDozvola.datumIzdavanja, 'dd/MM/yyyy');
+
+    if (this.data.action === 'view') {
+      this.disabled = true;
+    }
+
+    if (this.data.action === 'view' || this.data.action === 'edit') {
+      this.informacijeOLokaciji = this.informacijeOLokacijiList.find(x => x.id === this.lokacijskaDozvola.informacijeOLokacijiId);
+      this.selectedIol = this.informacijeOLokaciji.naziv;
+      this.datumIzdavanja = this.datePipe.transform(this.lokacijskaDozvola.datumIzdavanja, 'dd/MM/yyyy');
+
+      if (this.lokacijskaDozvola.nazivIdejnogResenja !== null) {
+        this.selectedIr = this.lokacijskaDozvola.nazivIdejnogResenja;
+      }
+    } else {
+      this.datumIzdavanja = this.datePipe.transform(new Date(), 'dd/MM/yyyy');
+      this.informacijeOLokaciji = new InformacijeOLokaciji();
     }
   }
 
@@ -64,28 +81,31 @@ export class AddLokacijskaDozvolaDialog implements OnInit {
     }
   }
 
-  changeSelectionIol(id: number, newIol: string) {
+  changeSelectionIol(iol: InformacijeOLokaciji, newIol: string) {
     this.selectedIol = newIol;
-    this.lokacijskaDozvola.informacijeOLokacijiId = id;
+    this.informacijeOLokaciji = iol;
+    this.lokacijskaDozvola.informacijeOLokacijiId = iol.id;
   }
 
-  changeSelectionIr(idejnoResenje: IdejnoResenje, newIr: string) {
+  changeSelectionIr(ir: IdejnoResenje, newIr: string) {
     this.selectedIr = newIr;
-    this.idejnoResenje = idejnoResenje;
+    this.idejnoResenje = ir;
+    this.lokacijskaDozvola.nazivIdejnogResenja = newIr;
   }
 
   validate() {
-    // let objekat = null;
+    let objekat = null;
+    debugger;
+    this.objekatService.getById(this.idejnoResenje.objekatId).subscribe(result => {
+      objekat = result;
+    }, error => {
+      return false;
+    });
 
-    // this.objekatService.getById(this.idejnoResenje.objekatId).subscribe(result => {
-    //   objekat = result;
-    // }, error => {
-    //   return false;
-    // });
-
-    // if (this.lokacijskaDozvola.nazivObjekta.toLowerCase() !== objekat.naziv.toLowerCase() || this.lokacijskaDozvola.brojParcele !== objekat.brojParcele) {
-    //   return false;
-    // }
+    if (this.lokacijskaDozvola.nazivObjekta.toLowerCase() !== objekat.naziv.toLowerCase()
+      || this.lokacijskaDozvola.brojParcele !== objekat.brojParcele) {
+      return false;
+    }
 
     return true;
   }

@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Ideastudio.Domain;
+﻿using Ideastudio.Domain;
 using Ideastudio.Service;
 using Ideastudio.Service.Interfaces;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Ideastudio.Controllers
@@ -69,12 +64,12 @@ namespace Ideastudio.Controllers
             if (projekatZaGradjevinskuDozvolu == null)
                 return NotFound(new ServiceResult<ProjekatZaGradjevinskuDozvolu>(false, "Projekat za gradjevinsku dozvolu nije pronadjen."));
 
-            var rezultat = _projekatZaGradjevinskuDozvoluService.Update(projekatZaGradjevinskuDozvolu);
+            var result = _projekatZaGradjevinskuDozvoluService.Update(projekatZaGradjevinskuDozvolu);
 
-            if (rezultat.Success)
-                return Ok(rezultat);
+            if (result.Success)
+                return Ok(result);
 
-            return BadRequest(rezultat);
+            return BadRequest(result);
         }
 
         [HttpDelete("{id}")]
@@ -88,12 +83,12 @@ namespace Ideastudio.Controllers
             if (projekatZaGradjevinskuDozvolu == null)
                 return NotFound(new ServiceResult<ProjekatZaGradjevinskuDozvolu>(false, "Projekat za gradjevinsku dozvolu nije pronadjen."));
 
-            var rezultat = _projekatZaGradjevinskuDozvoluService.Delete(projekatZaGradjevinskuDozvolu);
+            var result = _projekatZaGradjevinskuDozvoluService.Delete(projekatZaGradjevinskuDozvolu);
 
-            if (rezultat.Success)
-                return Ok(rezultat);
+            if (result.Success)
+                return Ok(result);
 
-            return BadRequest(rezultat);
+            return BadRequest(result);
         }
     }
 }

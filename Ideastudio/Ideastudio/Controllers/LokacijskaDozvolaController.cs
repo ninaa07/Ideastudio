@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using AutoMapper;
+﻿using AutoMapper;
 using Ideastudio.Domain;
 using Ideastudio.Models.LokacijskaDozvola.CreateLokacijskaDozvola;
 using Ideastudio.Models.LokacijskaDozvola.EditLokacijskaDozvola;
 using Ideastudio.Service;
 using Ideastudio.Service.Interfaces;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Ideastudio.Controllers
@@ -54,14 +49,14 @@ namespace Ideastudio.Controllers
 
             var lokacijskaDozvola = _mapper.Map<LokacijskaDozvola>(request);
 
-            var rezultat = _lokacijskaDozvolaService.Add(lokacijskaDozvola);
+            var result = _lokacijskaDozvolaService.Add(lokacijskaDozvola);
 
-            _mapper.Map<CreateLokacijskaDozvolaResponse>(rezultat.ResultObject);
+            _mapper.Map<CreateLokacijskaDozvolaResponse>(result.ResultObject);
 
-            if (rezultat.Success)
-                return Ok(rezultat);
+            if (result.Success)
+                return Ok(result);
 
-            return BadRequest(rezultat);
+            return BadRequest(result);
         }
 
         [HttpPut("{id}")]

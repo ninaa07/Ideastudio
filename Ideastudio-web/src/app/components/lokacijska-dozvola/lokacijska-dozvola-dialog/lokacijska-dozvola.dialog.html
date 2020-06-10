@@ -1,26 +1,28 @@
-<div class="card">
+<div class="card" id="card-dialog">
     <form>
 
-        <div class="card-header">
+        <div class="card-header" id="header-dialog">
             <h2 class="modal-title" id="add-modal-label">Izdavanje Lokacijske Dozvole</h2>
             <i class="tim-icons icon-simple-remove" (click)="close()"> </i>
         </div>
 
-        <div class="card-body">
+        <div class="card-body" id="body-dialog">
             <div class="row top-row">
                 <div class="column" style="width: 60%;">
                     <div class="row">
                         <div ngbDropdown class="d-inline-block">
-                            <button class="btn btn-outline-primary" ngbDropdownToggle>{{ selectedIol }}</button>
+                            <button class="btn btn-outline-primary" [disabled]="disabled"
+                                ngbDropdownToggle>{{ selectedIol }}</button>
                             <div ngbDropdownMenu>
-                                <button *ngFor="let iol of informacijeOLokaciji" ngbDropdownItem
-                                    (click)="changeSelectionIol(iol.id, iol.naziv)">{{ iol.naziv }}</button>
+                                <button *ngFor="let iol of informacijeOLokacijiList" ngbDropdownItem
+                                    (click)="changeSelectionIol(iol, iol.naziv)">{{ iol.naziv }}</button>
                             </div>
                         </div>
                     </div>
                     <div class="row">
                         <div ngbDropdown class="d-inline-block">
-                            <button class="btn btn-outline-primary" ngbDropdownToggle>{{ selectedIr }}</button>
+                            <button class="btn btn-outline-primary" [disabled]="disabled"
+                                ngbDropdownToggle>{{ selectedIr }}</button>
                             <div ngbDropdownMenu>
                                 <button *ngFor="let ir of idejnaResenja" ngbDropdownItem
                                     (click)="changeSelectionIr(ir, ir.naziv)">{{ ir.naziv }}</button>
@@ -28,16 +30,14 @@
                         </div>
                     </div>
                 </div>
-                <div id="section" class="column" style="width: 40%;">
+                <div id="section" class="column" style="width: 40%; height: fit-content;">
                     <div class="row">
                         <label id="first-row"> Šifra Dozvole </label>
-                        <input class="form-control" disabled placeholder="Šifra dozvole" type="text" value="" />
+                        <input class="form-control" disabled type="text" value="{{ lokacijskaDozvola.id }}" />
                     </div>
                     <div class="row">
                         <label> Datum </label>
-                        <input class="form-control" disabled placeholder="Datum" type="text"
-                            [(ngModel)]="lokacijskaDozvola.datumIzdavanja"
-                            value="{{ lokacijskaDozvola.datumIzdavanja }}" name="datum" />
+                        <input class="form-control" disabled type="text" value="{{ datumIzdavanja }}" name="datum" />
                     </div>
                 </div>
             </div>
@@ -46,40 +46,43 @@
                 <div class="row">
                     <label> Naziv </label>
                     <input #objekat class="form-control" placeholder="Naziv" type="text"
-                        [(ngModel)]="lokacijskaDozvola.nazivObjekta" required name="naziv" />
+                        [(ngModel)]="lokacijskaDozvola.nazivObjekta" required [disabled]="disabled" name="naziv" />
                     <mat-error *ngIf="!validate()">
                         Objekat ne postoji u izabranom Idejnom rešenju
                     </mat-error>
                 </div>
                 <div class="row">
                     <label> Broj Parcele </label>
-                    <input class="form-control" placeholder="Broj parcele" type="text"
-                        [(ngModel)]="lokacijskaDozvola.brojParcele" required name="brojParcele" />
+                    <input class="form-control" placeholder="Broj parcele" type="number"
+                        [(ngModel)]="lokacijskaDozvola.brojParcele" required [disabled]="disabled" name="brojParcele" />
                     <mat-error *ngIf="!validate()">
                         Objekat ne postoji u izabranom Idejnom rešenju
                     </mat-error>
                 </div>
                 <div class="row">
                     <label> Povrsina Parcele </label>
-                    <input class="form-control" placeholder="Povrsina parcele" type="text"
-                        [(ngModel)]="lokacijskaDozvola.povrsinaParcele" name="povrsinaParcele" />
+                    <input class="form-control" placeholder="Povrsina parcele" type="number"
+                        [(ngModel)]="lokacijskaDozvola.povrsinaParcele" [disabled]="disabled" name="povrsinaParcele" />
                 </div>
                 <div class="row">
                     <label> Zona </label>
-                    <input class="form-control" disabled type="text" [(ngModel)]="lokacijskaDozvola.zona"
-                        value="lokacijskaDozvola.zona" name="zona" />
+                    <input class="form-control" disabled type="text" [(ngModel)]="informacijeOLokaciji.zona"
+                        value="{{ informacijeOLokaciji.zona }}" name="zona" />
                 </div>
                 <div class="row">
                     <label> Namena Zemljišta </label>
-                    <input class="form-control" disabled type="text" [(ngModel)]="lokacijskaDozvola.namenaZemljista"
-                        value="lokacijskaDozvola.namenaZemljista" name="namenaZemljista" />
+                    <input class="form-control" disabled type="text" [(ngModel)]="informacijeOLokaciji.namenaZemljista"
+                        value="{{ informacijeOLokaciji.namenaZemljista }}" name="namenaZemljista" />
                 </div>
             </div>
         </div>
 
-        <div class="card-footer">
+        <div class="card-footer" id="footer-dialog">
             <button type="submit" class="btn btn-primary" (click)="save()">Potvrdi</button>
-            <button type="button" class="btn btn-default" (click)="cancel()">Poništi</button>
+            <button type="button" class="btn btn-default" (click)="close()">Poništi</button>
+            <!-- <button *ngIf="!disabled" type="submit" class="btn btn-primary" (click)="save()">Potvrdi</button>
+            <button *ngIf="disabled" type="button" class="btn btn-default" (click)="cancel()">Zatvori</button>
+            <button *ngIf="!disabled" type="button" class="btn btn-default" (click)="cancel()">Poništi</button> -->
         </div>
 
     </form>

@@ -22,6 +22,8 @@ namespace Ideastudio.Domain
 
         public InformacijeOLokaciji InformacijeOLokaciji { get; set; }
 
+        public string NazivIdejnogResenja { get; set; }
+
         public virtual ICollection<IdejnoResenje> IdejnaResenja { get; set; }
     }
 }

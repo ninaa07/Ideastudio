@@ -1,5 +1,4 @@
-﻿using AutoMapper;
-using Ideastudio.Domain;
+﻿using Ideastudio.Domain;
 using Ideastudio.Service;
 using Ideastudio.Service.Interfaces;
 using Microsoft.AspNetCore.Mvc;
@@ -65,12 +64,12 @@ namespace Ideastudio.Controllers
             if (idejnoResenje == null)
                 return NotFound(new ServiceResult<IdejnoResenje>(false, "Idejno resenje nije pronadjeno."));
 
-            var rezultat = _idejnoResenjeService.Update(idejnoResenje);
+            var result = _idejnoResenjeService.Update(idejnoResenje);
 
-            if (rezultat.Success)
-                return Ok(rezultat);
+            if (result.Success)
+                return Ok(result);
 
-            return BadRequest(rezultat);
+            return BadRequest(result);
         }
 
         [HttpDelete("{id}")]
@@ -84,12 +83,12 @@ namespace Ideastudio.Controllers
             if (idejnoResenje == null)
                 return NotFound(new ServiceResult<IdejnoResenje>(false, "Idejno resenje nije pronadjeno."));
 
-            var rezultat = _idejnoResenjeService.Delete(idejnoResenje);
+            var result = _idejnoResenjeService.Delete(idejnoResenje);
 
-            if (rezultat.Success)
-                return Ok(rezultat);
+            if (result.Success)
+                return Ok(result);
 
-            return BadRequest(rezultat);
+            return BadRequest(result);
         }
     }
 }

@@ -1,5 +1,4 @@
-﻿using AutoMapper;
-using Ideastudio.Domain;
+﻿using Ideastudio.Domain;
 using Ideastudio.Service;
 using Ideastudio.Service.Interfaces;
 using Microsoft.AspNetCore.Mvc;
@@ -43,12 +42,12 @@ namespace Ideastudio.Controllers
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
-            var rezultat = _glavniProjektantService.Add(glavniProjektant);
+            var result = _glavniProjektantService.Add(glavniProjektant);
 
-            if (rezultat.Success)
-                return Ok(rezultat);
+            if (result.Success)
+                return Ok(result);
 
-            return BadRequest(rezultat);
+            return BadRequest(result);
         }
 
         [HttpPut("{id}")]
@@ -84,12 +83,12 @@ namespace Ideastudio.Controllers
             if (glavniProjektant == null)
                 return NotFound(new ServiceResult<GlavniProjektant>(false, "Glavni projektant nije pronadjen."));
 
-            var rezultat = _glavniProjektantService.Delete(glavniProjektant);
+            var result = _glavniProjektantService.Delete(glavniProjektant);
 
-            if (rezultat.Success)
-                return Ok(rezultat);
+            if (result.Success)
+                return Ok(result);
 
-            return BadRequest(rezultat);
+            return BadRequest(result);
         }
     }
 }

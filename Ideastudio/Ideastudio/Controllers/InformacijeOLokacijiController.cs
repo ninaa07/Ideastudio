@@ -64,12 +64,12 @@ namespace Ideastudio.Controllers
             if (informacijeOLokaciji == null)
                 return NotFound(new ServiceResult<InformacijeOLokaciji>(false, "Informacije o lokaciji nisu pronadjene."));
 
-            var rezultat = _informacijeOLokacijiService.Update(informacijeOLokaciji);
+            var result = _informacijeOLokacijiService.Update(informacijeOLokaciji);
 
-            if (rezultat.Success)
-                return Ok(rezultat);
+            if (result.Success)
+                return Ok(result);
 
-            return BadRequest(rezultat);
+            return BadRequest(result);
         }
 
         [HttpDelete("{id}")]
@@ -83,12 +83,12 @@ namespace Ideastudio.Controllers
             if (informacijeOLokaciji == null)
                 return NotFound(new ServiceResult<InformacijeOLokaciji>(false, "Informacije o lokaciji nisu pronadjene."));
 
-            var rezultat = _informacijeOLokacijiService.Delete(informacijeOLokaciji);
+            var result = _informacijeOLokacijiService.Delete(informacijeOLokaciji);
 
-            if (rezultat.Success)
-                return Ok(rezultat);
+            if (result.Success)
+                return Ok(result);
 
-            return BadRequest(rezultat);
+            return BadRequest(result);
         }
     }
 }

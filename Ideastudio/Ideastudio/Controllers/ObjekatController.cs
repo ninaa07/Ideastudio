@@ -64,12 +64,12 @@ namespace Ideastudio.Controllers
             if (objekat == null)
                 return NotFound(new ServiceResult<Objekat>(false, "Objekat nije pronadjen."));
 
-            var rezultat = _objekatService.Update(objekat);
+            var result = _objekatService.Update(objekat);
 
-            if (rezultat.Success)
-                return Ok(rezultat);
+            if (result.Success)
+                return Ok(result);
 
-            return BadRequest(rezultat);
+            return BadRequest(result);
         }
 
         [HttpDelete("{id}")]
@@ -83,12 +83,12 @@ namespace Ideastudio.Controllers
             if (objekat == null)
                 return NotFound(new ServiceResult<Objekat>(false, "Objekat nije pronadjen."));
 
-            var rezultat = _objekatService.Delete(objekat);
+            var result = _objekatService.Delete(objekat);
 
-            if (rezultat.Success)
-                return Ok(rezultat);
+            if (result.Success)
+                return Ok(result);
 
-            return BadRequest(rezultat);
+            return BadRequest(result);
         }
     }
 }

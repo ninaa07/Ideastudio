@@ -5,10 +5,10 @@ import { MatDialog } from '@angular/material/dialog';
 import { ConfirmDialog } from '../confirm/confirm.dialog';
 import { InformacijeOLokacijiService } from 'src/app/services/informacije-o-lokaciji.service';
 import { InformacijeOLokaciji } from 'src/app/models/informacije-o-lokaciji.model';
-import { AddLokacijskaDozvolaDialog } from './add-lokacijska-dozvola/add-lokacijska-dozvola.dialog';
-import { EditLokacijskaDozvolaDialog } from './edit-lokacijska-dozvola/edit-lokacijska-dozvola.dialog.';
 import { IdejnoResenje } from 'src/app/models/idejno-resenje.model';
 import { IdejnoResenjeService } from 'src/app/services/idejno-resenje.service';
+import { LokacijskaDozvolaDialog } from './lokacijska-dozvola-dialog/lokacijska-dozvola.dialog';
+import { AlertService } from 'src/app/services/alert.service';
 
 @Component({
   selector: 'lokacijska-dozvola',
@@ -26,22 +26,24 @@ export class LokacijskaDozvolaComponent implements OnInit {
     private lokacijskaDozvolaService: LokacijskaDozvolaService,
     private informacijeOLokacijiService: InformacijeOLokacijiService,
     private idejnoResenjeService: IdejnoResenjeService,
-    private dialog: MatDialog
-  ) {
+    private dialog: MatDialog,
+    private alert: AlertService
+  ) { }
+
+  ngOnInit() {
+    this.getAll();
+
     this.informacijeOLokacijiService.getAll().subscribe(result => {
       this.informacijeOLokaciji = result;
     }, error => {
       console.log('Greska!', error);
     });
+
     this.idejnoResenjeService.getAll().subscribe(result => {
       this.idejnaResenja = result;
     }, error => {
       console.log('Greska!', error);
     });
-  }
-
-  ngOnInit() {
-    this.getAll();
   }
 
   getAll(): void {
@@ -52,22 +54,26 @@ export class LokacijskaDozvolaComponent implements OnInit {
     });
   }
 
-  getById(id: number): LokacijskaDozvola {
-
+  open(id: number): void {
     this.lokacijskaDozvolaService.getById(id).subscribe(result => {
+
+      const dialogRef = this.dialog.open(LokacijskaDozvolaDialog, {
+        width: '700px',
+        data: { informacijeOLokaciji: this.informacijeOLokaciji, idejnaResenja: this.idejnaResenja, lokacijskaDozvola: result, action: 'view' },
+        autoFocus: true,
+        disableClose: true
+      });
+
       this.lokacijskaDozvola = result;
     }, error => {
       console.log('Greska!', error);
     });
-
-    return this.lokacijskaDozvola;
   }
 
   add(): void {
-
-    const dialogRef = this.dialog.open(AddLokacijskaDozvolaDialog, {
+    const dialogRef = this.dialog.open(LokacijskaDozvolaDialog, {
       width: '700px',
-      data: { informacijeOLokaciji: this.informacijeOLokaciji, idejnaResenja: this.idejnaResenja },
+      data: { informacijeOLokaciji: this.informacijeOLokaciji, idejnaResenja: this.idejnaResenja, action: 'add' },
       autoFocus: true,
       disableClose: true
     });
@@ -79,20 +85,13 @@ export class LokacijskaDozvolaComponent implements OnInit {
     });
   }
 
-  edit(lokacijskaDozvola: LokacijskaDozvola): void {
+  edit(ld: LokacijskaDozvola): void {
 
-    const dialogRef = this.dialog.open(AddLokacijskaDozvolaDialog, {
+    const dialogRef = this.dialog.open(LokacijskaDozvolaDialog, {
       width: '700px',
       autoFocus: true,
-      data: { lokacijskaDozvola },
+      data: { informacijeOLokaciji: this.informacijeOLokaciji, idejnaResenja: this.idejnaResenja, lokacijskaDozvola: ld, action: 'edit' },
       disableClose: true
-    });
-
-    dialogRef.afterClosed().subscribe(result => {
-      if (result) {
-        const item = this.lokacijskeDozvole.find(x => x.id === result.id);
-        this.lokacijskeDozvole.splice(this.lokacijskeDozvole.indexOf(item), 1, result);
-      }
     });
   }
 
@@ -100,17 +99,21 @@ export class LokacijskaDozvolaComponent implements OnInit {
 
     const confirmDialog = this.dialog.open(ConfirmDialog, {
       disableClose: true,
-      autoFocus: true
+      autoFocus: true,
+      data: { title: 'lokacijsku dozvolu' }
     });
 
     confirmDialog.afterClosed().subscribe(response => {
       if (response) {
         this.lokacijskaDozvolaService.delete(id).subscribe(result => {
           if (result) {
+            this.alert.showSuccess(result.message, 'Success');
             const item = this.lokacijskeDozvole.find(x => x.id === result.resultObject.id);
             this.lokacijskeDozvole.splice(this.lokacijskeDozvole.indexOf(item), 1);
           }
-        })
+        }, error => {
+          this.alert.errorHandler(error);
+        });
       }
     });
   }
