@@ -3,13 +3,21 @@
     justify-content: space-between;
 }
 
-.tim-icons {
-    padding: 5px;
+.card-title {
+    color: #f5365c !important;
+    font-family: Candara;
+    font-weight: 900 !important;
     font-size: 20px;
+    letter-spacing: 2px;
 }
 
 .table-responsive {
     overflow: hidden !important;
     justify-content: center;
     text-align: center;
+}
+
+.tim-icons {
+    font-size: 20px;
+    color: #f5365c;
 }

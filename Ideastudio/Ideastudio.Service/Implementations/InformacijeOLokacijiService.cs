@@ -16,7 +16,7 @@ namespace Ideastudio.Service.Implementations
 
         public IEnumerable<InformacijeOLokaciji> GetAll()
         {
-            return _informacijeOLokacijiRepository.GetAll();
+            return _informacijeOLokacijiRepository.GetAllInformacijeOLokacijiWithLokacijskeDozvole();
         }
 
         public InformacijeOLokaciji Get(int id)

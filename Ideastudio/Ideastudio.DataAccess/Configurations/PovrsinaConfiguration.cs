@@ -12,7 +12,11 @@ namespace Ideastudio.DataAccess.Configurations
 
             builder.Property(x => x.Oznaka).IsRequired();
 
+            builder.Property(x => x.Naziv).IsRequired().HasMaxLength(50);
+
             builder.Property(x => x.VrstaPoda).IsRequired().HasMaxLength(20);
+
+            builder.Property(x => x.Status).IsRequired();
 
             builder.HasOne(x => x.VrstaPovrsine)
                 .WithMany(x => x.Povrsine)

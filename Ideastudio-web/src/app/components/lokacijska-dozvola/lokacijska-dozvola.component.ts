@@ -36,13 +36,13 @@ export class LokacijskaDozvolaComponent implements OnInit {
     this.informacijeOLokacijiService.getAll().subscribe(result => {
       this.informacijeOLokaciji = result;
     }, error => {
-      console.log('Greska!', error);
+      this.alert.errorHandler(error);
     });
 
     this.idejnoResenjeService.getAll().subscribe(result => {
       this.idejnaResenja = result;
     }, error => {
-      console.log('Greska!', error);
+      this.alert.errorHandler(error);
     });
   }
 
@@ -50,7 +50,7 @@ export class LokacijskaDozvolaComponent implements OnInit {
     this.lokacijskaDozvolaService.getAll().subscribe(result => {
       this.lokacijskeDozvole = result;
     }, error => {
-      console.log('Greska!', error);
+      this.alert.errorHandler(error);
     });
   }
 
@@ -59,21 +59,29 @@ export class LokacijskaDozvolaComponent implements OnInit {
 
       const dialogRef = this.dialog.open(LokacijskaDozvolaDialog, {
         width: '700px',
-        data: { informacijeOLokaciji: this.informacijeOLokaciji, idejnaResenja: this.idejnaResenja, lokacijskaDozvola: result, action: 'view' },
+        data: {
+          title: 'Pregled lokacijske dozvole: ' + result.naziv,
+          informacijeOLokaciji: this.informacijeOLokaciji,
+          lokacijskaDozvola: result,
+          action: 'view'
+        },
         autoFocus: true,
         disableClose: true
       });
 
-      this.lokacijskaDozvola = result;
     }, error => {
-      console.log('Greska!', error);
+      this.alert.errorHandler(error);
     });
   }
 
   add(): void {
     const dialogRef = this.dialog.open(LokacijskaDozvolaDialog, {
       width: '700px',
-      data: { informacijeOLokaciji: this.informacijeOLokaciji, idejnaResenja: this.idejnaResenja, action: 'add' },
+      data: {
+        title: 'Izdavanje lokacijske dozvole',
+        informacijeOLokaciji: this.informacijeOLokaciji,
+        action: 'add'
+      },
       autoFocus: true,
       disableClose: true
     });
@@ -90,7 +98,12 @@ export class LokacijskaDozvolaComponent implements OnInit {
     const dialogRef = this.dialog.open(LokacijskaDozvolaDialog, {
       width: '700px',
       autoFocus: true,
-      data: { informacijeOLokaciji: this.informacijeOLokaciji, idejnaResenja: this.idejnaResenja, lokacijskaDozvola: ld, action: 'edit' },
+      data: {
+        title: 'Izmena lokacijske dozvole: ' + ld.naziv,
+        informacijeOLokaciji: this.informacijeOLokaciji,
+        okacijskaDozvola: ld,
+        action: 'edit'
+      },
       disableClose: true
     });
   }

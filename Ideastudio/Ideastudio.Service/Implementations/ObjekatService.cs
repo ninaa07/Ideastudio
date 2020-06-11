@@ -16,7 +16,7 @@ namespace Ideastudio.Service.Implementations
 
         public IEnumerable<Objekat> GetAll()
         {
-            return _objekatRepository.GetAll();
+            return _objekatRepository.GetAllObjektiWithIdejnaResenja();
         }
 
         public Objekat Get(int id)

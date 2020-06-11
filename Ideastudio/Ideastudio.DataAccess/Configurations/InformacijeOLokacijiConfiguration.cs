@@ -9,6 +9,8 @@ namespace Ideastudio.DataAccess.Configurations
         {
             base.Configure(builder);
 
+            builder.Property(x => x.Naziv).IsRequired().HasMaxLength(50);
+
             builder.Property(x => x.DatumIzdavanja).IsRequired();
             
             builder.Property(x => x.NamenaZemljista).IsRequired().HasMaxLength(255);

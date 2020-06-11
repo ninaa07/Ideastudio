@@ -9,9 +9,11 @@ namespace Ideastudio.Domain
             IdejnaResenja = new HashSet<IdejnoResenje>();
         }
 
-        public long BrojParcele { get; set; }
-
         public string Naziv { get; set; }
+
+        public decimal Dimenzije { get; set; }
+
+        public string Karakteristike { get; set; }
 
         public virtual ICollection<IdejnoResenje> IdejnaResenja { get; set; }
     }

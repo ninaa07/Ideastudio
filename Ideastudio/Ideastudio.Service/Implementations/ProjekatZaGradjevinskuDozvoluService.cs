@@ -16,7 +16,7 @@ namespace Ideastudio.Service.Implementations
 
         public IEnumerable<ProjekatZaGradjevinskuDozvolu> GetAll()
         {
-            return _projekatZaGradjevinskuDozvoluRepository.GetAll();
+            return _projekatZaGradjevinskuDozvoluRepository.GetAllPgdWithPovrsine();
         }
 
         public ProjekatZaGradjevinskuDozvolu Get(int id)

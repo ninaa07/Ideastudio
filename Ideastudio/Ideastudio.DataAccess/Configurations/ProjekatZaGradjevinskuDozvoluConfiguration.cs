@@ -14,6 +14,8 @@ namespace Ideastudio.DataAccess.Configurations
 
             builder.Property(x => x.DatumIzrade).IsRequired();
 
+            builder.Property(x => x.StatusDokumenta).IsRequired();
+
             builder.HasOne(x => x.IdejnoResenje)
                 .WithMany(x => x.ProjektiZaGradjevinskuDozvolu)
                 .HasForeignKey(x => x.IdejnoResenjeId)

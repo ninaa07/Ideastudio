@@ -1,4 +1,3 @@
-import { IdejnoResenje } from './idejno-resenje.model';
 import { Povrsina } from './povrsina.model';
 
 export class ProjekatZaGradjevinskuDozvolu {
@@ -9,7 +8,7 @@ export class ProjekatZaGradjevinskuDozvolu {
 
     datumIzrade: Date;
 
-    idejnoResenje: IdejnoResenje[];
+    idejnoResenjeId: number;
 
     povrsine: Povrsina[];
 
@@ -24,3 +23,9 @@ export enum StatusDokumenta {
 
     Obradjen
 }
+
+export const STATUSIDOKUMENTA = [
+    { id: 0, label: 'Nov' },
+    { id: 1, label: 'Kreiran' },
+    { id: 2, label: 'Obradjen' }
+]

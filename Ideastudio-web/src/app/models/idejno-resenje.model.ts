@@ -1,6 +1,3 @@
-import { LokacijskaDozvola } from './lokacijska-dozvola.model';
-import { Objekat } from './objekat.model';
-import { GlavniProjektant } from './glavni-projektant.model';
 import { ProjekatZaGradjevinskuDozvolu } from './projekat-za-gradjevinsku-dozvolu.model';
 
 export class IdejnoResenje {
@@ -17,5 +14,5 @@ export class IdejnoResenje {
 
     lokacijskaDozvolaId: number;
 
-    projektiZaGradjevinskuDozvolu: ProjekatZaGradjevinskuDozvolu;
+    projektiZaGradjevinskuDozvolu: ProjekatZaGradjevinskuDozvolu[];
 }

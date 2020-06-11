@@ -98,7 +98,9 @@ namespace Ideastudio.DataAccess.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("Naziv")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasColumnType("nvarchar(50)")
+                        .HasMaxLength(50);
 
                     b.Property<int>("ObjekatId")
                         .HasColumnType("int");
@@ -117,46 +119,91 @@ namespace Ideastudio.DataAccess.Migrations
                         new
                         {
                             Id = 1,
-                            DatumIzrade = new DateTime(2020, 6, 10, 9, 38, 48, 367, DateTimeKind.Utc).AddTicks(501),
+                            DatumIzrade = new DateTime(2020, 6, 11, 14, 52, 25, 544, DateTimeKind.Utc).AddTicks(6431),
                             GlavniProjektantId = 2,
                             LokacijskaDozvolaId = 1,
-                            Naziv = "Naziv 1",
+                            Naziv = "Idejno resenje 1",
                             ObjekatId = 4
                         },
                         new
                         {
                             Id = 2,
-                            DatumIzrade = new DateTime(2020, 6, 10, 9, 38, 48, 367, DateTimeKind.Utc).AddTicks(1653),
+                            DatumIzrade = new DateTime(2020, 6, 11, 14, 52, 25, 544, DateTimeKind.Utc).AddTicks(8170),
                             GlavniProjektantId = 5,
                             LokacijskaDozvolaId = 5,
-                            Naziv = "Naziv 2",
+                            Naziv = "Idejno resenje 2",
                             ObjekatId = 1
                         },
                         new
                         {
                             Id = 3,
-                            DatumIzrade = new DateTime(2020, 6, 10, 9, 38, 48, 367, DateTimeKind.Utc).AddTicks(1686),
+                            DatumIzrade = new DateTime(2020, 6, 11, 14, 52, 25, 544, DateTimeKind.Utc).AddTicks(8204),
                             GlavniProjektantId = 1,
                             LokacijskaDozvolaId = 3,
-                            Naziv = "Naziv 3",
+                            Naziv = "Idejno resenje 3",
                             ObjekatId = 3
                         },
                         new
                         {
                             Id = 4,
-                            DatumIzrade = new DateTime(2020, 6, 10, 9, 38, 48, 367, DateTimeKind.Utc).AddTicks(1689),
+                            DatumIzrade = new DateTime(2020, 6, 11, 14, 52, 25, 544, DateTimeKind.Utc).AddTicks(8206),
                             GlavniProjektantId = 4,
                             LokacijskaDozvolaId = 2,
-                            Naziv = "Naziv 4",
+                            Naziv = "Idejno resenje 4",
                             ObjekatId = 2
                         },
                         new
                         {
                             Id = 5,
-                            DatumIzrade = new DateTime(2020, 6, 10, 9, 38, 48, 367, DateTimeKind.Utc).AddTicks(1690),
+                            DatumIzrade = new DateTime(2020, 6, 11, 14, 52, 25, 544, DateTimeKind.Utc).AddTicks(8208),
                             GlavniProjektantId = 3,
                             LokacijskaDozvolaId = 4,
-                            Naziv = "Naziv 5",
+                            Naziv = "Idejno resenje 5",
+                            ObjekatId = 5
+                        },
+                        new
+                        {
+                            Id = 6,
+                            DatumIzrade = new DateTime(2020, 6, 11, 14, 52, 25, 544, DateTimeKind.Utc).AddTicks(8210),
+                            GlavniProjektantId = 2,
+                            LokacijskaDozvolaId = 1,
+                            Naziv = "Idejno resenje 6",
+                            ObjekatId = 3
+                        },
+                        new
+                        {
+                            Id = 7,
+                            DatumIzrade = new DateTime(2020, 6, 11, 14, 52, 25, 544, DateTimeKind.Utc).AddTicks(8212),
+                            GlavniProjektantId = 1,
+                            LokacijskaDozvolaId = 2,
+                            Naziv = "Idejno resenje 7",
+                            ObjekatId = 3
+                        },
+                        new
+                        {
+                            Id = 8,
+                            DatumIzrade = new DateTime(2020, 6, 11, 14, 52, 25, 544, DateTimeKind.Utc).AddTicks(8214),
+                            GlavniProjektantId = 2,
+                            LokacijskaDozvolaId = 4,
+                            Naziv = "Idejno resenje 8",
+                            ObjekatId = 4
+                        },
+                        new
+                        {
+                            Id = 9,
+                            DatumIzrade = new DateTime(2020, 6, 11, 14, 52, 25, 544, DateTimeKind.Utc).AddTicks(8215),
+                            GlavniProjektantId = 4,
+                            LokacijskaDozvolaId = 4,
+                            Naziv = "Idejno resenje 9",
+                            ObjekatId = 4
+                        },
+                        new
+                        {
+                            Id = 10,
+                            DatumIzrade = new DateTime(2020, 6, 11, 14, 52, 25, 544, DateTimeKind.Utc).AddTicks(8217),
+                            GlavniProjektantId = 4,
+                            LokacijskaDozvolaId = 5,
+                            Naziv = "Idejno resenje 10",
                             ObjekatId = 5
                         });
                 });
@@ -177,7 +224,9 @@ namespace Ideastudio.DataAccess.Migrations
                         .HasMaxLength(255);
 
                     b.Property<string>("Naziv")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasColumnType("nvarchar(50)")
+                        .HasMaxLength(50);
 
                     b.Property<string>("Zona")
                         .IsRequired()
@@ -192,42 +241,82 @@ namespace Ideastudio.DataAccess.Migrations
                         new
                         {
                             Id = 1,
-                            DatumIzdavanja = new DateTime(2020, 6, 10, 9, 38, 48, 365, DateTimeKind.Utc).AddTicks(6852),
+                            DatumIzdavanja = new DateTime(2020, 6, 11, 14, 52, 25, 542, DateTimeKind.Utc).AddTicks(6919),
                             NamenaZemljista = "Namena 1",
-                            Naziv = "Naziv 1",
+                            Naziv = "Informacije o lokaciji 1",
                             Zona = "Zona 1"
                         },
                         new
                         {
                             Id = 2,
-                            DatumIzdavanja = new DateTime(2020, 6, 10, 9, 38, 48, 365, DateTimeKind.Utc).AddTicks(7618),
+                            DatumIzdavanja = new DateTime(2020, 6, 11, 14, 52, 25, 542, DateTimeKind.Utc).AddTicks(8212),
                             NamenaZemljista = "Namena 2",
-                            Naziv = "Naziv 2",
+                            Naziv = "Informacije o lokaciji 2",
                             Zona = "Zona 2"
                         },
                         new
                         {
                             Id = 3,
-                            DatumIzdavanja = new DateTime(2020, 6, 10, 9, 38, 48, 365, DateTimeKind.Utc).AddTicks(7640),
+                            DatumIzdavanja = new DateTime(2020, 6, 11, 14, 52, 25, 542, DateTimeKind.Utc).AddTicks(8238),
                             NamenaZemljista = "Namena 3",
-                            Naziv = "Naziv 3",
+                            Naziv = "Informacije o lokaciji 3",
                             Zona = "Zona 3"
                         },
                         new
                         {
                             Id = 4,
-                            DatumIzdavanja = new DateTime(2020, 6, 10, 9, 38, 48, 365, DateTimeKind.Utc).AddTicks(7643),
+                            DatumIzdavanja = new DateTime(2020, 6, 11, 14, 52, 25, 542, DateTimeKind.Utc).AddTicks(8240),
                             NamenaZemljista = "Namena 4",
-                            Naziv = "Naziv 4",
+                            Naziv = "Informacije o lokaciji 4",
                             Zona = "Zona 4"
                         },
                         new
                         {
                             Id = 5,
-                            DatumIzdavanja = new DateTime(2020, 6, 10, 9, 38, 48, 365, DateTimeKind.Utc).AddTicks(7644),
+                            DatumIzdavanja = new DateTime(2020, 6, 11, 14, 52, 25, 542, DateTimeKind.Utc).AddTicks(8242),
                             NamenaZemljista = "Namena 5",
-                            Naziv = "Naziv 5",
+                            Naziv = "Informacije o lokaciji 5",
                             Zona = "Zona 5"
+                        },
+                        new
+                        {
+                            Id = 6,
+                            DatumIzdavanja = new DateTime(2020, 6, 11, 14, 52, 25, 542, DateTimeKind.Utc).AddTicks(8244),
+                            NamenaZemljista = "Namena 6",
+                            Naziv = "Informacije o lokaciji 6",
+                            Zona = "Zona 6"
+                        },
+                        new
+                        {
+                            Id = 7,
+                            DatumIzdavanja = new DateTime(2020, 6, 11, 14, 52, 25, 542, DateTimeKind.Utc).AddTicks(8246),
+                            NamenaZemljista = "Namena 7",
+                            Naziv = "Informacije o lokaciji 7",
+                            Zona = "Zona 7"
+                        },
+                        new
+                        {
+                            Id = 8,
+                            DatumIzdavanja = new DateTime(2020, 6, 11, 14, 52, 25, 542, DateTimeKind.Utc).AddTicks(8248),
+                            NamenaZemljista = "Namena 8",
+                            Naziv = "Informacije o lokaciji 8",
+                            Zona = "Zona 8"
+                        },
+                        new
+                        {
+                            Id = 9,
+                            DatumIzdavanja = new DateTime(2020, 6, 11, 14, 52, 25, 542, DateTimeKind.Utc).AddTicks(8249),
+                            NamenaZemljista = "Namena 9",
+                            Naziv = "Informacije o lokaciji 9",
+                            Zona = "Zona 9"
+                        },
+                        new
+                        {
+                            Id = 10,
+                            DatumIzdavanja = new DateTime(2020, 6, 11, 14, 52, 25, 542, DateTimeKind.Utc).AddTicks(8251),
+                            NamenaZemljista = "Namena 10",
+                            Naziv = "Informacije o lokaciji 10",
+                            Zona = "Zona 10"
                         });
                 });
 
@@ -247,13 +336,23 @@ namespace Ideastudio.DataAccess.Migrations
                     b.Property<int>("InformacijeOLokacijiId")
                         .HasColumnType("int");
 
-                    b.Property<string>("NazivIdejnogResenja")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<string>("LokacijskiUslovi")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(255)")
+                        .HasMaxLength(255);
 
-                    b.Property<string>("NazivObjekta")
+                    b.Property<string>("Naziv")
                         .IsRequired()
                         .HasColumnType("nvarchar(50)")
                         .HasMaxLength(50);
+
+                    b.Property<string>("NazivIdejnogResenja")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("OpstiPodaci")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(255)")
+                        .HasMaxLength(255);
 
                     b.Property<long>("PovrsinaParcele")
                         .HasColumnType("bigint");
@@ -269,45 +368,55 @@ namespace Ideastudio.DataAccess.Migrations
                         {
                             Id = 1,
                             BrojParcele = 6934L,
-                            DatumIzdavanja = new DateTime(2020, 6, 10, 9, 38, 48, 366, DateTimeKind.Utc).AddTicks(7810),
+                            DatumIzdavanja = new DateTime(2020, 6, 11, 14, 52, 25, 544, DateTimeKind.Utc).AddTicks(2990),
                             InformacijeOLokacijiId = 3,
-                            NazivObjekta = "Naziv 1",
+                            LokacijskiUslovi = "Lokacijski uslovi 1",
+                            Naziv = "Lokacijska dozvola 1",
+                            OpstiPodaci = "Opsti podaci 1",
                             PovrsinaParcele = 324L
                         },
                         new
                         {
                             Id = 2,
                             BrojParcele = 48643L,
-                            DatumIzdavanja = new DateTime(2020, 6, 10, 9, 38, 48, 366, DateTimeKind.Utc).AddTicks(8557),
+                            DatumIzdavanja = new DateTime(2020, 6, 11, 14, 52, 25, 544, DateTimeKind.Utc).AddTicks(3877),
                             InformacijeOLokacijiId = 2,
-                            NazivObjekta = "Naziv 2",
+                            LokacijskiUslovi = "Lokacijski uslovi 2",
+                            Naziv = "Lokacijska dozvola 2",
+                            OpstiPodaci = "Opsti podaci 2",
                             PovrsinaParcele = 412L
                         },
                         new
                         {
                             Id = 3,
                             BrojParcele = 4843L,
-                            DatumIzdavanja = new DateTime(2020, 6, 10, 9, 38, 48, 366, DateTimeKind.Utc).AddTicks(8584),
+                            DatumIzdavanja = new DateTime(2020, 6, 11, 14, 52, 25, 544, DateTimeKind.Utc).AddTicks(3895),
                             InformacijeOLokacijiId = 5,
-                            NazivObjekta = "Naziv 3",
+                            LokacijskiUslovi = "Lokacijski uslovi 3",
+                            Naziv = "Lokacijska dozvola 3",
+                            OpstiPodaci = "Opsti podaci 3",
                             PovrsinaParcele = 3453L
                         },
                         new
                         {
                             Id = 4,
                             BrojParcele = 3458L,
-                            DatumIzdavanja = new DateTime(2020, 6, 10, 9, 38, 48, 366, DateTimeKind.Utc).AddTicks(8587),
+                            DatumIzdavanja = new DateTime(2020, 6, 11, 14, 52, 25, 544, DateTimeKind.Utc).AddTicks(3898),
                             InformacijeOLokacijiId = 1,
-                            NazivObjekta = "Naziv 4",
+                            LokacijskiUslovi = "Lokacijski uslovi 4",
+                            Naziv = "Lokacijska dozvola 4",
+                            OpstiPodaci = "Opsti podaci 4",
                             PovrsinaParcele = 34534L
                         },
                         new
                         {
                             Id = 5,
                             BrojParcele = 34343L,
-                            DatumIzdavanja = new DateTime(2020, 6, 10, 9, 38, 48, 366, DateTimeKind.Utc).AddTicks(8589),
+                            DatumIzdavanja = new DateTime(2020, 6, 11, 14, 52, 25, 544, DateTimeKind.Utc).AddTicks(3900),
                             InformacijeOLokacijiId = 4,
-                            NazivObjekta = "Naziv 5",
+                            LokacijskiUslovi = "Lokacijski uslovi 5",
+                            Naziv = "Lokacijska dozvola 5",
+                            OpstiPodaci = "Opsti podaci 5",
                             PovrsinaParcele = 3483L
                         });
                 });
@@ -319,8 +428,13 @@ namespace Ideastudio.DataAccess.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<long>("BrojParcele")
-                        .HasColumnType("bigint");
+                    b.Property<decimal>("Dimenzije")
+                        .HasColumnType("decimal(10,2)");
+
+                    b.Property<string>("Karakteristike")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(255)")
+                        .HasMaxLength(255);
 
                     b.Property<string>("Naziv")
                         .IsRequired()
@@ -335,32 +449,37 @@ namespace Ideastudio.DataAccess.Migrations
                         new
                         {
                             Id = 1,
-                            BrojParcele = 6934L,
-                            Naziv = "Naziv 1"
+                            Dimenzije = 323m,
+                            Karakteristike = "Karakteristika 1",
+                            Naziv = "Objekat 1"
                         },
                         new
                         {
                             Id = 2,
-                            BrojParcele = 48643L,
-                            Naziv = "Naziv 2"
+                            Dimenzije = 432m,
+                            Karakteristike = "Karakteristika 2",
+                            Naziv = "Objekat 2"
                         },
                         new
                         {
                             Id = 3,
-                            BrojParcele = 4843L,
-                            Naziv = "Naziv 3"
+                            Dimenzije = 545m,
+                            Karakteristike = "Karakteristika 3",
+                            Naziv = "Objekat 3"
                         },
                         new
                         {
                             Id = 4,
-                            BrojParcele = 3458L,
-                            Naziv = "Naziv 4"
+                            Dimenzije = 216m,
+                            Karakteristike = "Karakteristika 4",
+                            Naziv = "Objekat 4"
                         },
                         new
                         {
                             Id = 5,
-                            BrojParcele = 34343L,
-                            Naziv = "Naziv 5"
+                            Dimenzije = 786m,
+                            Karakteristike = "Karakteristika 5",
+                            Naziv = "Objekat 5"
                         });
                 });
 
@@ -370,6 +489,11 @@ namespace Ideastudio.DataAccess.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Naziv")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(50)")
+                        .HasMaxLength(50);
 
                     b.Property<int>("Oznaka")
                         .HasColumnType("int");
@@ -400,7 +524,8 @@ namespace Ideastudio.DataAccess.Migrations
                         new
                         {
                             Id = 1,
-                            Oznaka = 123,
+                            Naziv = "Povrsina 1",
+                            Oznaka = 1423,
                             ProjekatZaGradjevinskuDozvoluId = 1,
                             Status = 0,
                             VrstaPoda = "Vrsta 1",
@@ -409,7 +534,8 @@ namespace Ideastudio.DataAccess.Migrations
                         new
                         {
                             Id = 2,
-                            Oznaka = 75,
+                            Naziv = "Povrsina 2",
+                            Oznaka = 755,
                             ProjekatZaGradjevinskuDozvoluId = 4,
                             Status = 0,
                             VrstaPoda = "Vrsta 2",
@@ -418,6 +544,7 @@ namespace Ideastudio.DataAccess.Migrations
                         new
                         {
                             Id = 3,
+                            Naziv = "Povrsina 3",
                             Oznaka = 678,
                             ProjekatZaGradjevinskuDozvoluId = 3,
                             Status = 0,
@@ -427,7 +554,8 @@ namespace Ideastudio.DataAccess.Migrations
                         new
                         {
                             Id = 4,
-                            Oznaka = 74,
+                            Naziv = "Povrsina 4",
+                            Oznaka = 7434,
                             ProjekatZaGradjevinskuDozvoluId = 5,
                             Status = 0,
                             VrstaPoda = "Vrsta 4",
@@ -436,11 +564,362 @@ namespace Ideastudio.DataAccess.Migrations
                         new
                         {
                             Id = 5,
-                            Oznaka = 3857,
+                            Naziv = "Povrsina 5",
+                            Oznaka = 231,
                             ProjekatZaGradjevinskuDozvoluId = 3,
                             Status = 0,
                             VrstaPoda = "Vrsta 5",
                             VrstaPovrsineId = 5
+                        },
+                        new
+                        {
+                            Id = 6,
+                            Naziv = "Povrsina 6",
+                            Oznaka = 3121,
+                            ProjekatZaGradjevinskuDozvoluId = 3,
+                            Status = 0,
+                            VrstaPoda = "Vrsta 6",
+                            VrstaPovrsineId = 5
+                        },
+                        new
+                        {
+                            Id = 7,
+                            Naziv = "Povrsina 7",
+                            Oznaka = 542,
+                            ProjekatZaGradjevinskuDozvoluId = 2,
+                            Status = 0,
+                            VrstaPoda = "Vrsta 7",
+                            VrstaPovrsineId = 1
+                        },
+                        new
+                        {
+                            Id = 8,
+                            Naziv = "Povrsina 8",
+                            Oznaka = 64,
+                            ProjekatZaGradjevinskuDozvoluId = 2,
+                            Status = 0,
+                            VrstaPoda = "Vrsta 8",
+                            VrstaPovrsineId = 1
+                        },
+                        new
+                        {
+                            Id = 9,
+                            Naziv = "Povrsina 9",
+                            Oznaka = 113,
+                            ProjekatZaGradjevinskuDozvoluId = 1,
+                            Status = 0,
+                            VrstaPoda = "Vrsta 9",
+                            VrstaPovrsineId = 2
+                        },
+                        new
+                        {
+                            Id = 10,
+                            Naziv = "Povrsina 10",
+                            Oznaka = 11,
+                            ProjekatZaGradjevinskuDozvoluId = 1,
+                            Status = 0,
+                            VrstaPoda = "Vrsta 10",
+                            VrstaPovrsineId = 3
+                        },
+                        new
+                        {
+                            Id = 11,
+                            Naziv = "Povrsina 11",
+                            Oznaka = 432,
+                            ProjekatZaGradjevinskuDozvoluId = 1,
+                            Status = 0,
+                            VrstaPoda = "Vrsta 11",
+                            VrstaPovrsineId = 4
+                        },
+                        new
+                        {
+                            Id = 12,
+                            Naziv = "Povrsina 12",
+                            Oznaka = 554,
+                            ProjekatZaGradjevinskuDozvoluId = 4,
+                            Status = 0,
+                            VrstaPoda = "Vrsta 12",
+                            VrstaPovrsineId = 2
+                        },
+                        new
+                        {
+                            Id = 13,
+                            Naziv = "Povrsina 13",
+                            Oznaka = 32,
+                            ProjekatZaGradjevinskuDozvoluId = 3,
+                            Status = 0,
+                            VrstaPoda = "Vrsta 13",
+                            VrstaPovrsineId = 3
+                        },
+                        new
+                        {
+                            Id = 14,
+                            Naziv = "Povrsina 14",
+                            Oznaka = 456,
+                            ProjekatZaGradjevinskuDozvoluId = 5,
+                            Status = 0,
+                            VrstaPoda = "Vrsta 14",
+                            VrstaPovrsineId = 1
+                        },
+                        new
+                        {
+                            Id = 15,
+                            Naziv = "Povrsina 15",
+                            Oznaka = 231,
+                            ProjekatZaGradjevinskuDozvoluId = 3,
+                            Status = 0,
+                            VrstaPoda = "Vrsta 15",
+                            VrstaPovrsineId = 5
+                        },
+                        new
+                        {
+                            Id = 16,
+                            Naziv = "Povrsina 16",
+                            Oznaka = 411,
+                            ProjekatZaGradjevinskuDozvoluId = 3,
+                            Status = 0,
+                            VrstaPoda = "Vrsta 16",
+                            VrstaPovrsineId = 5
+                        },
+                        new
+                        {
+                            Id = 17,
+                            Naziv = "Povrsina 17",
+                            Oznaka = 231,
+                            ProjekatZaGradjevinskuDozvoluId = 2,
+                            Status = 0,
+                            VrstaPoda = "Vrsta 17",
+                            VrstaPovrsineId = 1
+                        },
+                        new
+                        {
+                            Id = 18,
+                            Naziv = "Povrsina 18",
+                            Oznaka = 467,
+                            ProjekatZaGradjevinskuDozvoluId = 2,
+                            Status = 0,
+                            VrstaPoda = "Vrsta 18",
+                            VrstaPovrsineId = 1
+                        },
+                        new
+                        {
+                            Id = 19,
+                            Naziv = "Povrsina 19",
+                            Oznaka = 111,
+                            ProjekatZaGradjevinskuDozvoluId = 1,
+                            Status = 0,
+                            VrstaPoda = "Vrsta 19",
+                            VrstaPovrsineId = 2
+                        },
+                        new
+                        {
+                            Id = 20,
+                            Naziv = "Povrsina 20",
+                            Oznaka = 978,
+                            ProjekatZaGradjevinskuDozvoluId = 1,
+                            Status = 0,
+                            VrstaPoda = "Vrsta 20",
+                            VrstaPovrsineId = 3
+                        },
+                        new
+                        {
+                            Id = 21,
+                            Naziv = "Povrsina 21",
+                            Oznaka = 65,
+                            ProjekatZaGradjevinskuDozvoluId = 6,
+                            Status = 0,
+                            VrstaPoda = "Vrsta 21",
+                            VrstaPovrsineId = 4
+                        },
+                        new
+                        {
+                            Id = 22,
+                            Naziv = "Povrsina 22",
+                            Oznaka = 234,
+                            ProjekatZaGradjevinskuDozvoluId = 9,
+                            Status = 0,
+                            VrstaPoda = "Vrsta 22",
+                            VrstaPovrsineId = 2
+                        },
+                        new
+                        {
+                            Id = 23,
+                            Naziv = "Povrsina 23",
+                            Oznaka = 543,
+                            ProjekatZaGradjevinskuDozvoluId = 8,
+                            Status = 0,
+                            VrstaPoda = "Vrsta 23",
+                            VrstaPovrsineId = 3
+                        },
+                        new
+                        {
+                            Id = 24,
+                            Naziv = "Povrsina 24",
+                            Oznaka = 54,
+                            ProjekatZaGradjevinskuDozvoluId = 10,
+                            Status = 0,
+                            VrstaPoda = "Vrsta 24",
+                            VrstaPovrsineId = 1
+                        },
+                        new
+                        {
+                            Id = 25,
+                            Naziv = "Povrsina 25",
+                            Oznaka = 7865,
+                            ProjekatZaGradjevinskuDozvoluId = 8,
+                            Status = 0,
+                            VrstaPoda = "Vrsta 25",
+                            VrstaPovrsineId = 5
+                        },
+                        new
+                        {
+                            Id = 26,
+                            Naziv = "Povrsina 26",
+                            Oznaka = 465,
+                            ProjekatZaGradjevinskuDozvoluId = 8,
+                            Status = 0,
+                            VrstaPoda = "Vrsta 26",
+                            VrstaPovrsineId = 5
+                        },
+                        new
+                        {
+                            Id = 27,
+                            Naziv = "Povrsina 27",
+                            Oznaka = 123,
+                            ProjekatZaGradjevinskuDozvoluId = 7,
+                            Status = 0,
+                            VrstaPoda = "Vrsta 27",
+                            VrstaPovrsineId = 1
+                        },
+                        new
+                        {
+                            Id = 28,
+                            Naziv = "Povrsina 28",
+                            Oznaka = 541,
+                            ProjekatZaGradjevinskuDozvoluId = 7,
+                            Status = 0,
+                            VrstaPoda = "Vrsta 28",
+                            VrstaPovrsineId = 1
+                        },
+                        new
+                        {
+                            Id = 29,
+                            Naziv = "Povrsina 29",
+                            Oznaka = 313,
+                            ProjekatZaGradjevinskuDozvoluId = 6,
+                            Status = 0,
+                            VrstaPoda = "Vrsta 29",
+                            VrstaPovrsineId = 2
+                        },
+                        new
+                        {
+                            Id = 30,
+                            Naziv = "Povrsina 30",
+                            Oznaka = 467,
+                            ProjekatZaGradjevinskuDozvoluId = 6,
+                            Status = 0,
+                            VrstaPoda = "Vrsta 30",
+                            VrstaPovrsineId = 3
+                        },
+                        new
+                        {
+                            Id = 31,
+                            Naziv = "Povrsina 41",
+                            Oznaka = 984,
+                            ProjekatZaGradjevinskuDozvoluId = 6,
+                            Status = 0,
+                            VrstaPoda = "Vrsta 31",
+                            VrstaPovrsineId = 4
+                        },
+                        new
+                        {
+                            Id = 32,
+                            Naziv = "Povrsina 42",
+                            Oznaka = 32,
+                            ProjekatZaGradjevinskuDozvoluId = 9,
+                            Status = 0,
+                            VrstaPoda = "Vrsta 32",
+                            VrstaPovrsineId = 2
+                        },
+                        new
+                        {
+                            Id = 33,
+                            Naziv = "Povrsina 43",
+                            Oznaka = 7764,
+                            ProjekatZaGradjevinskuDozvoluId = 8,
+                            Status = 0,
+                            VrstaPoda = "Vrsta 33",
+                            VrstaPovrsineId = 3
+                        },
+                        new
+                        {
+                            Id = 34,
+                            Naziv = "Povrsina 44",
+                            Oznaka = 65342,
+                            ProjekatZaGradjevinskuDozvoluId = 10,
+                            Status = 0,
+                            VrstaPoda = "Vrsta 34",
+                            VrstaPovrsineId = 1
+                        },
+                        new
+                        {
+                            Id = 35,
+                            Naziv = "Povrsina 45",
+                            Oznaka = 3219,
+                            ProjekatZaGradjevinskuDozvoluId = 8,
+                            Status = 0,
+                            VrstaPoda = "Vrsta 35",
+                            VrstaPovrsineId = 5
+                        },
+                        new
+                        {
+                            Id = 36,
+                            Naziv = "Povrsina 46",
+                            Oznaka = 890,
+                            ProjekatZaGradjevinskuDozvoluId = 8,
+                            Status = 0,
+                            VrstaPoda = "Vrsta 36",
+                            VrstaPovrsineId = 5
+                        },
+                        new
+                        {
+                            Id = 37,
+                            Naziv = "Povrsina 47",
+                            Oznaka = 203,
+                            ProjekatZaGradjevinskuDozvoluId = 7,
+                            Status = 0,
+                            VrstaPoda = "Vrsta 37",
+                            VrstaPovrsineId = 1
+                        },
+                        new
+                        {
+                            Id = 38,
+                            Naziv = "Povrsina 48",
+                            Oznaka = 110,
+                            ProjekatZaGradjevinskuDozvoluId = 7,
+                            Status = 0,
+                            VrstaPoda = "Vrsta 38",
+                            VrstaPovrsineId = 1
+                        },
+                        new
+                        {
+                            Id = 39,
+                            Naziv = "Povrsina 49",
+                            Oznaka = 903,
+                            ProjekatZaGradjevinskuDozvoluId = 6,
+                            Status = 0,
+                            VrstaPoda = "Vrsta 39",
+                            VrstaPovrsineId = 2
+                        },
+                        new
+                        {
+                            Id = 40,
+                            Naziv = "Povrsina 50",
+                            Oznaka = 314,
+                            ProjekatZaGradjevinskuDozvoluId = 6,
+                            Status = 0,
+                            VrstaPoda = "Vrsta 40",
+                            VrstaPovrsineId = 3
                         });
                 });
 
@@ -475,41 +954,81 @@ namespace Ideastudio.DataAccess.Migrations
                         new
                         {
                             Id = 1,
-                            DatumIzrade = new DateTime(2020, 6, 10, 9, 38, 48, 367, DateTimeKind.Utc).AddTicks(3296),
-                            IdejnoResenjeId = 4,
-                            Naziv = "Naziv 1",
+                            DatumIzrade = new DateTime(2020, 6, 11, 14, 52, 25, 545, DateTimeKind.Utc).AddTicks(3585),
+                            IdejnoResenjeId = 2,
+                            Naziv = "Projekat 1",
                             StatusDokumenta = 0
                         },
                         new
                         {
                             Id = 2,
-                            DatumIzrade = new DateTime(2020, 6, 10, 9, 38, 48, 367, DateTimeKind.Utc).AddTicks(3981),
-                            IdejnoResenjeId = 1,
-                            Naziv = "Naziv 2",
+                            DatumIzrade = new DateTime(2020, 6, 11, 14, 52, 25, 545, DateTimeKind.Utc).AddTicks(4866),
+                            IdejnoResenjeId = 7,
+                            Naziv = "Projekat 2",
                             StatusDokumenta = 0
                         },
                         new
                         {
                             Id = 3,
-                            DatumIzrade = new DateTime(2020, 6, 10, 9, 38, 48, 367, DateTimeKind.Utc).AddTicks(4011),
-                            IdejnoResenjeId = 2,
-                            Naziv = "Naziv 3",
+                            DatumIzrade = new DateTime(2020, 6, 11, 14, 52, 25, 545, DateTimeKind.Utc).AddTicks(4891),
+                            IdejnoResenjeId = 9,
+                            Naziv = "Projekat 3",
                             StatusDokumenta = 0
                         },
                         new
                         {
                             Id = 4,
-                            DatumIzrade = new DateTime(2020, 6, 10, 9, 38, 48, 367, DateTimeKind.Utc).AddTicks(4014),
-                            IdejnoResenjeId = 5,
-                            Naziv = "Naziv 4",
+                            DatumIzrade = new DateTime(2020, 6, 11, 14, 52, 25, 545, DateTimeKind.Utc).AddTicks(4894),
+                            IdejnoResenjeId = 1,
+                            Naziv = "Projekat 4",
                             StatusDokumenta = 0
                         },
                         new
                         {
                             Id = 5,
-                            DatumIzrade = new DateTime(2020, 6, 10, 9, 38, 48, 367, DateTimeKind.Utc).AddTicks(4015),
+                            DatumIzrade = new DateTime(2020, 6, 11, 14, 52, 25, 545, DateTimeKind.Utc).AddTicks(4896),
+                            IdejnoResenjeId = 5,
+                            Naziv = "Projekat 5",
+                            StatusDokumenta = 0
+                        },
+                        new
+                        {
+                            Id = 6,
+                            DatumIzrade = new DateTime(2020, 6, 11, 14, 52, 25, 545, DateTimeKind.Utc).AddTicks(4897),
                             IdejnoResenjeId = 3,
-                            Naziv = "Naziv 5",
+                            Naziv = "Projekat 6",
+                            StatusDokumenta = 0
+                        },
+                        new
+                        {
+                            Id = 7,
+                            DatumIzrade = new DateTime(2020, 6, 11, 14, 52, 25, 545, DateTimeKind.Utc).AddTicks(4899),
+                            IdejnoResenjeId = 10,
+                            Naziv = "Projekat 7",
+                            StatusDokumenta = 0
+                        },
+                        new
+                        {
+                            Id = 8,
+                            DatumIzrade = new DateTime(2020, 6, 11, 14, 52, 25, 545, DateTimeKind.Utc).AddTicks(4901),
+                            IdejnoResenjeId = 4,
+                            Naziv = "Projekat 8",
+                            StatusDokumenta = 0
+                        },
+                        new
+                        {
+                            Id = 9,
+                            DatumIzrade = new DateTime(2020, 6, 11, 14, 52, 25, 545, DateTimeKind.Utc).AddTicks(4903),
+                            IdejnoResenjeId = 8,
+                            Naziv = "Projekat 9",
+                            StatusDokumenta = 0
+                        },
+                        new
+                        {
+                            Id = 10,
+                            DatumIzrade = new DateTime(2020, 6, 11, 14, 52, 25, 545, DateTimeKind.Utc).AddTicks(4904),
+                            IdejnoResenjeId = 6,
+                            Naziv = "Projekat 10",
                             StatusDokumenta = 0
                         });
                 });
@@ -539,31 +1058,31 @@ namespace Ideastudio.DataAccess.Migrations
                         new
                         {
                             Id = 1,
-                            Naziv = "Naziv 1",
+                            Naziv = "Prostorija 1",
                             VrstaPovrsineId = 1
                         },
                         new
                         {
                             Id = 2,
-                            Naziv = "Naziv 2",
+                            Naziv = "Prostorija 2",
                             VrstaPovrsineId = 5
                         },
                         new
                         {
                             Id = 3,
-                            Naziv = "Naziv 3",
+                            Naziv = "Prostorija 3",
                             VrstaPovrsineId = 3
                         },
                         new
                         {
                             Id = 4,
-                            Naziv = "Naziv 4",
+                            Naziv = "Prostorija 4",
                             VrstaPovrsineId = 2
                         },
                         new
                         {
                             Id = 5,
-                            Naziv = "Naziv 5",
+                            Naziv = "Prostorija 5",
                             VrstaPovrsineId = 4
                         });
                 });
@@ -588,27 +1107,27 @@ namespace Ideastudio.DataAccess.Migrations
                         new
                         {
                             Id = 1,
-                            Naziv = "Naziv 1"
+                            Naziv = "Vrsta povrsine 1"
                         },
                         new
                         {
                             Id = 2,
-                            Naziv = "Naziv 2"
+                            Naziv = "Vrsta povrsine 2"
                         },
                         new
                         {
                             Id = 3,
-                            Naziv = "Naziv 3"
+                            Naziv = "Vrsta povrsine 3"
                         },
                         new
                         {
                             Id = 4,
-                            Naziv = "Naziv 4"
+                            Naziv = "Vrsta povrsine 4"
                         },
                         new
                         {
                             Id = 5,
-                            Naziv = "Naziv 5"
+                            Naziv = "Vrsta povrsine 5"
                         });
                 });
 

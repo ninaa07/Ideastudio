@@ -11,6 +11,8 @@
     {
         public int Oznaka { get; set; }
 
+        public string Naziv { get; set; }
+
         public string VrstaPoda { get; set; }
 
         public int ProjekatZaGradjevinskuDozvoluId { get; set; }

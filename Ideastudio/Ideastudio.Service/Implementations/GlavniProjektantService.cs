@@ -16,7 +16,7 @@ namespace Ideastudio.Service.Implementations
 
         public IEnumerable<GlavniProjektant> GetAll()
         {
-            return _glavniProjektantRepository.GetAll();
+            return _glavniProjektantRepository.GetAllGlavniProjekantiWithIdejnaResenja();
         }
 
         public GlavniProjektant Get(int id)

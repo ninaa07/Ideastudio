@@ -16,7 +16,7 @@ namespace Ideastudio.Service.Implementations
 
         public IEnumerable<IdejnoResenje> GetAll()
         {
-            return _idejnoResenjeRepository.GetAll();
+            return _idejnoResenjeRepository.GetAllIdejnaResenjaWithPgd();
         }
 
         public IdejnoResenje Get(int id)

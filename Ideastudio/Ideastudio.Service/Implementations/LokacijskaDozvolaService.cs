@@ -16,7 +16,7 @@ namespace Ideastudio.Service.Implementations
 
         public IEnumerable<LokacijskaDozvola> GetAll()
         {
-            return _lokacijskaDozvolaRepository.GetAll();
+            return _lokacijskaDozvolaRepository.GetAllLokacijskeDozvoleWithIdejnaResenja();
         }
 
         public LokacijskaDozvola Get(int id)

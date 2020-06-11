@@ -7,7 +7,7 @@ import { ToastrModule } from 'ngx-toastr';
 
 import { AppComponent } from './app.component';
 
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule, NgbDropdownConfig } from '@ng-bootstrap/ng-bootstrap';
 import { CommonModule, DatePipe } from '@angular/common';
 import { ThemeModule } from './theme/theme.module';
 import { AppRoutingModule } from './app-routing.module';
@@ -17,9 +17,14 @@ import { PregledPage } from './pages/pregled/pregled.page';
 import { ConfirmDialog } from './components/confirm/confirm.dialog';
 import { LokacijskaDozvolaComponent } from './components/lokacijska-dozvola/lokacijska-dozvola.component';
 import { LokacijskaDozvolaDialog } from './components/lokacijska-dozvola/lokacijska-dozvola-dialog/lokacijska-dozvola.dialog';
+import { BrowserModule } from '@angular/platform-browser';
+import { ProjekatZaGradjevinskuDozvoluComponent } from './components/projekat-za-gradjevinsku-dozvolu/projekat-za-gradjevinsku-dozvolu.component';
+import { ProjekatZaGradjevinskuDozvoluDialog } from './components/projekat-za-gradjevinsku-dozvolu/projekat-za-gradjevinsku-dozvolu-dialog/projekat-za-gradjevinsku-dozvolu.dialog';
+import { StatusDokumentaPipe } from './pipes/status-dokumenta.pipe';
 
 @NgModule({
   imports: [
+    BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
     CommonModule,
@@ -36,13 +41,17 @@ import { LokacijskaDozvolaDialog } from './components/lokacijska-dozvola/lokacij
     PregledPage,
     LokacijskaDozvolaComponent,
     ConfirmDialog,
-    LokacijskaDozvolaDialog
+    LokacijskaDozvolaDialog,
+    ProjekatZaGradjevinskuDozvoluComponent,
+    ProjekatZaGradjevinskuDozvoluDialog,
+    StatusDokumentaPipe
   ],
-  providers: [DatePipe],
+  providers: [DatePipe, NgbDropdownConfig],
   bootstrap: [AppComponent],
   entryComponents: [
     ConfirmDialog,
-    LokacijskaDozvolaDialog
+    LokacijskaDozvolaDialog,
+    ProjekatZaGradjevinskuDozvoluDialog
   ]
 })
 export class AppModule { }

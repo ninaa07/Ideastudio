@@ -4,9 +4,11 @@ export class Objekat {
 
     id: number;
 
-    brojParcele: number;
-
     naziv: string;
+
+    dimenzije: number;
+
+    karakteristike: string;
 
     idejnaResenja: IdejnoResenje[];
 }

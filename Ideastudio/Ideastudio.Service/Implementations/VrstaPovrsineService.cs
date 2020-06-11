@@ -16,7 +16,7 @@ namespace Ideastudio.Service.Implementations
 
         public IEnumerable<VrstaPovrsine> GetAll()
         {
-            return _vrstaPovrsineRepository.GetAll();
+            return _vrstaPovrsineRepository.GetAllVrstePovrsineWithProstorijeAndPovrsine();
         }
 
         public VrstaPovrsine Get(int id)

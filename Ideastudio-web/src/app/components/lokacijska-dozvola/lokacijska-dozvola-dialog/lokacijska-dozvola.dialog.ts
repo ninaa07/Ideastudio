@@ -16,32 +16,23 @@ import { ObjekatService } from 'src/app/services/objekat.service';
 export class LokacijskaDozvolaDialog implements OnInit {
 
   informacijeOLokacijiList: InformacijeOLokaciji[];
-  idejnaResenja: IdejnoResenje[];
   lokacijskaDozvola: LokacijskaDozvola;
   informacijeOLokaciji: InformacijeOLokaciji;
-  idejnoResenje: IdejnoResenje;
   selectedIol = 'Informacije o lokaciji';
   selectedIr = 'Idejno resenje';
   datumIzdavanja: string;
-  disabled: boolean;
+  nazivObjekta: string;
 
   constructor(private lokacijskaDozvolaService: LokacijskaDozvolaService,
-    private objekatService: ObjekatService,
     private dialogRef: MatDialogRef<LokacijskaDozvolaDialog>,
+    private objekatService: ObjekatService,
     @Inject(MAT_DIALOG_DATA) public data: any,
     private datePipe: DatePipe,
-    private alert: AlertService) {
-    this.disabled = false;
-  }
+    private alert: AlertService) { }
 
   ngOnInit(): void {
     this.informacijeOLokacijiList = this.data.informacijeOLokaciji;
-    this.idejnaResenja = this.data.idejnaResenja;
     this.lokacijskaDozvola = this.data.lokacijskaDozvola ? this.data.lokacijskaDozvola : new LokacijskaDozvola();
-
-    if (this.data.action === 'view') {
-      this.disabled = true;
-    }
 
     if (this.data.action === 'view' || this.data.action === 'edit') {
       this.informacijeOLokaciji = this.informacijeOLokacijiList.find(x => x.id === this.lokacijskaDozvola.informacijeOLokacijiId);
@@ -58,7 +49,9 @@ export class LokacijskaDozvolaDialog implements OnInit {
   }
 
   save() {
-    this.validate();
+    if (!this.validate()) {
+      return;
+    }
 
     if (!this.lokacijskaDozvola.id) {
       this.lokacijskaDozvolaService.add(this.lokacijskaDozvola).subscribe(result => {
@@ -89,21 +82,22 @@ export class LokacijskaDozvolaDialog implements OnInit {
 
   changeSelectionIr(ir: IdejnoResenje, newIr: string) {
     this.selectedIr = newIr;
-    this.idejnoResenje = ir;
     this.lokacijskaDozvola.nazivIdejnogResenja = newIr;
+
+    this.objekatService.getById(ir.objekatId).subscribe(result => {
+      if (result) {
+        this.nazivObjekta = result.naziv;
+      }
+    });
   }
 
   validate() {
-    let objekat = null;
-    debugger;
-    this.objekatService.getById(this.idejnoResenje.objekatId).subscribe(result => {
-      objekat = result;
-    }, error => {
-      return false;
-    });
-
-    if (this.lokacijskaDozvola.nazivObjekta.toLowerCase() !== objekat.naziv.toLowerCase()
-      || this.lokacijskaDozvola.brojParcele !== objekat.brojParcele) {
+    if (!this.lokacijskaDozvola.naziv ||
+      !this.lokacijskaDozvola.opstiPodaci ||
+      !this.lokacijskaDozvola.lokacijskiUslovi ||
+      !this.lokacijskaDozvola.brojParcele ||
+      !this.lokacijskaDozvola.povrsinaParcele) {
+      this.alert.showError('Neispravno uneti podaci', 'Error');
       return false;
     }
 
@@ -113,5 +107,4 @@ export class LokacijskaDozvolaDialog implements OnInit {
   close() {
     this.dialogRef.close(false);
   }
-
 }
