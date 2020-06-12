@@ -2,6 +2,7 @@
 using Ideastudio.Domain;
 using Ideastudio.Service.Interfaces;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Ideastudio.Service.Implementations
 {
@@ -21,7 +22,7 @@ namespace Ideastudio.Service.Implementations
 
         public VrstaPovrsine Get(int id)
         {
-            return _vrstaPovrsineRepository.Get(id);
+            return _vrstaPovrsineRepository.GetAllVrstePovrsineWithProstorijeAndPovrsine().FirstOrDefault(x => x.Id == id);
         }
 
         public ServiceResult<VrstaPovrsine> Add(VrstaPovrsine vrstaPovrsine)

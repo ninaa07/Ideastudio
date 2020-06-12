@@ -2,6 +2,7 @@
 using Ideastudio.Domain;
 using Ideastudio.Service.Interfaces;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Ideastudio.Service.Implementations
 {
@@ -21,7 +22,7 @@ namespace Ideastudio.Service.Implementations
 
         public LokacijskaDozvola Get(int id)
         {
-            return _lokacijskaDozvolaRepository.Get(id);
+            return _lokacijskaDozvolaRepository.GetAllLokacijskeDozvoleWithIdejnaResenja().FirstOrDefault(x => x.Id == id);
         }
 
         public ServiceResult<LokacijskaDozvola> Add(LokacijskaDozvola lokacijskaDozvola)

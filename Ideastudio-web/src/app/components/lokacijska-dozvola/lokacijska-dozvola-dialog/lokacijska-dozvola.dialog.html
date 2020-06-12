@@ -24,7 +24,7 @@
                             <button class="btn btn-outline-primary" [disabled]="disabled"
                                 ngbDropdownToggle>{{ selectedIr }}</button>
                             <div ngbDropdownMenu>
-                                <button *ngFor="let ir of ld.idejnaResenja" ngbDropdownItem
+                                <button *ngFor="let ir of lokacijskaDozvola.idejnaResenja" ngbDropdownItem
                                     (click)="changeSelectionIr(ir, ir.naziv)">{{ ir.naziv }}</button>
                             </div>
                         </div>
@@ -45,17 +45,17 @@
                 <label class="section-label">Podaci o dozvoli</label>
                 <mat-form-field appearance="outline" floatLabel="auto" class="row">
                     <label> Naziv </label>
-                    <input class="form-control" placeholder="Naziv" type="number" required name="naziv"
+                    <input class="form-control" placeholder="Naziv" type="text" required name="naziv"
                         [(ngModel)]="lokacijskaDozvola.naziv" />
                 </mat-form-field>
                 <mat-form-field appearance="outline" floatLabel="auto" class="row">
                     <label> Opšti Podaci </label>
-                    <input class="form-control" placeholder="Opšti Podaci" type="number" required name="opstiPodaci"
+                    <input class="form-control" placeholder="Opšti Podaci" type="text" required name="opstiPodaci"
                         [(ngModel)]="lokacijskaDozvola.opstiPodaci" />
                 </mat-form-field>
                 <mat-form-field appearance="outline" floatLabel="auto" class="row">
                     <label> Lokacijski Uslovi </label>
-                    <input class="form-control" placeholder="Lokacijski Uslovi" type="number" required
+                    <input class="form-control" placeholder="Lokacijski Uslovi" type="text" required
                         name="lokacijskiUslovi" [(ngModel)]="lokacijskaDozvola.lokacijskiUslovi" />
                 </mat-form-field>
             </div>

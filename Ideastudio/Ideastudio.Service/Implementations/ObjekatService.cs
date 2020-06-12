@@ -2,6 +2,7 @@
 using Ideastudio.Domain;
 using Ideastudio.Service.Interfaces;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Ideastudio.Service.Implementations
 {
@@ -21,7 +22,7 @@ namespace Ideastudio.Service.Implementations
 
         public Objekat Get(int id)
         {
-            return _objekatRepository.Get(id);
+            return _objekatRepository.GetAllObjektiWithIdejnaResenja().FirstOrDefault(x => x.Id == id);
         }
 
         public ServiceResult<Objekat> Add(Objekat objekat)

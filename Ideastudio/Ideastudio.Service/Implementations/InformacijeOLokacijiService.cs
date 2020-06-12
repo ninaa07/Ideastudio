@@ -2,6 +2,7 @@
 using Ideastudio.Domain;
 using Ideastudio.Service.Interfaces;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Ideastudio.Service.Implementations
 {
@@ -21,7 +22,7 @@ namespace Ideastudio.Service.Implementations
 
         public InformacijeOLokaciji Get(int id)
         {
-            return _informacijeOLokacijiRepository.Get(id);
+            return _informacijeOLokacijiRepository.GetAllInformacijeOLokacijiWithLokacijskeDozvole().FirstOrDefault(x => x.Id == id);
         }
 
         public ServiceResult<InformacijeOLokaciji> Add(InformacijeOLokaciji informacijeOLokaciji)

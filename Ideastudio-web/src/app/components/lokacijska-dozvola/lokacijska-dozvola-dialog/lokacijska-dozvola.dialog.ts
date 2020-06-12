@@ -34,6 +34,7 @@ export class LokacijskaDozvolaDialog implements OnInit {
     this.informacijeOLokacijiList = this.data.informacijeOLokaciji;
     this.lokacijskaDozvola = this.data.lokacijskaDozvola ? this.data.lokacijskaDozvola : new LokacijskaDozvola();
 
+    debugger;
     if (this.data.action === 'view' || this.data.action === 'edit') {
       this.informacijeOLokaciji = this.informacijeOLokacijiList.find(x => x.id === this.lokacijskaDozvola.informacijeOLokacijiId);
       this.selectedIol = this.informacijeOLokaciji.naziv;
@@ -54,6 +55,10 @@ export class LokacijskaDozvolaDialog implements OnInit {
     }
 
     if (!this.lokacijskaDozvola.id) {
+
+      this.lokacijskaDozvola.nazivIdejnogResenja = this.selectedIr;
+      this.lokacijskaDozvola.informacijeOLokacijiId = this.informacijeOLokaciji.id;
+
       this.lokacijskaDozvolaService.add(this.lokacijskaDozvola).subscribe(result => {
         if (result.success) {
           this.alert.showSuccess(result.message, 'Success');
@@ -77,12 +82,10 @@ export class LokacijskaDozvolaDialog implements OnInit {
   changeSelectionIol(iol: InformacijeOLokaciji, newIol: string) {
     this.selectedIol = newIol;
     this.informacijeOLokaciji = iol;
-    this.lokacijskaDozvola.informacijeOLokacijiId = iol.id;
   }
 
   changeSelectionIr(ir: IdejnoResenje, newIr: string) {
     this.selectedIr = newIr;
-    this.lokacijskaDozvola.nazivIdejnogResenja = newIr;
 
     this.objekatService.getById(ir.objekatId).subscribe(result => {
       if (result) {

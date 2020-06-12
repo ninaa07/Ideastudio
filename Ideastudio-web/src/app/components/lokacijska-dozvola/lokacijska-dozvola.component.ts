@@ -101,7 +101,7 @@ export class LokacijskaDozvolaComponent implements OnInit {
       data: {
         title: 'Izmena lokacijske dozvole: ' + ld.naziv,
         informacijeOLokaciji: this.informacijeOLokaciji,
-        okacijskaDozvola: ld,
+        lokacijskaDozvola: ld,
         action: 'edit'
       },
       disableClose: true

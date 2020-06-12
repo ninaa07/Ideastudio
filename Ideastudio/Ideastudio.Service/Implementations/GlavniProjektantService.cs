@@ -2,6 +2,7 @@
 using Ideastudio.Domain;
 using Ideastudio.Service.Interfaces;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Ideastudio.Service.Implementations
 {
@@ -21,7 +22,7 @@ namespace Ideastudio.Service.Implementations
 
         public GlavniProjektant Get(int id)
         {
-            return _glavniProjektantRepository.Get(id);
+            return _glavniProjektantRepository.GetAllGlavniProjekantiWithIdejnaResenja().FirstOrDefault(x => x.Id == id);
         }
 
         public ServiceResult<GlavniProjektant> Add(GlavniProjektant glavniProjektant)

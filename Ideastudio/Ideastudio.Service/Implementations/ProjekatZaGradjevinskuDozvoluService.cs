@@ -2,6 +2,7 @@
 using Ideastudio.Domain;
 using Ideastudio.Service.Interfaces;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Ideastudio.Service.Implementations
 {
@@ -21,7 +22,7 @@ namespace Ideastudio.Service.Implementations
 
         public ProjekatZaGradjevinskuDozvolu Get(int id)
         {
-            return _projekatZaGradjevinskuDozvoluRepository.Get(id);
+            return _projekatZaGradjevinskuDozvoluRepository.GetAllPgdWithPovrsine().FirstOrDefault(x => x.Id == id);
         }
 
         public ServiceResult<ProjekatZaGradjevinskuDozvolu> Add(ProjekatZaGradjevinskuDozvolu projekatZaGradjevinskuDozvolu)
