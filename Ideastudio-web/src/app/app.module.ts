@@ -21,9 +21,17 @@ import { BrowserModule } from '@angular/platform-browser';
 import { ProjekatZaGradjevinskuDozvoluComponent } from './components/projekat-za-gradjevinsku-dozvolu/projekat-za-gradjevinsku-dozvolu.component';
 import { ProjekatZaGradjevinskuDozvoluDialog } from './components/projekat-za-gradjevinsku-dozvolu/projekat-za-gradjevinsku-dozvolu-dialog/projekat-za-gradjevinsku-dozvolu.dialog';
 import { StatusDokumentaPipe } from './pipes/status-dokumenta.pipe';
+import { MatTableModule } from '@angular/material/table';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatButtonModule } from '@angular/material/button';
+import { MatInputModule } from '@angular/material/input';
 
 @NgModule({
   imports: [
+    // MatButtonModule,
+    // MatFormFieldModule,
+    // MatInputModule,
+    MatTableModule,
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
@@ -36,6 +44,12 @@ import { StatusDokumentaPipe } from './pipes/status-dokumenta.pipe';
     ToastrModule.forRoot(),
     MatDialogModule
   ],
+  exports: [
+    // MatButtonModule,
+    // MatFormFieldModule,
+    // MatInputModule
+    MatTableModule
+  ],
   declarations: [AppComponent,
     DashboardPage,
     PregledPage,
@@ -46,7 +60,7 @@ import { StatusDokumentaPipe } from './pipes/status-dokumenta.pipe';
     ProjekatZaGradjevinskuDozvoluDialog,
     StatusDokumentaPipe
   ],
-  providers: [DatePipe, NgbDropdownConfig],
+  providers: [DatePipe, NgbDropdownConfig, StatusDokumentaPipe],
   bootstrap: [AppComponent],
   entryComponents: [
     ConfirmDialog,

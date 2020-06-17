@@ -21,6 +21,8 @@ namespace Ideastudio.Domain
 
         public DateTime DatumIzrade { get; set; }
 
+        public string NazivIdejnogResenja { get; set; }
+
         public int IdejnoResenjeId { get; set; }
 
         public IdejnoResenje IdejnoResenje { get; set; }

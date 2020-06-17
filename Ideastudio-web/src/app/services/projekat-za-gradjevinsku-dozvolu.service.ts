@@ -3,6 +3,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { ServiceResult } from '../models/service-result.model';
 import { ProjekatZaGradjevinskuDozvolu } from '../models/projekat-za-gradjevinsku-dozvolu.model';
+import { IdejnoResenjeService } from './idejno-resenje.service';
+import { GlavniProjektantService } from './glavni-projektant.service';
 
 const httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json', 'Response-Type': 'text' })
@@ -16,7 +18,11 @@ export class ProjekatZaGradjevinskuDozvoluService {
 
     url = 'https://localhost:44306/api/projektiZaGradjevinskuDozvolu/';
 
-    constructor(private http: HttpClient) { }
+    constructor(
+        private http: HttpClient,
+        private idejnoResenjeService: IdejnoResenjeService,
+        private glavniProjektantService: GlavniProjektantService
+    ) { }
 
     getAll(): Observable<ProjekatZaGradjevinskuDozvolu[]> {
         return this.http.get<ProjekatZaGradjevinskuDozvolu[]>(this.url);

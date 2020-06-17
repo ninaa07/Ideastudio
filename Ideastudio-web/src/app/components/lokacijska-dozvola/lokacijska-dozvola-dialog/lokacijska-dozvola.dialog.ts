@@ -34,7 +34,6 @@ export class LokacijskaDozvolaDialog implements OnInit {
     this.informacijeOLokacijiList = this.data.informacijeOLokaciji;
     this.lokacijskaDozvola = this.data.lokacijskaDozvola ? this.data.lokacijskaDozvola : new LokacijskaDozvola();
 
-    debugger;
     if (this.data.action === 'view' || this.data.action === 'edit') {
       this.informacijeOLokaciji = this.informacijeOLokacijiList.find(x => x.id === this.lokacijskaDozvola.informacijeOLokacijiId);
       this.selectedIol = this.informacijeOLokaciji.naziv;

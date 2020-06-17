@@ -49,7 +49,7 @@ namespace Ideastudio.Service.Implementations
 
             _projekatZaGradjevinskuDozvoluRepository.SaveChanges();
 
-            return new ServiceResult<ProjekatZaGradjevinskuDozvolu>(true, "Projekat za gradjevinsku dozvolu uspesno izbrisan.");
+            return new ServiceResult<ProjekatZaGradjevinskuDozvolu>(true, "Projekat za gradjevinsku dozvolu uspesno izbrisan.", projekatZaGradjevinskuDozvolu);
         }
     }
 }

@@ -13,6 +13,8 @@ export class ProjekatZaGradjevinskuDozvolu {
     povrsine: Povrsina[];
 
     statusDokumenta: StatusDokumenta;
+
+    nazivIdejnogResenja: string;
 }
 
 export enum StatusDokumenta {

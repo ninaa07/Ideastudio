@@ -9,6 +9,7 @@ import { IdejnoResenje } from 'src/app/models/idejno-resenje.model';
 import { IdejnoResenjeService } from 'src/app/services/idejno-resenje.service';
 import { LokacijskaDozvolaDialog } from './lokacijska-dozvola-dialog/lokacijska-dozvola.dialog';
 import { AlertService } from 'src/app/services/alert.service';
+import { ProjekatZaGradjevinskuDozvoluDialog } from '../projekat-za-gradjevinsku-dozvolu/projekat-za-gradjevinsku-dozvolu-dialog/projekat-za-gradjevinsku-dozvolu.dialog';
 
 @Component({
   selector: 'lokacijska-dozvola',

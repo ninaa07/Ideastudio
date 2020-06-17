@@ -5,7 +5,11 @@ import { MatDialog } from '@angular/material/dialog';
 import { AlertService } from 'src/app/services/alert.service';
 import { ConfirmDialog } from '../confirm/confirm.dialog';
 import { ProjekatZaGradjevinskuDozvoluDialog } from './projekat-za-gradjevinsku-dozvolu-dialog/projekat-za-gradjevinsku-dozvolu.dialog';
-import { NgbDropdownConfig } from '@ng-bootstrap/ng-bootstrap';
+import { IdejnoResenje } from 'src/app/models/idejno-resenje.model';
+import { IdejnoResenjeService } from 'src/app/services/idejno-resenje.service';
+import { domain } from 'process';
+import { VrstaPovrsineService } from 'src/app/services/vrsta-povrsine.service';
+import { VrstaPovrsine } from 'src/app/models/vrsta-povrsine.model';
 
 @Component({
   selector: 'projekat-za-gradjevinsku-dozvolu',
@@ -15,20 +19,35 @@ import { NgbDropdownConfig } from '@ng-bootstrap/ng-bootstrap';
 export class ProjekatZaGradjevinskuDozvoluComponent implements OnInit {
 
   projektiZaGD: ProjekatZaGradjevinskuDozvolu[];
+  idejnaResenja: IdejnoResenje[];
+  vrstePovrsina: VrstaPovrsine[];
 
   constructor(
-    private projekatZaGDService: ProjekatZaGradjevinskuDozvoluService,
+    private projekatZaGradjevinskuDozvoluService: ProjekatZaGradjevinskuDozvoluService,
     private dialog: MatDialog,
-    private config: NgbDropdownConfig,
-    private alert: AlertService
+    private alert: AlertService,
+    private idejnoResenjeService: IdejnoResenjeService,
+    private vrstaPovrsineService: VrstaPovrsineService
   ) { }
 
   ngOnInit() {
     this.getAll();
+
+    this.idejnoResenjeService.getAll().subscribe(result => {
+      this.idejnaResenja = result;
+    }, error => {
+      this.alert.errorHandler(error);
+    });
+
+    this.vrstaPovrsineService.getAll().subscribe(result => {
+      this.vrstePovrsina = result;
+    }, error => {
+      this.alert.errorHandler(error);
+    });
   }
 
   getAll(): void {
-    this.projekatZaGDService.getAll().subscribe(result => {
+    this.projekatZaGradjevinskuDozvoluService.getAll().subscribe(result => {
       this.projektiZaGD = result;
     }, error => {
       this.alert.errorHandler(error);
@@ -36,11 +55,16 @@ export class ProjekatZaGradjevinskuDozvoluComponent implements OnInit {
   }
 
   open(id: number): void {
-    this.projekatZaGDService.getById(id).subscribe(result => {
+    this.projekatZaGradjevinskuDozvoluService.getById(id).subscribe(result => {
 
       const dialogRef = this.dialog.open(ProjekatZaGradjevinskuDozvoluDialog, {
         width: '700px',
-        data: { projekatZaGD: result, action: 'view' },
+        data: {
+          projekatZaGD: result,
+          vrstePovrsina: this.vrstePovrsina,
+          action: 'view',
+          title: 'Pregled projekta za građevinsku dozvolu'
+        },
         autoFocus: true,
         disableClose: true
       });
@@ -53,7 +77,12 @@ export class ProjekatZaGradjevinskuDozvoluComponent implements OnInit {
   add(): void {
     const dialogRef = this.dialog.open(ProjekatZaGradjevinskuDozvoluDialog, {
       width: '700px',
-      data: { action: 'add' },
+      data: {
+        action: 'add',
+        title: 'Unos površina i kreiranje projekta za građevinsku dozvolu',
+        vrstePovrsina: this.vrstePovrsina,
+        idejnaResenja: this.idejnaResenja
+      },
       autoFocus: true,
       disableClose: true
     });
@@ -70,7 +99,13 @@ export class ProjekatZaGradjevinskuDozvoluComponent implements OnInit {
     const dialogRef = this.dialog.open(ProjekatZaGradjevinskuDozvoluDialog, {
       width: '700px',
       autoFocus: true,
-      data: { projekatZaGD: pgd, action: 'edit' },
+      data: {
+        projekatZaGD: pgd,
+        vrstePovrsina: this.vrstePovrsina,
+        idejnaResenja: this.idejnaResenja,
+        action: 'edit',
+        title: 'Izmena površina i projekta za građevinsku dozvolu'
+      },
       disableClose: true
     });
   }
@@ -85,7 +120,7 @@ export class ProjekatZaGradjevinskuDozvoluComponent implements OnInit {
 
     confirmDialog.afterClosed().subscribe(response => {
       if (response) {
-        this.projekatZaGDService.delete(id).subscribe(result => {
+        this.projekatZaGradjevinskuDozvoluService.delete(id).subscribe(result => {
           if (result) {
             this.alert.showSuccess(result.message, 'Success');
             const item = this.projektiZaGD.find(x => x.id === result.resultObject.id);

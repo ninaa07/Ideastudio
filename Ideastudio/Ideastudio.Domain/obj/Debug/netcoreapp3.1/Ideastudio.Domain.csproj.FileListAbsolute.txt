@@ -19,3 +19,4 @@ D:\Projects\Ideastudio\Ideastudio\Ideastudio.Domain\obj\Debug\netcoreapp3.1\Idea
 D:\Projects\Ideastudio\Ideastudio\Ideastudio.Domain\obj\Debug\netcoreapp3.1\Ideastudio.Domain.dll
 D:\Projects\Ideastudio\Ideastudio\Ideastudio.Domain\obj\Debug\netcoreapp3.1\Ideastudio.Domain.pdb
 D:\Projects\Ideastudio\Ideastudio\Ideastudio.Domain\obj\Debug\netcoreapp3.1\Ideastudio.Domain.genruntimeconfig.cache
+D:\Projects\Ideastudio\Ideastudio\Ideastudio.Domain\obj\Debug\netcoreapp3.1\Ideastudio.Domain.csprojAssemblyReference.cache

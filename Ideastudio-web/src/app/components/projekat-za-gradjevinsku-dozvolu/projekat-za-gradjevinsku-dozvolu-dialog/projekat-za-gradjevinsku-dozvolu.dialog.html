@@ -1,1 +1,105 @@
-<p>projekat-za-gradjevinsku-dozvolu works!</p>
+<div class="card" id="card-dialog">
+    <form>
+
+        <div class="card-header" id="header-dialog">
+            <h2 class="modal-title" id="add-modal-label">{{ data.title }}</h2>
+            <i class="tim-icons icon-simple-remove" (click)="close()"> </i>
+        </div>
+
+        <div class="card-body" id="body-dialog">
+            <div class="row top-row">
+                <div class="column" style="width: 60%; height: fit-content;">
+                    <div ngbDropdown class="d-inline-block">
+                        <button class="btn btn-outline-primary" [disabled]="disabled"
+                            ngbDropdownToggle>{{ selectedIr }}</button>
+                        <div ngbDropdownMenu>
+                            <button *ngFor="let ir of idejnaResenja" ngbDropdownItem
+                                (click)="changeSelectionIr(ir)">{{ ir.naziv }}</button>
+                        </div>
+                    </div>
+                    <mat-form-field class="row">
+                        <label id="first-row"> Naziv Projektanta </label>
+                        <input class="form-control" disabled type="text" value="{{ nazivProjektanta }}" />
+                    </mat-form-field>
+                </div>
+                <div id="section" class="column" style="width: 40%; height: fit-content;">
+                    <mat-form-field class="row">
+                        <label> Datum Izrade</label>
+                        <input class="form-control" disabled type="date" value="{{ datumIzrade }}" name="datum" />
+                    </mat-form-field>
+                </div>
+            </div>
+            <div id="section" class="column" style="margin-top: 10px;">
+                <label class="section-label">Spisak površina</label>
+                <div style="width: 70%;">
+                    <table mat-table [dataSource]="dataSource">
+
+                        <ng-container matColumnDef="Oznaka">
+                            <th mat-header-cell *matHeaderCellDef> Oznaka </th>
+                            <td mat-cell *matCellDef="let element">
+                                {{ element.oznaka }}
+                            </td>
+                        </ng-container>
+
+                        <ng-container matColumnDef="VrstaPoda">
+                            <th mat-header-cell *matHeaderCellDef> Vrsta Poda </th>
+                            <td mat-cell *matCellDef="let element">
+                                {{ element.vrstaPoda }}
+                            </td>
+                        </ng-container>
+
+                        <ng-container matColumnDef="VrstaPovrsine">
+                            <th mat-header-cell *matHeaderCellDef> Vrsta Površine </th>
+                            <td mat-cell *matCellDef="let element" (blur)="onEnterVrstaPovrsine(element.vrstaPovrsine)">
+                                <div ngbDropdown class="d-inline-block">
+                                    <button class="btn btn-outline-primary"
+                                        ngbDropdownToggle>{{ vrstaPovrsine }}</button>
+                                    <div ngbDropdownMenu>
+                                        <button *ngFor="let vp of vrstePovrsina" ngbDropdownItem
+                                            (click)="changeSelectionVp(vp)">{{ vp.naziv }}</button>
+                                    </div>
+                                </div>
+                            </td>
+                        </ng-container>
+
+                        <ng-container matColumnDef="Prostorija">
+                            <th mat-header-cell *matHeaderCellDef> Prostorija </th>
+                            <td mat-cell *matCellDef="let element">
+                                <div ngbDropdown class="d-inline-block">
+                                    <button class="btn btn-outline-primary" [disabled]="!element.vrstaPovrsine"
+                                        ngbDropdownToggle>Prostorije</button>
+                                    <div ngbDropdownMenu>
+                                        <div *ngFor="let p of prostorije" ngbDropdownItem>{{ p.naziv }}</div>
+                                    </div>
+                                </div>
+                            </td>
+                        </ng-container>
+
+                        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+                    </table>
+                </div>
+                <div style="width: 30%;">
+
+                </div>
+            </div>
+            <div class="row">
+                <div ngbDropdown class="d-inline-block">
+                    <button class="btn btn-outline-primary" [disabled]="disabled"
+                        ngbDropdownToggle>{{ status }}</button>
+                    <div ngbDropdownMenu>
+                        <button *ngFor="let status of statusi" ngbDropdownItem
+                            (click)="changeSelection(status.id, status)">{{ status.label }}</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-footer" id="footer-dialog">
+            <button type="submit" class="btn btn-primary" (click)="save()">Potvrdi</button>
+            <button type="button" class="btn btn-default" (click)="close()">Poništi</button>
+        </div>
+
+    </form>
+</div>
