@@ -13415,7 +13415,7 @@ img {
 
 .navbar.navbar-absolute {
   position: absolute;
-  z-index: 1050;
+  z-index: 10;
 }
 
 .navbar.navbar-transparent {

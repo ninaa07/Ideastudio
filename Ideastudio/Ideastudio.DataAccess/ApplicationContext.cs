@@ -102,16 +102,16 @@ namespace Ideastudio.DataAccess
             );
 
             builder.Entity<ProjekatZaGradjevinskuDozvolu>().HasData(
-                new ProjekatZaGradjevinskuDozvolu { Id = 1, Naziv = "Projekat 1", DatumIzrade = DateTime.UtcNow, IdejnoResenjeId = 2, StatusDokumenta = StatusDokumenta.Nov },
-                new ProjekatZaGradjevinskuDozvolu { Id = 2, Naziv = "Projekat 2", DatumIzrade = DateTime.UtcNow, IdejnoResenjeId = 7, StatusDokumenta = StatusDokumenta.Nov },
-                new ProjekatZaGradjevinskuDozvolu { Id = 3, Naziv = "Projekat 3", DatumIzrade = DateTime.UtcNow, IdejnoResenjeId = 9, StatusDokumenta = StatusDokumenta.Nov },
-                new ProjekatZaGradjevinskuDozvolu { Id = 4, Naziv = "Projekat 4", DatumIzrade = DateTime.UtcNow, IdejnoResenjeId = 1, StatusDokumenta = StatusDokumenta.Nov },
-                new ProjekatZaGradjevinskuDozvolu { Id = 5, Naziv = "Projekat 5", DatumIzrade = DateTime.UtcNow, IdejnoResenjeId = 5, StatusDokumenta = StatusDokumenta.Nov },
-                new ProjekatZaGradjevinskuDozvolu { Id = 6, Naziv = "Projekat 6", DatumIzrade = DateTime.UtcNow, IdejnoResenjeId = 3, StatusDokumenta = StatusDokumenta.Nov },
-                new ProjekatZaGradjevinskuDozvolu { Id = 7, Naziv = "Projekat 7", DatumIzrade = DateTime.UtcNow, IdejnoResenjeId = 10, StatusDokumenta = StatusDokumenta.Nov },
-                new ProjekatZaGradjevinskuDozvolu { Id = 8, Naziv = "Projekat 8", DatumIzrade = DateTime.UtcNow, IdejnoResenjeId = 4, StatusDokumenta = StatusDokumenta.Nov },
-                new ProjekatZaGradjevinskuDozvolu { Id = 9, Naziv = "Projekat 9", DatumIzrade = DateTime.UtcNow, IdejnoResenjeId = 8, StatusDokumenta = StatusDokumenta.Nov },
-                new ProjekatZaGradjevinskuDozvolu { Id = 10, Naziv = "Projekat 10", DatumIzrade = DateTime.UtcNow, IdejnoResenjeId = 6, StatusDokumenta = StatusDokumenta.Nov }
+                new ProjekatZaGradjevinskuDozvolu { Id = 1, Naziv = "Projekat 1", DatumIzrade = DateTime.UtcNow, IdejnoResenjeId = 2, StatusDokumenta = StatusDokumenta.Kreiran },
+                new ProjekatZaGradjevinskuDozvolu { Id = 2, Naziv = "Projekat 2", DatumIzrade = DateTime.UtcNow, IdejnoResenjeId = 7, StatusDokumenta = StatusDokumenta.Kreiran },
+                new ProjekatZaGradjevinskuDozvolu { Id = 3, Naziv = "Projekat 3", DatumIzrade = DateTime.UtcNow, IdejnoResenjeId = 9, StatusDokumenta = StatusDokumenta.Kreiran },
+                new ProjekatZaGradjevinskuDozvolu { Id = 4, Naziv = "Projekat 4", DatumIzrade = DateTime.UtcNow, IdejnoResenjeId = 1, StatusDokumenta = StatusDokumenta.Kreiran },
+                new ProjekatZaGradjevinskuDozvolu { Id = 5, Naziv = "Projekat 5", DatumIzrade = DateTime.UtcNow, IdejnoResenjeId = 5, StatusDokumenta = StatusDokumenta.Kreiran },
+                new ProjekatZaGradjevinskuDozvolu { Id = 6, Naziv = "Projekat 6", DatumIzrade = DateTime.UtcNow, IdejnoResenjeId = 3, StatusDokumenta = StatusDokumenta.Kreiran },
+                new ProjekatZaGradjevinskuDozvolu { Id = 7, Naziv = "Projekat 7", DatumIzrade = DateTime.UtcNow, IdejnoResenjeId = 10, StatusDokumenta = StatusDokumenta.Kreiran },
+                new ProjekatZaGradjevinskuDozvolu { Id = 8, Naziv = "Projekat 8", DatumIzrade = DateTime.UtcNow, IdejnoResenjeId = 4, StatusDokumenta = StatusDokumenta.Kreiran },
+                new ProjekatZaGradjevinskuDozvolu { Id = 9, Naziv = "Projekat 9", DatumIzrade = DateTime.UtcNow, IdejnoResenjeId = 8, StatusDokumenta = StatusDokumenta.Kreiran },
+                new ProjekatZaGradjevinskuDozvolu { Id = 10, Naziv = "Projekat 10", DatumIzrade = DateTime.UtcNow, IdejnoResenjeId = 6, StatusDokumenta = StatusDokumenta.Kreiran }
             );
 
             builder.Entity<GlavniProjektant>().HasData(

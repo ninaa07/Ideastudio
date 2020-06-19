@@ -181,6 +181,7 @@ namespace Ideastudio.DataAccess.Migrations
                     VrstaPoda = table.Column<string>(maxLength: 20, nullable: false),
                     ProjekatZaGradjevinskuDozvoluId = table.Column<int>(nullable: false),
                     VrstaPovrsineId = table.Column<int>(nullable: false),
+                    ProstorijaNaziv = table.Column<string>(nullable: true),
                     Status = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
@@ -217,16 +218,16 @@ namespace Ideastudio.DataAccess.Migrations
                 columns: new[] { "Id", "DatumIzdavanja", "NamenaZemljista", "Naziv", "Zona" },
                 values: new object[,]
                 {
-                    { 10, new DateTime(2020, 6, 17, 16, 38, 27, 985, DateTimeKind.Utc).AddTicks(2078), "Namena 10", "Informacije o lokaciji 10", "Zona 10" },
-                    { 9, new DateTime(2020, 6, 17, 16, 38, 27, 985, DateTimeKind.Utc).AddTicks(2076), "Namena 9", "Informacije o lokaciji 9", "Zona 9" },
-                    { 7, new DateTime(2020, 6, 17, 16, 38, 27, 985, DateTimeKind.Utc).AddTicks(2072), "Namena 7", "Informacije o lokaciji 7", "Zona 7" },
-                    { 6, new DateTime(2020, 6, 17, 16, 38, 27, 985, DateTimeKind.Utc).AddTicks(2070), "Namena 6", "Informacije o lokaciji 6", "Zona 6" },
-                    { 8, new DateTime(2020, 6, 17, 16, 38, 27, 985, DateTimeKind.Utc).AddTicks(2074), "Namena 8", "Informacije o lokaciji 8", "Zona 8" },
-                    { 4, new DateTime(2020, 6, 17, 16, 38, 27, 985, DateTimeKind.Utc).AddTicks(2067), "Namena 4", "Informacije o lokaciji 4", "Zona 4" },
-                    { 3, new DateTime(2020, 6, 17, 16, 38, 27, 985, DateTimeKind.Utc).AddTicks(2064), "Namena 3", "Informacije o lokaciji 3", "Zona 3" },
-                    { 2, new DateTime(2020, 6, 17, 16, 38, 27, 985, DateTimeKind.Utc).AddTicks(2040), "Namena 2", "Informacije o lokaciji 2", "Zona 2" },
-                    { 1, new DateTime(2020, 6, 17, 16, 38, 27, 985, DateTimeKind.Utc).AddTicks(739), "Namena 1", "Informacije o lokaciji 1", "Zona 1" },
-                    { 5, new DateTime(2020, 6, 17, 16, 38, 27, 985, DateTimeKind.Utc).AddTicks(2068), "Namena 5", "Informacije o lokaciji 5", "Zona 5" }
+                    { 10, new DateTime(2020, 6, 18, 16, 40, 24, 745, DateTimeKind.Utc).AddTicks(1544), "Namena 10", "Informacije o lokaciji 10", "Zona 10" },
+                    { 9, new DateTime(2020, 6, 18, 16, 40, 24, 745, DateTimeKind.Utc).AddTicks(1541), "Namena 9", "Informacije o lokaciji 9", "Zona 9" },
+                    { 7, new DateTime(2020, 6, 18, 16, 40, 24, 745, DateTimeKind.Utc).AddTicks(1536), "Namena 7", "Informacije o lokaciji 7", "Zona 7" },
+                    { 6, new DateTime(2020, 6, 18, 16, 40, 24, 745, DateTimeKind.Utc).AddTicks(1533), "Namena 6", "Informacije o lokaciji 6", "Zona 6" },
+                    { 8, new DateTime(2020, 6, 18, 16, 40, 24, 745, DateTimeKind.Utc).AddTicks(1538), "Namena 8", "Informacije o lokaciji 8", "Zona 8" },
+                    { 4, new DateTime(2020, 6, 18, 16, 40, 24, 745, DateTimeKind.Utc).AddTicks(1527), "Namena 4", "Informacije o lokaciji 4", "Zona 4" },
+                    { 3, new DateTime(2020, 6, 18, 16, 40, 24, 745, DateTimeKind.Utc).AddTicks(1518), "Namena 3", "Informacije o lokaciji 3", "Zona 3" },
+                    { 2, new DateTime(2020, 6, 18, 16, 40, 24, 745, DateTimeKind.Utc).AddTicks(1449), "Namena 2", "Informacije o lokaciji 2", "Zona 2" },
+                    { 1, new DateTime(2020, 6, 18, 16, 40, 24, 744, DateTimeKind.Utc).AddTicks(9821), "Namena 1", "Informacije o lokaciji 1", "Zona 1" },
+                    { 5, new DateTime(2020, 6, 18, 16, 40, 24, 745, DateTimeKind.Utc).AddTicks(1530), "Namena 5", "Informacije o lokaciji 5", "Zona 5" }
                 });
 
             migrationBuilder.InsertData(
@@ -258,11 +259,11 @@ namespace Ideastudio.DataAccess.Migrations
                 columns: new[] { "Id", "BrojParcele", "DatumIzdavanja", "InformacijeOLokacijiId", "LokacijskiUslovi", "Naziv", "NazivIdejnogResenja", "OpstiPodaci", "PovrsinaParcele" },
                 values: new object[,]
                 {
-                    { 4, 3458L, new DateTime(2020, 6, 17, 16, 38, 27, 986, DateTimeKind.Utc).AddTicks(7183), 1, "Lokacijski uslovi 4", "Lokacijska dozvola 4", null, "Opsti podaci 4", 34534L },
-                    { 2, 48643L, new DateTime(2020, 6, 17, 16, 38, 27, 986, DateTimeKind.Utc).AddTicks(7126), 2, "Lokacijski uslovi 2", "Lokacijska dozvola 2", null, "Opsti podaci 2", 412L },
-                    { 1, 6934L, new DateTime(2020, 6, 17, 16, 38, 27, 986, DateTimeKind.Utc).AddTicks(6251), 3, "Lokacijski uslovi 1", "Lokacijska dozvola 1", null, "Opsti podaci 1", 324L },
-                    { 5, 34343L, new DateTime(2020, 6, 17, 16, 38, 27, 986, DateTimeKind.Utc).AddTicks(7185), 4, "Lokacijski uslovi 5", "Lokacijska dozvola 5", null, "Opsti podaci 5", 3483L },
-                    { 3, 4843L, new DateTime(2020, 6, 17, 16, 38, 27, 986, DateTimeKind.Utc).AddTicks(7180), 5, "Lokacijski uslovi 3", "Lokacijska dozvola 3", null, "Opsti podaci 3", 3453L }
+                    { 4, 3458L, new DateTime(2020, 6, 18, 16, 40, 24, 746, DateTimeKind.Utc).AddTicks(9002), 1, "Lokacijski uslovi 4", "Lokacijska dozvola 4", null, "Opsti podaci 4", 34534L },
+                    { 2, 48643L, new DateTime(2020, 6, 18, 16, 40, 24, 746, DateTimeKind.Utc).AddTicks(8980), 2, "Lokacijski uslovi 2", "Lokacijska dozvola 2", null, "Opsti podaci 2", 412L },
+                    { 1, 6934L, new DateTime(2020, 6, 18, 16, 40, 24, 746, DateTimeKind.Utc).AddTicks(7829), 3, "Lokacijski uslovi 1", "Lokacijska dozvola 1", null, "Opsti podaci 1", 324L },
+                    { 5, 34343L, new DateTime(2020, 6, 18, 16, 40, 24, 746, DateTimeKind.Utc).AddTicks(9004), 4, "Lokacijski uslovi 5", "Lokacijska dozvola 5", null, "Opsti podaci 5", 3483L },
+                    { 3, 4843L, new DateTime(2020, 6, 18, 16, 40, 24, 746, DateTimeKind.Utc).AddTicks(8998), 5, "Lokacijski uslovi 3", "Lokacijska dozvola 3", null, "Opsti podaci 3", 3453L }
                 });
 
             migrationBuilder.InsertData(
@@ -282,16 +283,16 @@ namespace Ideastudio.DataAccess.Migrations
                 columns: new[] { "Id", "DatumIzrade", "GlavniProjektantId", "LokacijskaDozvolaId", "Naziv", "ObjekatId" },
                 values: new object[,]
                 {
-                    { 5, new DateTime(2020, 6, 17, 16, 38, 27, 987, DateTimeKind.Utc).AddTicks(1106), 3, 4, "Idejno resenje 5", 5 },
-                    { 8, new DateTime(2020, 6, 17, 16, 38, 27, 987, DateTimeKind.Utc).AddTicks(1112), 2, 4, "Idejno resenje 8", 4 },
-                    { 9, new DateTime(2020, 6, 17, 16, 38, 27, 987, DateTimeKind.Utc).AddTicks(1113), 4, 4, "Idejno resenje 9", 4 },
-                    { 4, new DateTime(2020, 6, 17, 16, 38, 27, 987, DateTimeKind.Utc).AddTicks(1104), 4, 2, "Idejno resenje 4", 2 },
-                    { 7, new DateTime(2020, 6, 17, 16, 38, 27, 987, DateTimeKind.Utc).AddTicks(1109), 1, 2, "Idejno resenje 7", 3 },
-                    { 1, new DateTime(2020, 6, 17, 16, 38, 27, 986, DateTimeKind.Utc).AddTicks(9524), 2, 1, "Idejno resenje 1", 4 },
-                    { 6, new DateTime(2020, 6, 17, 16, 38, 27, 987, DateTimeKind.Utc).AddTicks(1108), 2, 1, "Idejno resenje 6", 3 },
-                    { 2, new DateTime(2020, 6, 17, 16, 38, 27, 987, DateTimeKind.Utc).AddTicks(1066), 5, 5, "Idejno resenje 2", 1 },
-                    { 10, new DateTime(2020, 6, 17, 16, 38, 27, 987, DateTimeKind.Utc).AddTicks(1116), 4, 5, "Idejno resenje 10", 5 },
-                    { 3, new DateTime(2020, 6, 17, 16, 38, 27, 987, DateTimeKind.Utc).AddTicks(1102), 1, 3, "Idejno resenje 3", 3 }
+                    { 5, new DateTime(2020, 6, 18, 16, 40, 24, 747, DateTimeKind.Utc).AddTicks(3686), 3, 4, "Idejno resenje 5", 5 },
+                    { 8, new DateTime(2020, 6, 18, 16, 40, 24, 747, DateTimeKind.Utc).AddTicks(3692), 2, 4, "Idejno resenje 8", 4 },
+                    { 9, new DateTime(2020, 6, 18, 16, 40, 24, 747, DateTimeKind.Utc).AddTicks(3694), 4, 4, "Idejno resenje 9", 4 },
+                    { 4, new DateTime(2020, 6, 18, 16, 40, 24, 747, DateTimeKind.Utc).AddTicks(3683), 4, 2, "Idejno resenje 4", 2 },
+                    { 7, new DateTime(2020, 6, 18, 16, 40, 24, 747, DateTimeKind.Utc).AddTicks(3690), 1, 2, "Idejno resenje 7", 3 },
+                    { 1, new DateTime(2020, 6, 18, 16, 40, 24, 747, DateTimeKind.Utc).AddTicks(1710), 2, 1, "Idejno resenje 1", 4 },
+                    { 6, new DateTime(2020, 6, 18, 16, 40, 24, 747, DateTimeKind.Utc).AddTicks(3688), 2, 1, "Idejno resenje 6", 3 },
+                    { 2, new DateTime(2020, 6, 18, 16, 40, 24, 747, DateTimeKind.Utc).AddTicks(3645), 5, 5, "Idejno resenje 2", 1 },
+                    { 10, new DateTime(2020, 6, 18, 16, 40, 24, 747, DateTimeKind.Utc).AddTicks(3695), 4, 5, "Idejno resenje 10", 5 },
+                    { 3, new DateTime(2020, 6, 18, 16, 40, 24, 747, DateTimeKind.Utc).AddTicks(3680), 1, 3, "Idejno resenje 3", 3 }
                 });
 
             migrationBuilder.InsertData(
@@ -299,63 +300,63 @@ namespace Ideastudio.DataAccess.Migrations
                 columns: new[] { "Id", "DatumIzrade", "IdejnoResenjeId", "Naziv", "NazivIdejnogResenja", "StatusDokumenta" },
                 values: new object[,]
                 {
-                    { 5, new DateTime(2020, 6, 17, 16, 38, 27, 987, DateTimeKind.Utc).AddTicks(7291), 5, "Projekat 5", null, 0 },
-                    { 9, new DateTime(2020, 6, 17, 16, 38, 27, 987, DateTimeKind.Utc).AddTicks(7301), 8, "Projekat 9", null, 0 },
-                    { 3, new DateTime(2020, 6, 17, 16, 38, 27, 987, DateTimeKind.Utc).AddTicks(7287), 9, "Projekat 3", null, 0 },
-                    { 8, new DateTime(2020, 6, 17, 16, 38, 27, 987, DateTimeKind.Utc).AddTicks(7299), 4, "Projekat 8", null, 0 },
-                    { 2, new DateTime(2020, 6, 17, 16, 38, 27, 987, DateTimeKind.Utc).AddTicks(7261), 7, "Projekat 2", null, 0 },
-                    { 4, new DateTime(2020, 6, 17, 16, 38, 27, 987, DateTimeKind.Utc).AddTicks(7289), 1, "Projekat 4", null, 0 },
-                    { 10, new DateTime(2020, 6, 17, 16, 38, 27, 987, DateTimeKind.Utc).AddTicks(7302), 6, "Projekat 10", null, 0 },
-                    { 1, new DateTime(2020, 6, 17, 16, 38, 27, 987, DateTimeKind.Utc).AddTicks(6059), 2, "Projekat 1", null, 0 },
-                    { 7, new DateTime(2020, 6, 17, 16, 38, 27, 987, DateTimeKind.Utc).AddTicks(7298), 10, "Projekat 7", null, 0 },
-                    { 6, new DateTime(2020, 6, 17, 16, 38, 27, 987, DateTimeKind.Utc).AddTicks(7294), 3, "Projekat 6", null, 0 }
+                    { 5, new DateTime(2020, 6, 18, 16, 40, 24, 748, DateTimeKind.Utc).AddTicks(897), 5, "Projekat 5", null, 0 },
+                    { 9, new DateTime(2020, 6, 18, 16, 40, 24, 748, DateTimeKind.Utc).AddTicks(904), 8, "Projekat 9", null, 0 },
+                    { 3, new DateTime(2020, 6, 18, 16, 40, 24, 748, DateTimeKind.Utc).AddTicks(892), 9, "Projekat 3", null, 0 },
+                    { 8, new DateTime(2020, 6, 18, 16, 40, 24, 748, DateTimeKind.Utc).AddTicks(902), 4, "Projekat 8", null, 0 },
+                    { 2, new DateTime(2020, 6, 18, 16, 40, 24, 748, DateTimeKind.Utc).AddTicks(866), 7, "Projekat 2", null, 0 },
+                    { 4, new DateTime(2020, 6, 18, 16, 40, 24, 748, DateTimeKind.Utc).AddTicks(895), 1, "Projekat 4", null, 0 },
+                    { 10, new DateTime(2020, 6, 18, 16, 40, 24, 748, DateTimeKind.Utc).AddTicks(906), 6, "Projekat 10", null, 0 },
+                    { 1, new DateTime(2020, 6, 18, 16, 40, 24, 747, DateTimeKind.Utc).AddTicks(9438), 2, "Projekat 1", null, 0 },
+                    { 7, new DateTime(2020, 6, 18, 16, 40, 24, 748, DateTimeKind.Utc).AddTicks(900), 10, "Projekat 7", null, 0 },
+                    { 6, new DateTime(2020, 6, 18, 16, 40, 24, 748, DateTimeKind.Utc).AddTicks(898), 3, "Projekat 6", null, 0 }
                 });
 
             migrationBuilder.InsertData(
                 table: "Povrsina",
-                columns: new[] { "Id", "Naziv", "Oznaka", "ProjekatZaGradjevinskuDozvoluId", "Status", "VrstaPoda", "VrstaPovrsineId" },
+                columns: new[] { "Id", "Naziv", "Oznaka", "ProjekatZaGradjevinskuDozvoluId", "ProstorijaNaziv", "Status", "VrstaPoda", "VrstaPovrsineId" },
                 values: new object[,]
                 {
-                    { 4, "Povrsina 4", 7434, 5, 0, "Vrsta 4", 1 },
-                    { 24, "Povrsina 24", 54, 10, 0, "Vrsta 24", 1 },
-                    { 34, "Povrsina 44", 65342, 10, 0, "Vrsta 34", 1 },
-                    { 1, "Povrsina 1", 1423, 1, 0, "Vrsta 1", 4 },
-                    { 9, "Povrsina 9", 113, 1, 0, "Vrsta 9", 2 },
-                    { 10, "Povrsina 10", 11, 1, 0, "Vrsta 10", 3 },
-                    { 11, "Povrsina 11", 432, 1, 0, "Vrsta 11", 4 },
-                    { 19, "Povrsina 19", 111, 1, 0, "Vrsta 19", 2 },
-                    { 12, "Povrsina 12", 554, 4, 0, "Vrsta 12", 2 },
-                    { 20, "Povrsina 20", 978, 1, 0, "Vrsta 20", 3 },
-                    { 28, "Povrsina 28", 541, 7, 0, "Vrsta 28", 1 },
-                    { 37, "Povrsina 47", 203, 7, 0, "Vrsta 37", 1 },
-                    { 38, "Povrsina 48", 110, 7, 0, "Vrsta 38", 1 },
-                    { 21, "Povrsina 21", 65, 6, 0, "Vrsta 21", 4 },
-                    { 29, "Povrsina 29", 313, 6, 0, "Vrsta 29", 2 },
-                    { 30, "Povrsina 30", 467, 6, 0, "Vrsta 30", 3 },
-                    { 31, "Povrsina 41", 984, 6, 0, "Vrsta 31", 4 },
-                    { 27, "Povrsina 27", 123, 7, 0, "Vrsta 27", 1 },
-                    { 2, "Povrsina 2", 755, 4, 0, "Vrsta 2", 2 },
-                    { 18, "Povrsina 18", 467, 2, 0, "Vrsta 18", 1 },
-                    { 17, "Povrsina 17", 231, 2, 0, "Vrsta 17", 1 },
-                    { 14, "Povrsina 14", 456, 5, 0, "Vrsta 14", 1 },
-                    { 22, "Povrsina 22", 234, 9, 0, "Vrsta 22", 2 },
-                    { 32, "Povrsina 42", 32, 9, 0, "Vrsta 32", 2 },
-                    { 3, "Povrsina 3", 678, 3, 0, "Vrsta 3", 3 },
-                    { 5, "Povrsina 5", 231, 3, 0, "Vrsta 5", 5 },
-                    { 6, "Povrsina 6", 3121, 3, 0, "Vrsta 6", 5 },
-                    { 13, "Povrsina 13", 32, 3, 0, "Vrsta 13", 3 },
-                    { 15, "Povrsina 15", 231, 3, 0, "Vrsta 15", 5 },
-                    { 16, "Povrsina 16", 411, 3, 0, "Vrsta 16", 5 },
-                    { 23, "Povrsina 23", 543, 8, 0, "Vrsta 23", 3 },
-                    { 25, "Povrsina 25", 7865, 8, 0, "Vrsta 25", 5 },
-                    { 26, "Povrsina 26", 465, 8, 0, "Vrsta 26", 5 },
-                    { 33, "Povrsina 43", 7764, 8, 0, "Vrsta 33", 3 },
-                    { 35, "Povrsina 45", 3219, 8, 0, "Vrsta 35", 5 },
-                    { 36, "Povrsina 46", 890, 8, 0, "Vrsta 36", 5 },
-                    { 7, "Povrsina 7", 542, 2, 0, "Vrsta 7", 1 },
-                    { 8, "Povrsina 8", 64, 2, 0, "Vrsta 8", 1 },
-                    { 39, "Povrsina 49", 903, 6, 0, "Vrsta 39", 2 },
-                    { 40, "Povrsina 50", 314, 6, 0, "Vrsta 40", 3 }
+                    { 4, "Povrsina 4", 7434, 5, null, 0, "Vrsta 4", 1 },
+                    { 24, "Povrsina 24", 54, 10, null, 0, "Vrsta 24", 1 },
+                    { 34, "Povrsina 44", 65342, 10, null, 0, "Vrsta 34", 1 },
+                    { 1, "Povrsina 1", 1423, 1, null, 0, "Vrsta 1", 4 },
+                    { 9, "Povrsina 9", 113, 1, null, 0, "Vrsta 9", 2 },
+                    { 10, "Povrsina 10", 11, 1, null, 0, "Vrsta 10", 3 },
+                    { 11, "Povrsina 11", 432, 1, null, 0, "Vrsta 11", 4 },
+                    { 19, "Povrsina 19", 111, 1, null, 0, "Vrsta 19", 2 },
+                    { 12, "Povrsina 12", 554, 4, null, 0, "Vrsta 12", 2 },
+                    { 20, "Povrsina 20", 978, 1, null, 0, "Vrsta 20", 3 },
+                    { 28, "Povrsina 28", 541, 7, null, 0, "Vrsta 28", 1 },
+                    { 37, "Povrsina 47", 203, 7, null, 0, "Vrsta 37", 1 },
+                    { 38, "Povrsina 48", 110, 7, null, 0, "Vrsta 38", 1 },
+                    { 21, "Povrsina 21", 65, 6, null, 0, "Vrsta 21", 4 },
+                    { 29, "Povrsina 29", 313, 6, null, 0, "Vrsta 29", 2 },
+                    { 30, "Povrsina 30", 467, 6, null, 0, "Vrsta 30", 3 },
+                    { 31, "Povrsina 41", 984, 6, null, 0, "Vrsta 31", 4 },
+                    { 27, "Povrsina 27", 123, 7, null, 0, "Vrsta 27", 1 },
+                    { 2, "Povrsina 2", 755, 4, null, 0, "Vrsta 2", 2 },
+                    { 18, "Povrsina 18", 467, 2, null, 0, "Vrsta 18", 1 },
+                    { 17, "Povrsina 17", 231, 2, null, 0, "Vrsta 17", 1 },
+                    { 14, "Povrsina 14", 456, 5, null, 0, "Vrsta 14", 1 },
+                    { 22, "Povrsina 22", 234, 9, null, 0, "Vrsta 22", 2 },
+                    { 32, "Povrsina 42", 32, 9, null, 0, "Vrsta 32", 2 },
+                    { 3, "Povrsina 3", 678, 3, null, 0, "Vrsta 3", 3 },
+                    { 5, "Povrsina 5", 231, 3, null, 0, "Vrsta 5", 5 },
+                    { 6, "Povrsina 6", 3121, 3, null, 0, "Vrsta 6", 5 },
+                    { 13, "Povrsina 13", 32, 3, null, 0, "Vrsta 13", 3 },
+                    { 15, "Povrsina 15", 231, 3, null, 0, "Vrsta 15", 5 },
+                    { 16, "Povrsina 16", 411, 3, null, 0, "Vrsta 16", 5 },
+                    { 23, "Povrsina 23", 543, 8, null, 0, "Vrsta 23", 3 },
+                    { 25, "Povrsina 25", 7865, 8, null, 0, "Vrsta 25", 5 },
+                    { 26, "Povrsina 26", 465, 8, null, 0, "Vrsta 26", 5 },
+                    { 33, "Povrsina 43", 7764, 8, null, 0, "Vrsta 33", 3 },
+                    { 35, "Povrsina 45", 3219, 8, null, 0, "Vrsta 35", 5 },
+                    { 36, "Povrsina 46", 890, 8, null, 0, "Vrsta 36", 5 },
+                    { 7, "Povrsina 7", 542, 2, null, 0, "Vrsta 7", 1 },
+                    { 8, "Povrsina 8", 64, 2, null, 0, "Vrsta 8", 1 },
+                    { 39, "Povrsina 49", 903, 6, null, 0, "Vrsta 39", 2 },
+                    { 40, "Povrsina 50", 314, 6, null, 0, "Vrsta 40", 3 }
                 });
 
             migrationBuilder.CreateIndex(

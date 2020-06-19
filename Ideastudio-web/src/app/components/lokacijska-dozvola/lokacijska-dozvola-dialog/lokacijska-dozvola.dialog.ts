@@ -20,14 +20,13 @@ export class LokacijskaDozvolaDialog implements OnInit {
   informacijeOLokaciji: InformacijeOLokaciji;
   selectedIol = 'Informacije o lokaciji';
   selectedIr = 'Idejno resenje';
-  datumIzdavanja: string;
+  datumIzdavanja: Date;
   nazivObjekta: string;
 
   constructor(private lokacijskaDozvolaService: LokacijskaDozvolaService,
     private dialogRef: MatDialogRef<LokacijskaDozvolaDialog>,
     private objekatService: ObjekatService,
     @Inject(MAT_DIALOG_DATA) public data: any,
-    private datePipe: DatePipe,
     private alert: AlertService) { }
 
   ngOnInit(): void {
@@ -37,13 +36,13 @@ export class LokacijskaDozvolaDialog implements OnInit {
     if (this.data.action === 'view' || this.data.action === 'edit') {
       this.informacijeOLokaciji = this.informacijeOLokacijiList.find(x => x.id === this.lokacijskaDozvola.informacijeOLokacijiId);
       this.selectedIol = this.informacijeOLokaciji.naziv;
-      this.datumIzdavanja = this.datePipe.transform(this.lokacijskaDozvola.datumIzdavanja, 'dd/MM/yyyy');
+      this.datumIzdavanja = this.lokacijskaDozvola.datumIzdavanja;
 
       if (this.lokacijskaDozvola.nazivIdejnogResenja !== null) {
         this.selectedIr = this.lokacijskaDozvola.nazivIdejnogResenja;
       }
     } else {
-      this.datumIzdavanja = this.datePipe.transform(new Date(), 'dd/MM/yyyy');
+      this.datumIzdavanja = new Date();
       this.informacijeOLokaciji = new InformacijeOLokaciji();
     }
   }

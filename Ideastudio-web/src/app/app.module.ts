@@ -29,8 +29,8 @@ import { MatInputModule } from '@angular/material/input';
 @NgModule({
   imports: [
     // MatButtonModule,
-    // MatFormFieldModule,
-    // MatInputModule,
+    MatFormFieldModule,
+    MatInputModule,
     MatTableModule,
     BrowserModule,
     BrowserAnimationsModule,

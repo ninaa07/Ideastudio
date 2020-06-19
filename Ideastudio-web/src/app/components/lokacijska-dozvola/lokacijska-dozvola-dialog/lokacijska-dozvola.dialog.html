@@ -3,7 +3,7 @@
 
         <div class="card-header" id="header-dialog">
             <h2 class="modal-title" id="add-modal-label">{{ data.title }}</h2>
-            <i class="tim-icons icon-simple-remove" (click)="close()"> </i>
+            <i class="tim-icons icon-simple-remove" (click)="close()"></i>
         </div>
 
         <div class="card-body" id="body-dialog">
@@ -37,7 +37,8 @@
                     </mat-form-field>
                     <mat-form-field class="row">
                         <label> Datum </label>
-                        <input class="form-control" disabled type="date" value="{{ datumIzdavanja }}" name="datum" />
+                        <input class="form-control" disabled type="date" value="{{ datumIzdavanja | date }}"
+                            name="datum" />
                     </mat-form-field>
                 </div>
             </div>

@@ -2,6 +2,7 @@
 {
     public enum Status
     {
+        None,
         Insert, 
         Update, 
         Delete
@@ -22,6 +23,8 @@
         public int VrstaPovrsineId { get; set; }
 
         public VrstaPovrsine VrstaPovrsine { get; set; }
+
+        public string ProstorijaNaziv { get; set; }
 
         public Status Status { get; set; }
     }

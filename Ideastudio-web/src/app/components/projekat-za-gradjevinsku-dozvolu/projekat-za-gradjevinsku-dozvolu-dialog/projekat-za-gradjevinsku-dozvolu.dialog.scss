@@ -35,7 +35,6 @@ label {
 .section-label {
     margin-top: 10px;
     margin-left: 10px;
-    margin-bottom: 15px;
 }
 
 .d-inline-block {
@@ -57,4 +56,29 @@ label {
 
 #section > .row {
     height: 65px;
+}
+
+.status-dokumenta {
+    width: 30% !important;
+    margin: 0px;
+    margin-top: 15px;
+}
+
+.status-dokumenta > input {
+    margin-bottom: 0px;
+}
+
+.mat-table {
+    background: none;
+    padding: 10px !important;
+    padding-top: 0px !important;
+}
+
+th {
+    padding: 15px 15px 15px 0px !important;
+}
+
+td {
+    padding-right: 15px !important;
+    padding-left: 0px !important;
 }

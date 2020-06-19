@@ -2,6 +2,7 @@
 using Ideastudio.Service;
 using Ideastudio.Service.Interfaces;
 using Microsoft.AspNetCore.Mvc;
+using System.Linq;
 
 namespace Ideastudio.Controllers
 {
@@ -51,7 +52,7 @@ namespace Ideastudio.Controllers
         }
 
         [HttpPut("{id}")]
-        public IActionResult Put(int id)
+        public IActionResult Put(int id, [FromBody] ProjekatZaGradjevinskuDozvolu model)
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
@@ -62,7 +63,16 @@ namespace Ideastudio.Controllers
             var projekatZaGradjevinskuDozvolu = _projekatZaGradjevinskuDozvoluService.Get(id);
 
             if (projekatZaGradjevinskuDozvolu == null)
-                return NotFound(new ServiceResult<ProjekatZaGradjevinskuDozvolu>(false, "Projekat za gradjevinsku dozvolu nije pronadjen."));
+                return NotFound(new ServiceResult<ProjekatZaGradjevinskuDozvolu>(false, "Projekat za gradjevinsku dozvolu nije pronadjen."));            
+
+            foreach(var povrsina in model.Povrsine.Where(x => x.Status != Status.None))
+            {
+                if (povrsina.Status == Status.Insert)
+                {
+                    //povrsina.ProjekatZaGradjevinskuDozvoluId = projekatZaGradjevinskuDozvolu.Id;
+                    //_projekatZaGradjevinskuDozvoluService.Dodaj
+                }
+            }
 
             var result = _projekatZaGradjevinskuDozvoluService.Update(projekatZaGradjevinskuDozvolu);
 

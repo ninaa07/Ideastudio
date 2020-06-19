@@ -1,4 +1,7 @@
-﻿namespace Ideastudio.Domain
+﻿using System.Collections;
+using System.Collections.Generic;
+
+namespace Ideastudio.Domain
 {
     public class Prostorija : BaseEntity
     {
