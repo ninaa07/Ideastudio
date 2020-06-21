@@ -143,15 +143,13 @@ D:\Projects\Ideastudio\Ideastudio\Ideastudio\bin\Debug\netcoreapp3.1\Ideastudio.
 D:\Projects\Ideastudio\Ideastudio\Ideastudio\bin\Debug\netcoreapp3.1\Ideastudio.DataAccess.pdb
 D:\Projects\Ideastudio\Ideastudio\Ideastudio\bin\Debug\netcoreapp3.1\Ideastudio.Domain.pdb
 D:\Projects\Ideastudio\Ideastudio\Ideastudio\obj\Debug\netcoreapp3.1\Ideastudio.csprojAssemblyReference.cache
-D:\Projects\Ideastudio\Ideastudio\Ideastudio\obj\Debug\netcoreapp3.1\Ideastudio.csproj.CoreCompileInputs.cache
+D:\Projects\Ideastudio\Ideastudio\Ideastudio\obj\Debug\netcoreapp3.1\staticwebassets\Ideastudio.StaticWebAssets.Manifest.cache
+D:\Projects\Ideastudio\Ideastudio\Ideastudio\obj\Debug\netcoreapp3.1\staticwebassets\Ideastudio.StaticWebAssets.xml
 D:\Projects\Ideastudio\Ideastudio\Ideastudio\obj\Debug\netcoreapp3.1\Ideastudio.MvcApplicationPartsAssemblyInfo.cs
 D:\Projects\Ideastudio\Ideastudio\Ideastudio\obj\Debug\netcoreapp3.1\Ideastudio.MvcApplicationPartsAssemblyInfo.cache
 D:\Projects\Ideastudio\Ideastudio\Ideastudio\obj\Debug\netcoreapp3.1\Ideastudio.AssemblyInfoInputs.cache
 D:\Projects\Ideastudio\Ideastudio\Ideastudio\obj\Debug\netcoreapp3.1\Ideastudio.AssemblyInfo.cs
 D:\Projects\Ideastudio\Ideastudio\Ideastudio\obj\Debug\netcoreapp3.1\Ideastudio.RazorTargetAssemblyInfo.cache
 D:\Projects\Ideastudio\Ideastudio\Ideastudio\obj\Debug\netcoreapp3.1\Ideastudio.csproj.CopyComplete
-D:\Projects\Ideastudio\Ideastudio\Ideastudio\obj\Debug\netcoreapp3.1\staticwebassets\Ideastudio.StaticWebAssets.Manifest.cache
-D:\Projects\Ideastudio\Ideastudio\Ideastudio\obj\Debug\netcoreapp3.1\staticwebassets\Ideastudio.StaticWebAssets.xml
 D:\Projects\Ideastudio\Ideastudio\Ideastudio\obj\Debug\netcoreapp3.1\Ideastudio.dll
 D:\Projects\Ideastudio\Ideastudio\Ideastudio\obj\Debug\netcoreapp3.1\Ideastudio.pdb
-D:\Projects\Ideastudio\Ideastudio\Ideastudio\obj\Debug\netcoreapp3.1\Ideastudio.genruntimeconfig.cache

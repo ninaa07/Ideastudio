@@ -18,10 +18,8 @@ D:\Projects\Ideastudio\Ideastudio\Ideastudio.Service\bin\Debug\netcoreapp3.1\Ide
 D:\Projects\Ideastudio\Ideastudio\Ideastudio.Service\bin\Debug\netcoreapp3.1\Ideastudio.DataAccess.pdb
 D:\Projects\Ideastudio\Ideastudio\Ideastudio.Service\bin\Debug\netcoreapp3.1\Ideastudio.Domain.pdb
 D:\Projects\Ideastudio\Ideastudio\Ideastudio.Service\obj\Debug\netcoreapp3.1\Ideastudio.Service.csprojAssemblyReference.cache
-D:\Projects\Ideastudio\Ideastudio\Ideastudio.Service\obj\Debug\netcoreapp3.1\Ideastudio.Service.csproj.CoreCompileInputs.cache
 D:\Projects\Ideastudio\Ideastudio\Ideastudio.Service\obj\Debug\netcoreapp3.1\Ideastudio.Service.AssemblyInfoInputs.cache
 D:\Projects\Ideastudio\Ideastudio\Ideastudio.Service\obj\Debug\netcoreapp3.1\Ideastudio.Service.AssemblyInfo.cs
 D:\Projects\Ideastudio\Ideastudio\Ideastudio.Service\obj\Debug\netcoreapp3.1\Ideastudio.Service.csproj.CopyComplete
 D:\Projects\Ideastudio\Ideastudio\Ideastudio.Service\obj\Debug\netcoreapp3.1\Ideastudio.Service.dll
 D:\Projects\Ideastudio\Ideastudio\Ideastudio.Service\obj\Debug\netcoreapp3.1\Ideastudio.Service.pdb
-D:\Projects\Ideastudio\Ideastudio\Ideastudio.Service\obj\Debug\netcoreapp3.1\Ideastudio.Service.genruntimeconfig.cache

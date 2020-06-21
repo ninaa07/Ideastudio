@@ -5,7 +5,6 @@ import { AlertService } from 'src/app/services/alert.service';
 import { InformacijeOLokaciji } from 'src/app/models/informacije-o-lokaciji.model';
 import { IdejnoResenje } from 'src/app/models/idejno-resenje.model';
 import { LokacijskaDozvola } from 'src/app/models/lokacijska-dozvola.model';
-import { DatePipe } from '@angular/common';
 import { ObjekatService } from 'src/app/services/objekat.service';
 
 @Component({

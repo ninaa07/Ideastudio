@@ -2,11 +2,9 @@ import { Component, OnInit, Inject, ChangeDetectorRef } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { AlertService } from 'src/app/services/alert.service';
 import { ProjekatZaGradjevinskuDozvoluService } from 'src/app/services/projekat-za-gradjevinsku-dozvolu.service';
-import { DatePipe } from '@angular/common';
-import { ProjekatZaGradjevinskuDozvolu, STATUSIDOKUMENTA } from 'src/app/models/projekat-za-gradjevinsku-dozvolu.model';
+import { ProjekatZaGradjevinskuDozvolu, STATUSIDOKUMENTA, StatusDokumenta } from 'src/app/models/projekat-za-gradjevinsku-dozvolu.model';
 import { StatusDokumentaPipe } from 'src/app/pipes/status-dokumenta.pipe';
 import { IdejnoResenje } from 'src/app/models/idejno-resenje.model';
-import { IdejnoResenjeService } from 'src/app/services/idejno-resenje.service';
 import { GlavniProjektantService } from 'src/app/services/glavni-projektant.service';
 import { MatTableDataSource } from '@angular/material/table';
 import { Povrsina, Status } from 'src/app/models/povrsina.model';
@@ -27,7 +25,7 @@ export class ProjekatZaGradjevinskuDozvoluDialog implements OnInit {
   nazivProjektanta: string;
   idejnaResenja: IdejnoResenje[];
   vrstePovrsina: VrstaPovrsine[];
-  selectedIr = 'Idejno resenje';
+  selectedIr: string;
 
   dataSource: MatTableDataSource<Povrsina>;
   displayedColumns: string[] = ['Oznaka', 'VrstaPoda', 'VrstaPovrsine', 'Prostorija', 'Izmeni', 'Obrisi'];
@@ -37,8 +35,7 @@ export class ProjekatZaGradjevinskuDozvoluDialog implements OnInit {
     @Inject(MAT_DIALOG_DATA) public data: any,
     private statusDokumentaPipe: StatusDokumentaPipe,
     private alert: AlertService,
-    private glavniProjektantService: GlavniProjektantService,
-    private changeDetectorRefs: ChangeDetectorRef
+    private glavniProjektantService: GlavniProjektantService
   ) {
     this.dataSource = new MatTableDataSource<Povrsina>();
   }
@@ -49,20 +46,20 @@ export class ProjekatZaGradjevinskuDozvoluDialog implements OnInit {
     this.vrstePovrsina = this.data.vrstePovrsina;
 
     if (this.data.action === 'view' || this.data.action === 'edit') {
-      this.dataSource.data = this.pgd.povrsine;
 
       this.datumIzrade = this.pgd.datumIzrade;
+      this.selectedIr = this.pgd.nazivIdejnogResenja ? this.pgd.nazivIdejnogResenja : 'Idejno resenje';
 
       this.pgd.povrsine.forEach(element => {
         element.isEditable = false;
       });
-
-      if (this.pgd.nazivIdejnogResenja !== null) {
-        this.selectedIr = this.pgd.nazivIdejnogResenja;
-      }
     } else {
+      this.pgd.povrsine = new Array();
+      this.pgd.statusDokumenta = StatusDokumenta.Nov;
       this.datumIzrade = new Date();
     }
+
+    this.dataSource.data = this.pgd.povrsine;
   }
 
   save() {
@@ -133,8 +130,8 @@ export class ProjekatZaGradjevinskuDozvoluDialog implements OnInit {
 
   delete(p: Povrsina) {
     p.status = Status.Delete;
-    this.dataSource.data.splice(this.dataSource.data.indexOf(p), 1);
-    this.changeDetectorRefs.detectChanges();
+    this.pgd.povrsine.splice(this.pgd.povrsine.indexOf(p), 1);
+    this.dataSource.data = this.pgd.povrsine;
   }
 
   saveElement(p: Povrsina) {
@@ -148,6 +145,14 @@ export class ProjekatZaGradjevinskuDozvoluDialog implements OnInit {
     }
 
     console.log(p);
+  }
+
+  resetFields(p: Povrsina) {
+    debugger;
+
+    p.oznaka = null;
+    p.vrstaPoda = null;
+    p.vrstaPovrsine = null;
   }
 
   validate() {

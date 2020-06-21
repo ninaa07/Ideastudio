@@ -10,11 +10,11 @@
         "projectUniqueName": "D:\\Projects\\Ideastudio\\Ideastudio\\Ideastudio.DataAccess\\Ideastudio.DataAccess.csproj",
         "projectName": "Ideastudio.DataAccess",
         "projectPath": "D:\\Projects\\Ideastudio\\Ideastudio\\Ideastudio.DataAccess\\Ideastudio.DataAccess.csproj",
-        "packagesPath": "C:\\Users\\New User\\.nuget\\packages\\",
+        "packagesPath": "C:\\Users\\Nina\\.nuget\\packages\\",
         "outputPath": "D:\\Projects\\Ideastudio\\Ideastudio\\Ideastudio.DataAccess\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\New User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Nina\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -113,7 +113,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
@@ -123,11 +123,11 @@
         "projectUniqueName": "D:\\Projects\\Ideastudio\\Ideastudio\\Ideastudio.Domain\\Ideastudio.Domain.csproj",
         "projectName": "Ideastudio.Domain",
         "projectPath": "D:\\Projects\\Ideastudio\\Ideastudio\\Ideastudio.Domain\\Ideastudio.Domain.csproj",
-        "packagesPath": "C:\\Users\\New User\\.nuget\\packages\\",
+        "packagesPath": "C:\\Users\\Nina\\.nuget\\packages\\",
         "outputPath": "D:\\Projects\\Ideastudio\\Ideastudio\\Ideastudio.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\New User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Nina\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -222,7 +222,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
@@ -232,11 +232,11 @@
         "projectUniqueName": "D:\\Projects\\Ideastudio\\Ideastudio\\Ideastudio.Service\\Ideastudio.Service.csproj",
         "projectName": "Ideastudio.Service",
         "projectPath": "D:\\Projects\\Ideastudio\\Ideastudio\\Ideastudio.Service\\Ideastudio.Service.csproj",
-        "packagesPath": "C:\\Users\\New User\\.nuget\\packages\\",
+        "packagesPath": "C:\\Users\\Nina\\.nuget\\packages\\",
         "outputPath": "D:\\Projects\\Ideastudio\\Ideastudio\\Ideastudio.Service\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\New User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Nina\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -335,7 +335,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
@@ -345,11 +345,11 @@
         "projectUniqueName": "D:\\Projects\\Ideastudio\\Ideastudio\\Ideastudio\\Ideastudio.csproj",
         "projectName": "Ideastudio",
         "projectPath": "D:\\Projects\\Ideastudio\\Ideastudio\\Ideastudio\\Ideastudio.csproj",
-        "packagesPath": "C:\\Users\\New User\\.nuget\\packages\\",
+        "packagesPath": "C:\\Users\\Nina\\.nuget\\packages\\",
         "outputPath": "D:\\Projects\\Ideastudio\\Ideastudio\\Ideastudio\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\New User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Nina\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -464,7 +464,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.100\\RuntimeIdentifierGraph.json"
         }
       }
     }

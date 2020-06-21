@@ -46,11 +46,12 @@ import { MatInputModule } from '@angular/material/input';
   ],
   exports: [
     // MatButtonModule,
-    // MatFormFieldModule,
-    // MatInputModule
+    MatFormFieldModule,
+    MatInputModule,
     MatTableModule
   ],
-  declarations: [AppComponent,
+  declarations: [
+    AppComponent,
     DashboardPage,
     PregledPage,
     LokacijskaDozvolaComponent,
