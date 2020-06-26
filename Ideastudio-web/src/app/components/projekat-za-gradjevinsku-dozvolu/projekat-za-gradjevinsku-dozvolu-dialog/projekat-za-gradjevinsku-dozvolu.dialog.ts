@@ -25,10 +25,12 @@ export class ProjekatZaGradjevinskuDozvoluDialog implements OnInit {
   nazivProjektanta: string;
   idejnaResenja: IdejnoResenje[];
   vrstePovrsina: VrstaPovrsine[];
-  selectedIr: string;
+  selectedIr = 'Idejno resenje';
+  disabledBtn = false;
+  povrsinaRes: Povrsina;
 
   dataSource: MatTableDataSource<Povrsina>;
-  displayedColumns: string[] = ['Oznaka', 'VrstaPoda', 'VrstaPovrsine', 'Prostorija', 'Izmeni', 'Obrisi'];
+  displayedColumns: string[] = ['NazivPovrsine', 'Oznaka', 'VrstaPoda', 'VrstaPovrsine', 'Prostorija', 'Izmeni', 'Obrisi'];
 
   constructor(private projekatZaGradjevinskuDozvoluService: ProjekatZaGradjevinskuDozvoluService,
     private dialogRef: MatDialogRef<ProjekatZaGradjevinskuDozvoluDialog>,
@@ -48,11 +50,25 @@ export class ProjekatZaGradjevinskuDozvoluDialog implements OnInit {
     if (this.data.action === 'view' || this.data.action === 'edit') {
 
       this.datumIzrade = this.pgd.datumIzrade;
+
+      if (this.pgd.nazivIdejnogResenja) {
+        const ir = this.idejnaResenja.find(x => x.id === this.pgd.idejnoResenjeId);
+
+        this.setNazivGlavnogProjektanta(ir);
+      }
+
       this.selectedIr = this.pgd.nazivIdejnogResenja ? this.pgd.nazivIdejnogResenja : 'Idejno resenje';
 
       this.pgd.povrsine.forEach(element => {
+        element.status = Status.None;
         element.isEditable = false;
+
+        if (!element.vrstaPovrsine) {
+          const vp = this.vrstePovrsina.find(x => x.id === element.vrstaPovrsineId);
+          element.vrstaPovrsine = vp;
+        }
       });
+
     } else {
       this.pgd.povrsine = new Array();
       this.pgd.statusDokumenta = StatusDokumenta.Nov;
@@ -91,15 +107,7 @@ export class ProjekatZaGradjevinskuDozvoluDialog implements OnInit {
     }
   }
 
-  changeSelection(id: number) {
-    this.pgd.statusDokumenta = id;
-    this.status = this.statusDokumentaPipe.transform(id);
-  }
-
-  changeSelectionIr(ir: IdejnoResenje) {
-    this.pgd.idejnoResenjeId = ir.id;
-    this.selectedIr = ir.naziv;
-
+  setNazivGlavnogProjektanta(ir: IdejnoResenje) {
     this.glavniProjektantService.getById(ir.glavniProjektantId).subscribe(result => {
       if (result) {
         this.nazivProjektanta = result.imePrezime;
@@ -107,8 +115,22 @@ export class ProjekatZaGradjevinskuDozvoluDialog implements OnInit {
     });
   }
 
+  changeSelection(id: number) {
+    this.pgd.statusDokumenta = id;
+    this.status = this.statusDokumentaPipe.transform(id);
+  }
+
+  changeSelectionIr(ir: IdejnoResenje) {
+    this.pgd.idejnoResenjeId = ir.id;
+    this.pgd.nazivIdejnogResenja = ir.naziv;
+    this.selectedIr = ir.naziv;
+
+    this.setNazivGlavnogProjektanta(ir);
+  }
+
   changeSelectionVp(vp: VrstaPovrsine, p: Povrsina) {
     p.vrstaPovrsine = vp;
+    p.vrstaPovrsineId = vp.id;
   }
 
   changeSelectionP(pr: Prostorija, p: Povrsina) {
@@ -125,7 +147,9 @@ export class ProjekatZaGradjevinskuDozvoluDialog implements OnInit {
 
   edit(p: Povrsina) {
     //p.status = Status.Update;
+    this.disabledBtn = true;
     p.isEditable = true;
+    this.povrsinaRes = p;
   }
 
   delete(p: Povrsina) {
@@ -135,7 +159,9 @@ export class ProjekatZaGradjevinskuDozvoluDialog implements OnInit {
   }
 
   saveElement(p: Povrsina) {
+    debugger;
     p.isEditable = false;
+    this.disabledBtn = false;
 
     if (p.id === undefined) {
       p.status = Status.Insert;
@@ -143,19 +169,31 @@ export class ProjekatZaGradjevinskuDozvoluDialog implements OnInit {
     else {
       p.status = Status.Update;
     }
-
-    console.log(p);
   }
 
   resetFields(p: Povrsina) {
     debugger;
+    if (!this.povrsinaRes.oznaka) {
+      p.oznaka = null;
+    }
 
-    p.oznaka = null;
-    p.vrstaPoda = null;
-    p.vrstaPovrsine = null;
+    if (!this.povrsinaRes.vrstaPoda) {
+      p.vrstaPoda = null;
+    }
+
+    if (!this.povrsinaRes.vrstaPovrsine) {
+      p.vrstaPovrsine = null;
+    }
+
+    else {
+      p.oznaka = this.povrsinaRes.oznaka;
+      p.vrstaPoda = this.povrsinaRes.vrstaPoda;
+      p.vrstaPovrsine = this.povrsinaRes.vrstaPovrsine;
+    }
   }
 
   validate() {
+    debugger;
     if (!this.pgd.naziv) {
       this.alert.showError('Neispravno uneti podaci', 'Error');
       return false;

@@ -19,7 +19,7 @@ namespace Ideastudio.DataAccess.Configurations
             builder.Property(x => x.Status).IsRequired();
 
             builder.HasOne(x => x.VrstaPovrsine)
-                .WithMany(x => x.Povrsine)
+                .WithMany()
                 .HasForeignKey(x => x.VrstaPovrsineId)
                 .OnDelete(DeleteBehavior.Cascade);
 

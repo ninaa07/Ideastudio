@@ -1,4 +1,7 @@
-﻿using Ideastudio.Domain;
+﻿using AutoMapper;
+using Ideastudio.Domain;
+using Ideastudio.Models.ProjekatZaGradjevinskuDozvolu.CreateProjekatZaGradjevinskuDozvolu;
+using Ideastudio.Models.ProjekatZaGradjevinskuDozvolu.EditProjekatZaGradjevinskuDozvolu;
 using Ideastudio.Service;
 using Ideastudio.Service.Interfaces;
 using Microsoft.AspNetCore.Mvc;
@@ -11,10 +14,14 @@ namespace Ideastudio.Controllers
     public class ProjekatZaGradjevinskuDozvoluController : ControllerBase
     {
         private readonly IProjekatZaGradjevinskuDozvoluService _projekatZaGradjevinskuDozvoluService;
+        private readonly IMapper _mapper;
+        private readonly IPovrsinaService _povrsinaService;
 
-        public ProjekatZaGradjevinskuDozvoluController(IProjekatZaGradjevinskuDozvoluService projekatZaGradjevinskuDozvoluService)
+        public ProjekatZaGradjevinskuDozvoluController(IProjekatZaGradjevinskuDozvoluService projekatZaGradjevinskuDozvoluService, IMapper mapper, IPovrsinaService povrsinaService)
         {
             _projekatZaGradjevinskuDozvoluService = projekatZaGradjevinskuDozvoluService;
+            _mapper = mapper;
+            _povrsinaService = povrsinaService;
         }
 
         [HttpGet]
@@ -38,12 +45,24 @@ namespace Ideastudio.Controllers
         }
 
         [HttpPost]
-        public IActionResult Post([FromBody] ProjekatZaGradjevinskuDozvolu projekatZaGradjevinskuDozvolu)
+        public IActionResult Post([FromBody] CreateProjekatZaGradjevinskuDozvoluRequest request)
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
+            var projekatZaGradjevinskuDozvolu = _mapper.Map<ProjekatZaGradjevinskuDozvolu>(request);
+
             var result = _projekatZaGradjevinskuDozvoluService.Add(projekatZaGradjevinskuDozvolu);
+
+            foreach (var povrsina in request.Povrsine)
+            {
+                povrsina.VrstaPovrsine = null;
+                povrsina.ProjekatZaGradjevinskuDozvoluId = result.ResultObject.Id;
+                result.ResultObject.Povrsine.Add(povrsina);
+                _povrsinaService.Add(povrsina);
+            }
+
+            _mapper.Map<CreateProjekatZaGradjevinskuDozvoluResponse>(result.ResultObject);
 
             if (result.Success)
                 return Ok(result);
@@ -52,7 +71,7 @@ namespace Ideastudio.Controllers
         }
 
         [HttpPut("{id}")]
-        public IActionResult Put(int id, [FromBody] ProjekatZaGradjevinskuDozvolu model)
+        public IActionResult Put(int id, [FromBody] EditProjekatZaGradjevinskuDozvoluRequest request)
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
@@ -63,18 +82,30 @@ namespace Ideastudio.Controllers
             var projekatZaGradjevinskuDozvolu = _projekatZaGradjevinskuDozvoluService.Get(id);
 
             if (projekatZaGradjevinskuDozvolu == null)
-                return NotFound(new ServiceResult<ProjekatZaGradjevinskuDozvolu>(false, "Projekat za gradjevinsku dozvolu nije pronadjen."));            
+                return NotFound(new ServiceResult<ProjekatZaGradjevinskuDozvolu>(false, "Projekat za gradjevinsku dozvolu nije pronadjen."));
 
-            foreach(var povrsina in model.Povrsine.Where(x => x.Status != Status.None))
+            _mapper.Map(request, projekatZaGradjevinskuDozvolu);
+
+            foreach (var povrsina in projekatZaGradjevinskuDozvolu.Povrsine.Where(x => x.Status != Status.None))
             {
                 if (povrsina.Status == Status.Insert)
                 {
-                    //povrsina.ProjekatZaGradjevinskuDozvoluId = projekatZaGradjevinskuDozvolu.Id;
-                    //_projekatZaGradjevinskuDozvoluService.Dodaj
+                    povrsina.ProjekatZaGradjevinskuDozvoluId = projekatZaGradjevinskuDozvolu.Id;
+                    _povrsinaService.Add(povrsina);
+                }
+                else if (povrsina.Status == Status.Update)
+                {
+                    _povrsinaService.Update(povrsina);
+                }
+                else
+                {
+                    _povrsinaService.Delete(povrsina);
                 }
             }
 
             var result = _projekatZaGradjevinskuDozvoluService.Update(projekatZaGradjevinskuDozvolu);
+
+            _mapper.Map<EditProjekatZaGradjevinskuDozvoluResponse>(result.ResultObject);
 
             if (result.Success)
                 return Ok(result);

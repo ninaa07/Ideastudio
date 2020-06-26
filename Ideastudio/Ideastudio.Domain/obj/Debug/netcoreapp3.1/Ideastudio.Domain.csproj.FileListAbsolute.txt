@@ -13,8 +13,10 @@ D:\Projects\Ideastudio\Ideastudio\Ideastudio.Domain\bin\Debug\netcoreapp3.1\Idea
 D:\Projects\Ideastudio\Ideastudio\Ideastudio.Domain\bin\Debug\netcoreapp3.1\Ideastudio.Domain.runtimeconfig.dev.json
 D:\Projects\Ideastudio\Ideastudio\Ideastudio.Domain\bin\Debug\netcoreapp3.1\Ideastudio.Domain.dll
 D:\Projects\Ideastudio\Ideastudio\Ideastudio.Domain\bin\Debug\netcoreapp3.1\Ideastudio.Domain.pdb
-D:\Projects\Ideastudio\Ideastudio\Ideastudio.Domain\obj\Debug\netcoreapp3.1\Ideastudio.Domain.csprojAssemblyReference.cache
 D:\Projects\Ideastudio\Ideastudio\Ideastudio.Domain\obj\Debug\netcoreapp3.1\Ideastudio.Domain.AssemblyInfoInputs.cache
 D:\Projects\Ideastudio\Ideastudio\Ideastudio.Domain\obj\Debug\netcoreapp3.1\Ideastudio.Domain.AssemblyInfo.cs
 D:\Projects\Ideastudio\Ideastudio\Ideastudio.Domain\obj\Debug\netcoreapp3.1\Ideastudio.Domain.dll
 D:\Projects\Ideastudio\Ideastudio\Ideastudio.Domain\obj\Debug\netcoreapp3.1\Ideastudio.Domain.pdb
+D:\Projects\Ideastudio\Ideastudio\Ideastudio.Domain\obj\Debug\netcoreapp3.1\Ideastudio.Domain.csproj.CoreCompileInputs.cache
+D:\Projects\Ideastudio\Ideastudio\Ideastudio.Domain\obj\Debug\netcoreapp3.1\Ideastudio.Domain.genruntimeconfig.cache
+D:\Projects\Ideastudio\Ideastudio\Ideastudio.Domain\obj\Debug\netcoreapp3.1\Ideastudio.Domain.csprojAssemblyReference.cache

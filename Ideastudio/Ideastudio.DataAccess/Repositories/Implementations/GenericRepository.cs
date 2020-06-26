@@ -1,9 +1,8 @@
-﻿using Ideastudio.DataAccess.Repositories.Interfaces;
+﻿using Ideastudio.DataAccess.ExtensionMethods;
+using Ideastudio.DataAccess.Repositories.Interfaces;
 using Ideastudio.Domain;
 using Microsoft.EntityFrameworkCore;
-using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace Ideastudio.DataAccess.Repositories.Implementations
 {
@@ -37,6 +36,7 @@ namespace Ideastudio.DataAccess.Repositories.Implementations
 
         public void Update(T obj)
         {
+            _context.DetachLocal(obj, obj.Id);
             table.Attach(obj);
             _context.Entry(obj).State = EntityState.Modified;
             SaveChanges();

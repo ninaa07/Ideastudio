@@ -58,7 +58,7 @@ export class ProjekatZaGradjevinskuDozvoluComponent implements OnInit {
     this.projekatZaGradjevinskuDozvoluService.getById(id).subscribe(result => {
 
       const dialogRef = this.dialog.open(ProjekatZaGradjevinskuDozvoluDialog, {
-        width: '700px',
+        width: '900px',
         data: {
           projekatZaGD: result,
           vrstePovrsina: this.vrstePovrsina,
@@ -76,7 +76,7 @@ export class ProjekatZaGradjevinskuDozvoluComponent implements OnInit {
 
   add(): void {
     const dialogRef = this.dialog.open(ProjekatZaGradjevinskuDozvoluDialog, {
-      width: '700px',
+      width: '900px',
       data: {
         action: 'add',
         title: 'Unos površina i kreiranje projekta za građevinsku dozvolu',
@@ -97,7 +97,7 @@ export class ProjekatZaGradjevinskuDozvoluComponent implements OnInit {
   edit(pgd: ProjekatZaGradjevinskuDozvolu): void {
 
     const dialogRef = this.dialog.open(ProjekatZaGradjevinskuDozvoluDialog, {
-      width: '700px',
+      width: '900px',
       autoFocus: true,
       data: {
         projekatZaGD: pgd,

@@ -5,9 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Models\" />
     <Folder Include="Validator\" />
-    <Folder Include="Profile\" />
   </ItemGroup>
 
   <ItemGroup>

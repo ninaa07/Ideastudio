@@ -23,3 +23,5 @@ D:\Projects\Ideastudio\Ideastudio\Ideastudio.Service\obj\Debug\netcoreapp3.1\Ide
 D:\Projects\Ideastudio\Ideastudio\Ideastudio.Service\obj\Debug\netcoreapp3.1\Ideastudio.Service.csproj.CopyComplete
 D:\Projects\Ideastudio\Ideastudio\Ideastudio.Service\obj\Debug\netcoreapp3.1\Ideastudio.Service.dll
 D:\Projects\Ideastudio\Ideastudio\Ideastudio.Service\obj\Debug\netcoreapp3.1\Ideastudio.Service.pdb
+D:\Projects\Ideastudio\Ideastudio\Ideastudio.Service\obj\Debug\netcoreapp3.1\Ideastudio.Service.csproj.CoreCompileInputs.cache
+D:\Projects\Ideastudio\Ideastudio\Ideastudio.Service\obj\Debug\netcoreapp3.1\Ideastudio.Service.genruntimeconfig.cache

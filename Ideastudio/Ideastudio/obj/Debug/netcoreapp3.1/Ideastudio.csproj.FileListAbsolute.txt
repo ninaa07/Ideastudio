@@ -153,3 +153,5 @@ D:\Projects\Ideastudio\Ideastudio\Ideastudio\obj\Debug\netcoreapp3.1\Ideastudio.
 D:\Projects\Ideastudio\Ideastudio\Ideastudio\obj\Debug\netcoreapp3.1\Ideastudio.csproj.CopyComplete
 D:\Projects\Ideastudio\Ideastudio\Ideastudio\obj\Debug\netcoreapp3.1\Ideastudio.dll
 D:\Projects\Ideastudio\Ideastudio\Ideastudio\obj\Debug\netcoreapp3.1\Ideastudio.pdb
+D:\Projects\Ideastudio\Ideastudio\Ideastudio\obj\Debug\netcoreapp3.1\Ideastudio.csproj.CoreCompileInputs.cache
+D:\Projects\Ideastudio\Ideastudio\Ideastudio\obj\Debug\netcoreapp3.1\Ideastudio.genruntimeconfig.cache

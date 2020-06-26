@@ -14,7 +14,8 @@ namespace Ideastudio.DataAccess.Repositories.Implementations
 
         public IEnumerable<VrstaPovrsine> GetAllVrstePovrsineWithProstorijeAndPovrsine()
         {
-            return _context.VrstePovrsine.Include(x => x.Prostorije).Include(x => x.Povrsine);
+            //return _context.VrstePovrsine.Include(x => x.Prostorije).Include(x => x.Povrsine);
+            return _context.VrstePovrsine.Include(x => x.Prostorije);
         }
     }
 }

@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Ideastudio.DataAccess.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
-    [Migration("20200620120905_init")]
+    [Migration("20200623161832_init")]
     partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -121,7 +121,7 @@ namespace Ideastudio.DataAccess.Migrations
                         new
                         {
                             Id = 1,
-                            DatumIzrade = new DateTime(2020, 6, 20, 12, 9, 5, 296, DateTimeKind.Utc).AddTicks(4293),
+                            DatumIzrade = new DateTime(2020, 6, 23, 16, 18, 32, 113, DateTimeKind.Utc).AddTicks(1180),
                             GlavniProjektantId = 2,
                             LokacijskaDozvolaId = 1,
                             Naziv = "Idejno resenje 1",
@@ -130,7 +130,7 @@ namespace Ideastudio.DataAccess.Migrations
                         new
                         {
                             Id = 2,
-                            DatumIzrade = new DateTime(2020, 6, 20, 12, 9, 5, 296, DateTimeKind.Utc).AddTicks(6680),
+                            DatumIzrade = new DateTime(2020, 6, 23, 16, 18, 32, 113, DateTimeKind.Utc).AddTicks(2769),
                             GlavniProjektantId = 5,
                             LokacijskaDozvolaId = 5,
                             Naziv = "Idejno resenje 2",
@@ -139,7 +139,7 @@ namespace Ideastudio.DataAccess.Migrations
                         new
                         {
                             Id = 3,
-                            DatumIzrade = new DateTime(2020, 6, 20, 12, 9, 5, 296, DateTimeKind.Utc).AddTicks(6747),
+                            DatumIzrade = new DateTime(2020, 6, 23, 16, 18, 32, 113, DateTimeKind.Utc).AddTicks(2798),
                             GlavniProjektantId = 1,
                             LokacijskaDozvolaId = 3,
                             Naziv = "Idejno resenje 3",
@@ -148,7 +148,7 @@ namespace Ideastudio.DataAccess.Migrations
                         new
                         {
                             Id = 4,
-                            DatumIzrade = new DateTime(2020, 6, 20, 12, 9, 5, 296, DateTimeKind.Utc).AddTicks(6751),
+                            DatumIzrade = new DateTime(2020, 6, 23, 16, 18, 32, 113, DateTimeKind.Utc).AddTicks(2801),
                             GlavniProjektantId = 4,
                             LokacijskaDozvolaId = 2,
                             Naziv = "Idejno resenje 4",
@@ -157,7 +157,7 @@ namespace Ideastudio.DataAccess.Migrations
                         new
                         {
                             Id = 5,
-                            DatumIzrade = new DateTime(2020, 6, 20, 12, 9, 5, 296, DateTimeKind.Utc).AddTicks(6756),
+                            DatumIzrade = new DateTime(2020, 6, 23, 16, 18, 32, 113, DateTimeKind.Utc).AddTicks(2802),
                             GlavniProjektantId = 3,
                             LokacijskaDozvolaId = 4,
                             Naziv = "Idejno resenje 5",
@@ -166,7 +166,7 @@ namespace Ideastudio.DataAccess.Migrations
                         new
                         {
                             Id = 6,
-                            DatumIzrade = new DateTime(2020, 6, 20, 12, 9, 5, 296, DateTimeKind.Utc).AddTicks(6759),
+                            DatumIzrade = new DateTime(2020, 6, 23, 16, 18, 32, 113, DateTimeKind.Utc).AddTicks(2804),
                             GlavniProjektantId = 2,
                             LokacijskaDozvolaId = 1,
                             Naziv = "Idejno resenje 6",
@@ -175,7 +175,7 @@ namespace Ideastudio.DataAccess.Migrations
                         new
                         {
                             Id = 7,
-                            DatumIzrade = new DateTime(2020, 6, 20, 12, 9, 5, 296, DateTimeKind.Utc).AddTicks(6762),
+                            DatumIzrade = new DateTime(2020, 6, 23, 16, 18, 32, 113, DateTimeKind.Utc).AddTicks(2806),
                             GlavniProjektantId = 1,
                             LokacijskaDozvolaId = 2,
                             Naziv = "Idejno resenje 7",
@@ -184,7 +184,7 @@ namespace Ideastudio.DataAccess.Migrations
                         new
                         {
                             Id = 8,
-                            DatumIzrade = new DateTime(2020, 6, 20, 12, 9, 5, 296, DateTimeKind.Utc).AddTicks(6765),
+                            DatumIzrade = new DateTime(2020, 6, 23, 16, 18, 32, 113, DateTimeKind.Utc).AddTicks(2808),
                             GlavniProjektantId = 2,
                             LokacijskaDozvolaId = 4,
                             Naziv = "Idejno resenje 8",
@@ -193,7 +193,7 @@ namespace Ideastudio.DataAccess.Migrations
                         new
                         {
                             Id = 9,
-                            DatumIzrade = new DateTime(2020, 6, 20, 12, 9, 5, 296, DateTimeKind.Utc).AddTicks(6768),
+                            DatumIzrade = new DateTime(2020, 6, 23, 16, 18, 32, 113, DateTimeKind.Utc).AddTicks(2809),
                             GlavniProjektantId = 4,
                             LokacijskaDozvolaId = 4,
                             Naziv = "Idejno resenje 9",
@@ -202,7 +202,7 @@ namespace Ideastudio.DataAccess.Migrations
                         new
                         {
                             Id = 10,
-                            DatumIzrade = new DateTime(2020, 6, 20, 12, 9, 5, 296, DateTimeKind.Utc).AddTicks(6770),
+                            DatumIzrade = new DateTime(2020, 6, 23, 16, 18, 32, 113, DateTimeKind.Utc).AddTicks(2811),
                             GlavniProjektantId = 4,
                             LokacijskaDozvolaId = 5,
                             Naziv = "Idejno resenje 10",
@@ -243,7 +243,7 @@ namespace Ideastudio.DataAccess.Migrations
                         new
                         {
                             Id = 1,
-                            DatumIzdavanja = new DateTime(2020, 6, 20, 12, 9, 5, 293, DateTimeKind.Utc).AddTicks(6124),
+                            DatumIzdavanja = new DateTime(2020, 6, 23, 16, 18, 32, 111, DateTimeKind.Utc).AddTicks(2233),
                             NamenaZemljista = "Namena 1",
                             Naziv = "Informacije o lokaciji 1",
                             Zona = "Zona 1"
@@ -251,7 +251,7 @@ namespace Ideastudio.DataAccess.Migrations
                         new
                         {
                             Id = 2,
-                            DatumIzdavanja = new DateTime(2020, 6, 20, 12, 9, 5, 293, DateTimeKind.Utc).AddTicks(7855),
+                            DatumIzdavanja = new DateTime(2020, 6, 23, 16, 18, 32, 111, DateTimeKind.Utc).AddTicks(3526),
                             NamenaZemljista = "Namena 2",
                             Naziv = "Informacije o lokaciji 2",
                             Zona = "Zona 2"
@@ -259,7 +259,7 @@ namespace Ideastudio.DataAccess.Migrations
                         new
                         {
                             Id = 3,
-                            DatumIzdavanja = new DateTime(2020, 6, 20, 12, 9, 5, 293, DateTimeKind.Utc).AddTicks(7899),
+                            DatumIzdavanja = new DateTime(2020, 6, 23, 16, 18, 32, 111, DateTimeKind.Utc).AddTicks(3547),
                             NamenaZemljista = "Namena 3",
                             Naziv = "Informacije o lokaciji 3",
                             Zona = "Zona 3"
@@ -267,7 +267,7 @@ namespace Ideastudio.DataAccess.Migrations
                         new
                         {
                             Id = 4,
-                            DatumIzdavanja = new DateTime(2020, 6, 20, 12, 9, 5, 293, DateTimeKind.Utc).AddTicks(7903),
+                            DatumIzdavanja = new DateTime(2020, 6, 23, 16, 18, 32, 111, DateTimeKind.Utc).AddTicks(3550),
                             NamenaZemljista = "Namena 4",
                             Naziv = "Informacije o lokaciji 4",
                             Zona = "Zona 4"
@@ -275,7 +275,7 @@ namespace Ideastudio.DataAccess.Migrations
                         new
                         {
                             Id = 5,
-                            DatumIzdavanja = new DateTime(2020, 6, 20, 12, 9, 5, 293, DateTimeKind.Utc).AddTicks(7906),
+                            DatumIzdavanja = new DateTime(2020, 6, 23, 16, 18, 32, 111, DateTimeKind.Utc).AddTicks(3551),
                             NamenaZemljista = "Namena 5",
                             Naziv = "Informacije o lokaciji 5",
                             Zona = "Zona 5"
@@ -283,7 +283,7 @@ namespace Ideastudio.DataAccess.Migrations
                         new
                         {
                             Id = 6,
-                            DatumIzdavanja = new DateTime(2020, 6, 20, 12, 9, 5, 293, DateTimeKind.Utc).AddTicks(7909),
+                            DatumIzdavanja = new DateTime(2020, 6, 23, 16, 18, 32, 111, DateTimeKind.Utc).AddTicks(3553),
                             NamenaZemljista = "Namena 6",
                             Naziv = "Informacije o lokaciji 6",
                             Zona = "Zona 6"
@@ -291,7 +291,7 @@ namespace Ideastudio.DataAccess.Migrations
                         new
                         {
                             Id = 7,
-                            DatumIzdavanja = new DateTime(2020, 6, 20, 12, 9, 5, 293, DateTimeKind.Utc).AddTicks(7912),
+                            DatumIzdavanja = new DateTime(2020, 6, 23, 16, 18, 32, 111, DateTimeKind.Utc).AddTicks(3555),
                             NamenaZemljista = "Namena 7",
                             Naziv = "Informacije o lokaciji 7",
                             Zona = "Zona 7"
@@ -299,7 +299,7 @@ namespace Ideastudio.DataAccess.Migrations
                         new
                         {
                             Id = 8,
-                            DatumIzdavanja = new DateTime(2020, 6, 20, 12, 9, 5, 293, DateTimeKind.Utc).AddTicks(7914),
+                            DatumIzdavanja = new DateTime(2020, 6, 23, 16, 18, 32, 111, DateTimeKind.Utc).AddTicks(3556),
                             NamenaZemljista = "Namena 8",
                             Naziv = "Informacije o lokaciji 8",
                             Zona = "Zona 8"
@@ -307,7 +307,7 @@ namespace Ideastudio.DataAccess.Migrations
                         new
                         {
                             Id = 9,
-                            DatumIzdavanja = new DateTime(2020, 6, 20, 12, 9, 5, 293, DateTimeKind.Utc).AddTicks(7918),
+                            DatumIzdavanja = new DateTime(2020, 6, 23, 16, 18, 32, 111, DateTimeKind.Utc).AddTicks(3558),
                             NamenaZemljista = "Namena 9",
                             Naziv = "Informacije o lokaciji 9",
                             Zona = "Zona 9"
@@ -315,7 +315,7 @@ namespace Ideastudio.DataAccess.Migrations
                         new
                         {
                             Id = 10,
-                            DatumIzdavanja = new DateTime(2020, 6, 20, 12, 9, 5, 293, DateTimeKind.Utc).AddTicks(7921),
+                            DatumIzdavanja = new DateTime(2020, 6, 23, 16, 18, 32, 111, DateTimeKind.Utc).AddTicks(3560),
                             NamenaZemljista = "Namena 10",
                             Naziv = "Informacije o lokaciji 10",
                             Zona = "Zona 10"
@@ -370,7 +370,7 @@ namespace Ideastudio.DataAccess.Migrations
                         {
                             Id = 1,
                             BrojParcele = 6934L,
-                            DatumIzdavanja = new DateTime(2020, 6, 20, 12, 9, 5, 295, DateTimeKind.Utc).AddTicks(9417),
+                            DatumIzdavanja = new DateTime(2020, 6, 23, 16, 18, 32, 112, DateTimeKind.Utc).AddTicks(7577),
                             InformacijeOLokacijiId = 3,
                             LokacijskiUslovi = "Lokacijski uslovi 1",
                             Naziv = "Lokacijska dozvola 1",
@@ -381,7 +381,7 @@ namespace Ideastudio.DataAccess.Migrations
                         {
                             Id = 2,
                             BrojParcele = 48643L,
-                            DatumIzdavanja = new DateTime(2020, 6, 20, 12, 9, 5, 296, DateTimeKind.Utc).AddTicks(686),
+                            DatumIzdavanja = new DateTime(2020, 6, 23, 16, 18, 32, 112, DateTimeKind.Utc).AddTicks(8470),
                             InformacijeOLokacijiId = 2,
                             LokacijskiUslovi = "Lokacijski uslovi 2",
                             Naziv = "Lokacijska dozvola 2",
@@ -392,7 +392,7 @@ namespace Ideastudio.DataAccess.Migrations
                         {
                             Id = 3,
                             BrojParcele = 4843L,
-                            DatumIzdavanja = new DateTime(2020, 6, 20, 12, 9, 5, 296, DateTimeKind.Utc).AddTicks(714),
+                            DatumIzdavanja = new DateTime(2020, 6, 23, 16, 18, 32, 112, DateTimeKind.Utc).AddTicks(8488),
                             InformacijeOLokacijiId = 5,
                             LokacijskiUslovi = "Lokacijski uslovi 3",
                             Naziv = "Lokacijska dozvola 3",
@@ -403,7 +403,7 @@ namespace Ideastudio.DataAccess.Migrations
                         {
                             Id = 4,
                             BrojParcele = 3458L,
-                            DatumIzdavanja = new DateTime(2020, 6, 20, 12, 9, 5, 296, DateTimeKind.Utc).AddTicks(719),
+                            DatumIzdavanja = new DateTime(2020, 6, 23, 16, 18, 32, 112, DateTimeKind.Utc).AddTicks(8490),
                             InformacijeOLokacijiId = 1,
                             LokacijskiUslovi = "Lokacijski uslovi 4",
                             Naziv = "Lokacijska dozvola 4",
@@ -414,7 +414,7 @@ namespace Ideastudio.DataAccess.Migrations
                         {
                             Id = 5,
                             BrojParcele = 34343L,
-                            DatumIzdavanja = new DateTime(2020, 6, 20, 12, 9, 5, 296, DateTimeKind.Utc).AddTicks(722),
+                            DatumIzdavanja = new DateTime(2020, 6, 23, 16, 18, 32, 112, DateTimeKind.Utc).AddTicks(8492),
                             InformacijeOLokacijiId = 4,
                             LokacijskiUslovi = "Lokacijski uslovi 5",
                             Naziv = "Lokacijska dozvola 5",
@@ -962,7 +962,7 @@ namespace Ideastudio.DataAccess.Migrations
                         new
                         {
                             Id = 1,
-                            DatumIzrade = new DateTime(2020, 6, 20, 12, 9, 5, 297, DateTimeKind.Utc).AddTicks(4550),
+                            DatumIzrade = new DateTime(2020, 6, 23, 16, 18, 32, 113, DateTimeKind.Utc).AddTicks(7560),
                             IdejnoResenjeId = 2,
                             Naziv = "Projekat 1",
                             StatusDokumenta = 1
@@ -970,7 +970,7 @@ namespace Ideastudio.DataAccess.Migrations
                         new
                         {
                             Id = 2,
-                            DatumIzrade = new DateTime(2020, 6, 20, 12, 9, 5, 297, DateTimeKind.Utc).AddTicks(6232),
+                            DatumIzrade = new DateTime(2020, 6, 23, 16, 18, 32, 113, DateTimeKind.Utc).AddTicks(8787),
                             IdejnoResenjeId = 7,
                             Naziv = "Projekat 2",
                             StatusDokumenta = 1
@@ -978,7 +978,7 @@ namespace Ideastudio.DataAccess.Migrations
                         new
                         {
                             Id = 3,
-                            DatumIzrade = new DateTime(2020, 6, 20, 12, 9, 5, 297, DateTimeKind.Utc).AddTicks(6274),
+                            DatumIzrade = new DateTime(2020, 6, 23, 16, 18, 32, 113, DateTimeKind.Utc).AddTicks(8811),
                             IdejnoResenjeId = 9,
                             Naziv = "Projekat 3",
                             StatusDokumenta = 1
@@ -986,7 +986,7 @@ namespace Ideastudio.DataAccess.Migrations
                         new
                         {
                             Id = 4,
-                            DatumIzrade = new DateTime(2020, 6, 20, 12, 9, 5, 297, DateTimeKind.Utc).AddTicks(6277),
+                            DatumIzrade = new DateTime(2020, 6, 23, 16, 18, 32, 113, DateTimeKind.Utc).AddTicks(8851),
                             IdejnoResenjeId = 1,
                             Naziv = "Projekat 4",
                             StatusDokumenta = 1
@@ -994,7 +994,7 @@ namespace Ideastudio.DataAccess.Migrations
                         new
                         {
                             Id = 5,
-                            DatumIzrade = new DateTime(2020, 6, 20, 12, 9, 5, 297, DateTimeKind.Utc).AddTicks(6279),
+                            DatumIzrade = new DateTime(2020, 6, 23, 16, 18, 32, 113, DateTimeKind.Utc).AddTicks(8854),
                             IdejnoResenjeId = 5,
                             Naziv = "Projekat 5",
                             StatusDokumenta = 1
@@ -1002,7 +1002,7 @@ namespace Ideastudio.DataAccess.Migrations
                         new
                         {
                             Id = 6,
-                            DatumIzrade = new DateTime(2020, 6, 20, 12, 9, 5, 297, DateTimeKind.Utc).AddTicks(6282),
+                            DatumIzrade = new DateTime(2020, 6, 23, 16, 18, 32, 113, DateTimeKind.Utc).AddTicks(8855),
                             IdejnoResenjeId = 3,
                             Naziv = "Projekat 6",
                             StatusDokumenta = 1
@@ -1010,7 +1010,7 @@ namespace Ideastudio.DataAccess.Migrations
                         new
                         {
                             Id = 7,
-                            DatumIzrade = new DateTime(2020, 6, 20, 12, 9, 5, 297, DateTimeKind.Utc).AddTicks(6285),
+                            DatumIzrade = new DateTime(2020, 6, 23, 16, 18, 32, 113, DateTimeKind.Utc).AddTicks(8858),
                             IdejnoResenjeId = 10,
                             Naziv = "Projekat 7",
                             StatusDokumenta = 1
@@ -1018,7 +1018,7 @@ namespace Ideastudio.DataAccess.Migrations
                         new
                         {
                             Id = 8,
-                            DatumIzrade = new DateTime(2020, 6, 20, 12, 9, 5, 297, DateTimeKind.Utc).AddTicks(6289),
+                            DatumIzrade = new DateTime(2020, 6, 23, 16, 18, 32, 113, DateTimeKind.Utc).AddTicks(8859),
                             IdejnoResenjeId = 4,
                             Naziv = "Projekat 8",
                             StatusDokumenta = 1
@@ -1026,7 +1026,7 @@ namespace Ideastudio.DataAccess.Migrations
                         new
                         {
                             Id = 9,
-                            DatumIzrade = new DateTime(2020, 6, 20, 12, 9, 5, 297, DateTimeKind.Utc).AddTicks(6292),
+                            DatumIzrade = new DateTime(2020, 6, 23, 16, 18, 32, 113, DateTimeKind.Utc).AddTicks(8861),
                             IdejnoResenjeId = 8,
                             Naziv = "Projekat 9",
                             StatusDokumenta = 1
@@ -1034,7 +1034,7 @@ namespace Ideastudio.DataAccess.Migrations
                         new
                         {
                             Id = 10,
-                            DatumIzrade = new DateTime(2020, 6, 20, 12, 9, 5, 297, DateTimeKind.Utc).AddTicks(6294),
+                            DatumIzrade = new DateTime(2020, 6, 23, 16, 18, 32, 113, DateTimeKind.Utc).AddTicks(8864),
                             IdejnoResenjeId = 6,
                             Naziv = "Projekat 10",
                             StatusDokumenta = 1
