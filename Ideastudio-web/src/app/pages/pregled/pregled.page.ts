@@ -6,7 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['pregled.page.scss']
 })
 export class PregledPage implements OnInit {
+
   constructor() { }
 
-  ngOnInit() { }
+  ngOnInit() {
+  }
 }

@@ -37,9 +37,6 @@ export class LokacijskaDozvolaDialog implements OnInit {
       this.selectedIol = this.informacijeOLokaciji.naziv;
       this.datumIzdavanja = this.lokacijskaDozvola.datumIzdavanja;
 
-      if (this.lokacijskaDozvola.nazivIdejnogResenja !== null) {
-        this.selectedIr = this.lokacijskaDozvola.nazivIdejnogResenja;
-      }
     } else {
       this.datumIzdavanja = new Date();
       this.informacijeOLokaciji = new InformacijeOLokaciji();
@@ -52,7 +49,6 @@ export class LokacijskaDozvolaDialog implements OnInit {
     }
 
     if (!this.lokacijskaDozvola.id) {
-
       this.lokacijskaDozvola.nazivIdejnogResenja = this.selectedIr;
       this.lokacijskaDozvola.informacijeOLokacijiId = this.informacijeOLokaciji.id;
 
@@ -84,6 +80,10 @@ export class LokacijskaDozvolaDialog implements OnInit {
   changeSelectionIr(ir: IdejnoResenje, newIr: string) {
     this.selectedIr = newIr;
 
+    this.setNazivObjekta(ir);
+  }
+
+  setNazivObjekta(ir: IdejnoResenje) {
     this.objekatService.getById(ir.objekatId).subscribe(result => {
       if (result) {
         this.nazivObjekta = result.naziv;

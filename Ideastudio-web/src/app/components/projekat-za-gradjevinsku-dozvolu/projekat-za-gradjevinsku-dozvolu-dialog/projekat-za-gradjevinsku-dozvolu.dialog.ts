@@ -51,13 +51,11 @@ export class ProjekatZaGradjevinskuDozvoluDialog implements OnInit {
 
       this.datumIzrade = this.pgd.datumIzrade;
 
-      if (this.pgd.nazivIdejnogResenja) {
+      if (this.pgd.idejnoResenjeId) {
         const ir = this.idejnaResenja.find(x => x.id === this.pgd.idejnoResenjeId);
-
+        this.selectedIr = ir.naziv;
         this.setNazivGlavnogProjektanta(ir);
       }
-
-      this.selectedIr = this.pgd.nazivIdejnogResenja ? this.pgd.nazivIdejnogResenja : 'Idejno resenje';
 
       this.pgd.povrsine.forEach(element => {
         element.status = Status.None;
@@ -68,13 +66,11 @@ export class ProjekatZaGradjevinskuDozvoluDialog implements OnInit {
           element.vrstaPovrsine = vp;
         }
       });
-
     } else {
       this.pgd.povrsine = new Array();
       this.pgd.statusDokumenta = StatusDokumenta.Nov;
       this.datumIzrade = new Date();
     }
-
     this.dataSource.data = this.pgd.povrsine;
   }
 
@@ -111,6 +107,7 @@ export class ProjekatZaGradjevinskuDozvoluDialog implements OnInit {
     this.glavniProjektantService.getById(ir.glavniProjektantId).subscribe(result => {
       if (result) {
         this.nazivProjektanta = result.imePrezime;
+        this.selectedIr = ir.naziv;
       }
     });
   }
@@ -139,14 +136,13 @@ export class ProjekatZaGradjevinskuDozvoluDialog implements OnInit {
 
   add() {
     const p = new Povrsina();
+    this.disabledBtn = true;
     p.isEditable = true;
-    //p.status = Status.Insert;
     this.pgd.povrsine.push(p);
     this.dataSource.data = this.pgd.povrsine;
   }
 
   edit(p: Povrsina) {
-    //p.status = Status.Update;
     this.disabledBtn = true;
     p.isEditable = true;
     this.povrsinaRes = p;
@@ -159,43 +155,44 @@ export class ProjekatZaGradjevinskuDozvoluDialog implements OnInit {
   }
 
   saveElement(p: Povrsina) {
-    debugger;
+
+    if (!this.validateElement(p)) {
+      return;
+    }
+
     p.isEditable = false;
     this.disabledBtn = false;
-
     if (p.id === undefined) {
       p.status = Status.Insert;
-    }
-    else {
+    } else {
       p.status = Status.Update;
     }
   }
 
   resetFields(p: Povrsina) {
-    debugger;
-    if (!this.povrsinaRes.oznaka) {
-      p.oznaka = null;
+    if (!p.naziv && !p.oznaka && !p.vrstaPoda && !p.vrstaPovrsine && !p.prostorijaNaziv) {
+      this.delete(p);
     }
 
-    if (!this.povrsinaRes.vrstaPoda) {
-      p.vrstaPoda = null;
-    }
-
-    if (!this.povrsinaRes.vrstaPovrsine) {
-      p.vrstaPovrsine = null;
-    }
-
-    else {
-      p.oznaka = this.povrsinaRes.oznaka;
-      p.vrstaPoda = this.povrsinaRes.vrstaPoda;
-      p.vrstaPovrsine = this.povrsinaRes.vrstaPovrsine;
-    }
+    p.naziv = null;
+    p.oznaka = null;
+    p.vrstaPoda = null;
+    p.vrstaPovrsine = null;
+    p.prostorijaNaziv = null;
   }
 
   validate() {
-    debugger;
     if (!this.pgd.naziv) {
       this.alert.showError('Neispravno uneti podaci', 'Error');
+      return false;
+    }
+
+    return true;
+  }
+
+  validateElement(p: Povrsina) {
+    if (!p.naziv || !p.oznaka || !p.vrstaPoda || !p.vrstaPovrsine) {
+      this.alert.showError('Neispravno uneti podaci o površini', 'Error');
       return false;
     }
 

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { LokacijskaDozvola } from 'src/app/models/lokacijska-dozvola.model';
 import { LokacijskaDozvolaService } from 'src/app/services/lokacijska-dozvola.service';
 import { MatDialog } from '@angular/material/dialog';
@@ -9,7 +9,6 @@ import { IdejnoResenje } from 'src/app/models/idejno-resenje.model';
 import { IdejnoResenjeService } from 'src/app/services/idejno-resenje.service';
 import { LokacijskaDozvolaDialog } from './lokacijska-dozvola-dialog/lokacijska-dozvola.dialog';
 import { AlertService } from 'src/app/services/alert.service';
-import { ProjekatZaGradjevinskuDozvoluDialog } from '../projekat-za-gradjevinsku-dozvolu/projekat-za-gradjevinsku-dozvolu-dialog/projekat-za-gradjevinsku-dozvolu.dialog';
 
 @Component({
   selector: 'lokacijska-dozvola',
@@ -29,7 +28,9 @@ export class LokacijskaDozvolaComponent implements OnInit {
     private idejnoResenjeService: IdejnoResenjeService,
     private dialog: MatDialog,
     private alert: AlertService
-  ) { }
+  ) {
+    this.lokacijskeDozvole = new Array();
+  }
 
   ngOnInit() {
     this.getAll();
@@ -49,7 +50,9 @@ export class LokacijskaDozvolaComponent implements OnInit {
 
   getAll(): void {
     this.lokacijskaDozvolaService.getAll().subscribe(result => {
-      this.lokacijskeDozvole = result;
+      if (result) {
+        this.lokacijskeDozvole = result;
+      }
     }, error => {
       this.alert.errorHandler(error);
     });
@@ -81,7 +84,8 @@ export class LokacijskaDozvolaComponent implements OnInit {
       data: {
         title: 'Izdavanje lokacijske dozvole',
         informacijeOLokaciji: this.informacijeOLokaciji,
-        action: 'add'
+        action: 'add',
+        idejnaResenja: this.idejnaResenja
       },
       autoFocus: true,
       disableClose: true

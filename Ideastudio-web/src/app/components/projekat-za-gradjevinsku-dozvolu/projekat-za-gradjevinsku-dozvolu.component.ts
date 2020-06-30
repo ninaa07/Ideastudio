@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ProjekatZaGradjevinskuDozvolu } from 'src/app/models/projekat-za-gradjevinsku-dozvolu.model';
 import { ProjekatZaGradjevinskuDozvoluService } from 'src/app/services/projekat-za-gradjevinsku-dozvolu.service';
 import { MatDialog } from '@angular/material/dialog';
@@ -7,7 +7,6 @@ import { ConfirmDialog } from '../confirm/confirm.dialog';
 import { ProjekatZaGradjevinskuDozvoluDialog } from './projekat-za-gradjevinsku-dozvolu-dialog/projekat-za-gradjevinsku-dozvolu.dialog';
 import { IdejnoResenje } from 'src/app/models/idejno-resenje.model';
 import { IdejnoResenjeService } from 'src/app/services/idejno-resenje.service';
-import { domain } from 'process';
 import { VrstaPovrsineService } from 'src/app/services/vrsta-povrsine.service';
 import { VrstaPovrsine } from 'src/app/models/vrsta-povrsine.model';
 
@@ -48,7 +47,9 @@ export class ProjekatZaGradjevinskuDozvoluComponent implements OnInit {
 
   getAll(): void {
     this.projekatZaGradjevinskuDozvoluService.getAll().subscribe(result => {
-      this.projektiZaGD = result;
+      if (result) {
+        this.projektiZaGD = result;
+      }
     }, error => {
       this.alert.errorHandler(error);
     });
@@ -63,7 +64,8 @@ export class ProjekatZaGradjevinskuDozvoluComponent implements OnInit {
           projekatZaGD: result,
           vrstePovrsina: this.vrstePovrsina,
           action: 'view',
-          title: 'Pregled projekta za građevinsku dozvolu'
+          title: 'Pregled projekta za građevinsku dozvolu',
+          idejnaResenja: this.idejnaResenja
         },
         autoFocus: true,
         disableClose: true

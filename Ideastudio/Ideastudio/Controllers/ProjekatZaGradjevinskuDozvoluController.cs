@@ -86,9 +86,12 @@ namespace Ideastudio.Controllers
 
             _mapper.Map(request, projekatZaGradjevinskuDozvolu);
 
-            foreach (var povrsina in projekatZaGradjevinskuDozvolu.Povrsine.Where(x => x.Status != Status.None))
+            foreach (var povrsina in projekatZaGradjevinskuDozvolu.Povrsine)
             {
-                if (povrsina.Status == Status.Insert)
+                povrsina.VrstaPovrsine = null;
+                if (povrsina.Status == Status.None)
+                    continue;
+                else if (povrsina.Status == Status.Insert)
                 {
                     povrsina.ProjekatZaGradjevinskuDozvoluId = projekatZaGradjevinskuDozvolu.Id;
                     _povrsinaService.Add(povrsina);

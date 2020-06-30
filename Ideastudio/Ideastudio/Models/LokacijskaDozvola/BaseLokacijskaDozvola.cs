@@ -4,6 +4,8 @@ namespace Ideastudio.Models.LokacijskaDozvola
 {
     public class BaseLokacijskaDozvola
     {
+        public string Naziv { get; set; }
+
         public string OpstiPodaci { get; set; }
 
         public string LokacijskiUslovi { get; set; }

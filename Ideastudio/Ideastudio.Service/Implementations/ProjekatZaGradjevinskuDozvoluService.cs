@@ -27,6 +27,8 @@ namespace Ideastudio.Service.Implementations
 
         public ServiceResult<ProjekatZaGradjevinskuDozvolu> Add(ProjekatZaGradjevinskuDozvolu projekatZaGradjevinskuDozvolu)
         {
+            projekatZaGradjevinskuDozvolu.DatumIzrade = System.DateTime.Now;
+
             _projekatZaGradjevinskuDozvoluRepository.Add(projekatZaGradjevinskuDozvolu);
 
             _projekatZaGradjevinskuDozvoluRepository.SaveChanges();
@@ -36,6 +38,8 @@ namespace Ideastudio.Service.Implementations
 
         public ServiceResult<ProjekatZaGradjevinskuDozvolu> Update(ProjekatZaGradjevinskuDozvolu projekatZaGradjevinskuDozvolu)
         {
+            projekatZaGradjevinskuDozvolu.DatumIzrade = System.DateTime.Now;
+
             _projekatZaGradjevinskuDozvoluRepository.Update(projekatZaGradjevinskuDozvolu);
 
             _projekatZaGradjevinskuDozvoluRepository.SaveChanges();

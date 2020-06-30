@@ -7,7 +7,10 @@ import { DashboardPage } from './pages/dashboard/dashboard.page';
 import { PregledPage } from './pages/pregled/pregled.page';
 
 const routes: Routes = [
-  { path: '', component: DashboardPage },
+  // { path: '', component: DashboardPage },
+  // { path: 'pregled', component: PregledPage },
+  // { path: '**', redirectTo: '' }
+  { path: '', component: PregledPage },
   { path: 'pregled', component: PregledPage },
   { path: '**', redirectTo: '' }
 ];

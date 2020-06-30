@@ -11,7 +11,7 @@
                 <div class="column" style="width: 60%;">
                     <div class="row">
                         <div ngbDropdown class="d-inline-block">
-                            <button class="btn btn-outline-primary" [disabled]="disabled"
+                            <button class="btn btn-outline-primary" [disabled]="this.data.action === 'view'"
                                 ngbDropdownToggle>{{ selectedIol }}</button>
                             <div ngbDropdownMenu>
                                 <button *ngFor="let iol of informacijeOLokacijiList" ngbDropdownItem
@@ -19,9 +19,9 @@
                             </div>
                         </div>
                     </div>
-                    <div class="row">
+                    <div *ngIf="this.data.action!=='add'" class="row">
                         <div ngbDropdown class="d-inline-block">
-                            <button class="btn btn-outline-primary" [disabled]="disabled"
+                            <button class="btn btn-outline-primary" [disabled]="this.data.action === 'view'"
                                 ngbDropdownToggle>{{ selectedIr }}</button>
                             <div ngbDropdownMenu>
                                 <button *ngFor="let ir of lokacijskaDozvola.idejnaResenja" ngbDropdownItem
@@ -47,34 +47,37 @@
                 <div appearance="outline" floatLabel="auto" class="row">
                     <label> Naziv </label>
                     <input class="form-control" placeholder="Naziv" type="text" required name="naziv"
-                        [(ngModel)]="lokacijskaDozvola.naziv" />
+                        [(ngModel)]="lokacijskaDozvola.naziv" [disabled]="this.data.action === 'view'" />
                 </div>
                 <div appearance="outline" floatLabel="auto" class="row">
                     <label> Opšti Podaci </label>
                     <input class="form-control" placeholder="Opšti Podaci" type="text" required name="opstiPodaci"
-                        [(ngModel)]="lokacijskaDozvola.opstiPodaci" />
+                        [(ngModel)]="lokacijskaDozvola.opstiPodaci" [disabled]="this.data.action === 'view'" />
                 </div>
                 <div appearance="outline" floatLabel="auto" class="row">
                     <label> Lokacijski Uslovi </label>
                     <input class="form-control" placeholder="Lokacijski Uslovi" type="text" required
-                        name="lokacijskiUslovi" [(ngModel)]="lokacijskaDozvola.lokacijskiUslovi" />
+                        name="lokacijskiUslovi" [(ngModel)]="lokacijskaDozvola.lokacijskiUslovi"
+                        [disabled]="this.data.action === 'view'" />
                 </div>
             </div>
             <div id="section" class="column" style="margin-top: 10px;">
                 <label class="section-label">Podaci o objektu</label>
                 <div appearance="outline" floatLabel="auto" class="row">
                     <label> Naziv </label>
-                    <input class="form-control" placeholder="Naziv" type="text" disabled value="{{ nazivObjekta }}" />
+                    <input class="form-control" placeholder="Naziv" type="text" [disabled]="this.data.action!=='add'"
+                        value="{{ nazivObjekta }}" />
                 </div>
                 <div appearance="outline" floatLabel="auto" class="row">
                     <label> Broj Parcele </label>
                     <input class="form-control" placeholder="Broj parcele" required type="number" name="brojParcele"
-                        [(ngModel)]="lokacijskaDozvola.brojParcele" />
+                        [(ngModel)]="lokacijskaDozvola.brojParcele" [disabled]="this.data.action === 'view'" />
                 </div>
                 <div appearance="outline" floatLabel="auto" class="row">
                     <label> Površina Parcele </label>
                     <input class="form-control" placeholder="Površina parcele" required type="number"
-                        name="povrsinaParcele" [(ngModel)]="lokacijskaDozvola.povrsinaParcele" />
+                        name="povrsinaParcele" [(ngModel)]="lokacijskaDozvola.povrsinaParcele"
+                        [disabled]="this.data.action === 'view'" />
                 </div>
                 <div appearance="outline" floatLabel="auto" class="row">
                     <label> Zona </label>
@@ -90,11 +93,12 @@
         </div>
 
         <div class="card-footer" id="footer-dialog">
-            <button type="submit" class="btn btn-primary" (click)="save()">Potvrdi</button>
-            <button type="button" class="btn btn-default" (click)="close()">Poništi</button>
-            <!-- <button *ngIf="!disabled" type="submit" class="btn btn-primary" (click)="save()">Potvrdi</button>
-            <button *ngIf="disabled" type="button" class="btn btn-default" (click)="cancel()">Zatvori</button>
-            <button *ngIf="!disabled" type="button" class="btn btn-default" (click)="cancel()">Poništi</button> -->
+            <button *ngIf="this.data.action!=='view'" type="submit" class="btn btn-warning"
+                (click)="save()">Potvrdi</button>
+            <button *ngIf="this.data.action!=='view'" type="button" class="btn btn-default"
+                (click)="close()">Poništi</button>
+            <button *ngIf="this.data.action==='view'" type="button" class="btn btn-default"
+                (click)="close()">Zatvori</button>
         </div>
 
     </form>

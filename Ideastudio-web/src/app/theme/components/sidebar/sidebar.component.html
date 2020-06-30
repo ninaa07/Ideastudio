@@ -12,8 +12,9 @@
   <ul class="nav">
     <li routerLinkActive="active" *ngFor="let menuItem of menuItems" class="{{ menuItem.class }} nav-item">
       <a [routerLink]="[menuItem.path]">
-        <i class="tim-icons  {{ menuItem.icon }}"></i>
-        <p>{{ menuItem.title }}</p>
+        <!-- <i class="tim-icons  {{ menuItem.icon }}"></i> -->
+        <i class="tim-icons icon-bullet-list-67"></i>
+        <p class="menu-title">{{ menuItem.title }}</p>
       </a>
     </li>
   </ul>
